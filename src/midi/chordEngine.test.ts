@@ -33,6 +33,10 @@ describe('chordEngine and Piano SMF export', () => {
     expect(parseChordSymbol('CM7(9,13)')?.intervals).toEqual([0, 4, 7, 11, 14, 21]);
   });
 
+  it('parses combined flat ninth and flat thirteenth dominant chords', () => {
+    expect(parseChordSymbol('A#7(b9,b13)')?.intervals).toEqual([0, 4, 7, 10, 13, 20]);
+  });
+
   it('resolves ChordTube Roman numerals into concrete chord symbols', () => {
     expect(resolveRomanToChord('IVM7', 'C major')).toBe('FM7');
     expect(resolveRomanToChord('V/VII', 'C major')).toBe('G/B');
