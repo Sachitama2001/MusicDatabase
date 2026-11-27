@@ -70,6 +70,28 @@ describe('chordEngine and Piano SMF export', () => {
     expect(parsed.tracks[0].notes.length).toBeGreaterThan(0);
   });
 
+  it('defaults to arpeggio voicing', () => {
+    const chords = parseQuickChordLine('Cmaj7(4) Fmaj7(4)');
+    const defaultSequence = generatePianoSequence(chords);
+    const arpeggioSequence = generatePianoSequence(chords, { voicing: 'arpeggio' });
+    expect(defaultSequence.notes).toEqual(arpeggioSequence.notes);
+  });
+
+  it('uses bar and beat offsets and ties an anticipation into the next bar', () => {
+    const chords = [
+      { symbol: 'Cmaj7', beats: 0.5, bar: 1, beatOffset: 3.5 },
+      { symbol: 'Cmaj7', beats: 4, bar: 2, beatOffset: 0 }
+    ];
+    const sequence = generatePianoSequence(chords);
+    expect(sequence.chordSpans[0].startBeat).toBe(3.5);
+    expect(sequence.chordSpans[1].startBeat).toBe(4);
+    expect(sequence.totalBeats).toBe(8);
+
+    const tied = sequence.notes.find((note) => note.startBeat === 3.5);
+    expect(tied).toBeDefined();
+    expect(tied!.durationBeats).toBeGreaterThan(0.5);
+  });
+
   it('parses Roman numeral quick lines when a key is provided', () => {
     const chords = parseQuickChordLine('IVM7(2) III7(2) VIm7(4)', 'C major');
     expect(chords.map((c) => c.symbol)).toEqual(['FM7', 'E7', 'Am7']);
