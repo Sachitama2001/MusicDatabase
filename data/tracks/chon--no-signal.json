@@ -107,9 +107,67 @@
           "beatOffset": 2,
           "note": "57小節目の裏拍位置として表示。拍位置概算"
         }
+      ],
+      "theoryAnnotations": [
+        {
+          "id": "tonic-hold",
+          "technique": "トニックの安定・保持（tonic hold）",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "50〜51小節",
+          "note": "F#M7（I）を長く保持し、動き出す前に調の中心を明確にする。これはトニックの安定機能として説明できる。上声和音を変えずに同一コードを保持しているため、ペダルポイントとは区別する。",
+          "theoryRefs": [
+            "HARM-026"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-026",
+              "libraryFile": "harmony-techniques.json",
+              "title": "Music Theory for the 21st-Century Classroom — 9.4 Harmonic Function",
+              "url": "https://musictheory.pugetsound.edu/mt21c/HarmonicFunction.html",
+              "evidenceType": "human-authored-educational-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF p.4"
+        },
+        {
+          "id": "slash-tension-bass",
+          "technique": "ハイブリッドコード／テンションベース",
+          "matchType": "partial",
+          "confidence": "medium",
+          "location": "53小節・57小節",
+          "note": "BM7/A# は三和音の構成音外にある長7度 A# をベースに置くテンションベース型。A#7/D は D（A#7 の長3度に相当）をベースにした第1転回形と読めるが、コード記号だけではボイシング上の狙いまでは断定しない。",
+          "theoryRefs": [
+            "HARM-013",
+            "HARM-007"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-013",
+              "libraryFile": "harmony-techniques.json",
+              "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+              "author": "SRM.",
+              "url": "https://srm-music.com/stylish-chord/",
+              "evidenceType": "human-authored-source",
+              "sourceConfidence": "high"
+            },
+            {
+              "recordId": "HARM-007",
+              "libraryFile": "harmony-techniques.json",
+              "title": "和声 : 第一転回形",
+              "author": "yuta",
+              "url": "https://soundquest.jp/quest/chord/chord-mv7/harmony-1st-inversion/",
+              "evidenceType": "human-authored-source+project-example",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF p.4",
+          "caveat": "A#7/D の D は異名同音で C## に相当する。"
+        }
       ]
     }
   ],
   "createdAt": "2026-11-27T18:02:00+09:00",
-  "updatedAt": "2026-11-27T18:02:00+09:00"
+  "updatedAt": "2026-11-27T19:10:00+09:00"
 }
