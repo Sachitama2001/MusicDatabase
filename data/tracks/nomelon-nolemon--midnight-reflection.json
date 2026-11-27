@@ -417,29 +417,6 @@
           "sourceNote": "ChordTube印刷PDF（Aメロ）"
         },
         {
-          "id": "passing-gdim",
-          "technique": "リーディングトーン／パッシング・ディミニッシュ",
-          "matchType": "direct",
-          "confidence": "high",
-          "location": "20〜22小節付近",
-          "note": "Gdim7→F#m7 は F# の半音上にある減七和音から F#m7 へ進む。F# minor への導音的な減和音の接続として HARM-004 に一致する。",
-          "theoryRefs": [
-            "HARM-004"
-          ],
-          "sources": [
-            {
-              "recordId": "HARM-004",
-              "libraryFile": "harmony-techniques.json",
-              "title": "SoundQuest — パッシング・ディミニッシュ",
-              "author": "yuta",
-              "url": "https://soundquest.jp/quest/chord/chord-mv4/passing-chord/",
-              "evidenceType": "human-authored-theory-to-review",
-              "sourceConfidence": "high"
-            }
-          ],
-          "sourceNote": "ChordTube印刷PDF（Aメロ）"
-        },
-        {
           "id": "hybrid-gsm7-csharp",
           "technique": "ハイブリッドコード／テンションベース",
           "matchType": "direct",
