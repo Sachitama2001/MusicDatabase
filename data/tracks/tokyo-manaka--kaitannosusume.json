@@ -547,6 +547,29 @@
             }
           ],
           "sourceNote": "ChordTube印刷PDF p.3"
+        },
+        {
+          "id": "harmonic-rhythm-b-verse",
+          "technique": "ハーモニック・リズムの細分化",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "27〜32小節",
+          "note": "2拍単位の和音から、1拍・0.5拍・0.25拍の短いコードへ細分化する箇所がある。Bメロ後半でコード変化の密度を上げ、最後の上昇接続へ向かう運動感を強めている。",
+          "theoryRefs": [
+            "HARM-029"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-029",
+              "libraryFile": "harmony-techniques.json",
+              "title": "Music Theory for the 21st-Century Classroom — 9.2 Harmonic Rhythm",
+              "author": "Robert Hutchinson",
+              "url": "https://musictheory.pugetsound.edu/mt21c/HarmonicRhythm.html",
+              "evidenceType": "human-authored-open-textbook",
+              "sourceConfidence": "high"
+            }
+          ],
+          "caveat": "小さいコード記号の拍位置・持続は印刷譜のグリッドからの推定を含む。"
         }
       ]
     }
