@@ -212,6 +212,53 @@
           "beatOffset": 3,
           "note": "17小節目終盤。上昇する接続"
         }
+      ],
+      "theoryAnnotations": [
+        {
+          "id": "secondary-dominant-c7-fm",
+          "technique": "セカンダリー・ドミナント V/vi",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "10〜17小節",
+          "note": "Ab major の C7（III7）が Fm7（vi）へ進む。C7 は Fm7 を一時的な到達点として強調する V/vi。",
+          "theoryRefs": [
+            "HARM-018"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-018",
+              "libraryFile": "harmony-techniques.json",
+              "title": "二次ドミナント",
+              "author": "yuta",
+              "url": "https://soundquest.jp/quest/chord/chord-mv2/secondary-dominant/",
+              "evidenceType": "human-authored-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF p.2"
+        },
+        {
+          "id": "chromatic-f-e-eb-d",
+          "technique": "下降クロマチック・ベースライン",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "13・15小節",
+          "note": "Fm7→Em7→Ebm7→Dm7-5 のルート／ベースが F→E→Eb→D と半音ずつ下降する。HARM-024 が説明する下降クロマチック・ベースの4音断片に一致する。",
+          "theoryRefs": [
+            "HARM-024"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-024",
+              "libraryFile": "harmony-techniques.json",
+              "title": "Music Theory for the 21st-Century Classroom — 21.7 Descending Chromatic Bass Lines",
+              "url": "https://musictheory.pugetsound.edu/mt21c/DescendingChromaticBassLines.html",
+              "evidenceType": "human-authored-educational-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF p.2"
+        }
       ]
     },
     {
@@ -406,9 +453,104 @@
           "beatOffset": 3.5,
           "note": "32小節目末。サビへの上昇接続"
         }
+      ],
+      "theoryAnnotations": [
+        {
+          "id": "passing-ddim",
+          "technique": "パッシング・ディミニッシュ",
+          "matchType": "partial",
+          "confidence": "medium",
+          "location": "27〜30小節",
+          "note": "Ddim／Ddim7 が Ab/Eb や Db6–Cm7–Ab の間に挿入される。隣接和音をクロマチックにつなぐ減和音の色彩として HARM-004 に関連するが、各小節内の厳密な解決先は印刷グリッドからの推定を含む。",
+          "theoryRefs": [
+            "HARM-004"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-004",
+              "libraryFile": "harmony-techniques.json",
+              "title": "SoundQuest — パッシング・ディミニッシュ",
+              "author": "yuta",
+              "url": "https://soundquest.jp/quest/chord/chord-mv4/passing-chord/",
+              "evidenceType": "human-authored-theory-to-review",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF p.3",
+          "caveat": "Ddi と読める小さい表記は文脈上 Ddim と解釈した。"
+        },
+        {
+          "id": "first-inversion-ab-c",
+          "technique": "第1転回形によるベース配置",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "31〜32小節",
+          "note": "Ab/C は Ab major triad の第3音 C をベースに置いた第1転回形。Ab/Bb と続くベース上昇の一部を担う。",
+          "theoryRefs": [
+            "HARM-007"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-007",
+              "libraryFile": "harmony-techniques.json",
+              "title": "和声 : 第一転回形",
+              "author": "yuta",
+              "url": "https://soundquest.jp/quest/chord/chord-mv7/harmony-1st-inversion/",
+              "evidenceType": "human-authored-source+project-example",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF p.3"
+        },
+        {
+          "id": "hybrid-ab-bb",
+          "technique": "ハイブリッドコード／テンションベース",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "32小節",
+          "note": "Ab/Bb は Ab major の上部構造に Bb ベースを重ねる形。Bb は Ab triad の構成音外で、次の DbM7/Eb へ向かう浮遊したベース色を作る。",
+          "theoryRefs": [
+            "HARM-013"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-013",
+              "libraryFile": "harmony-techniques.json",
+              "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+              "author": "SRM.",
+              "url": "https://srm-music.com/stylish-chord/",
+              "evidenceType": "human-authored-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF p.3"
+        },
+        {
+          "id": "ascending-bass-bb-eb",
+          "technique": "順次上行（ii–iii–IV–V型のベース上昇）",
+          "matchType": "partial",
+          "confidence": "medium",
+          "location": "32〜33小節",
+          "note": "Ab/Bb→Ab/C→DbM7→Dm→Eb ではベースが Bb→C→Db→D→Eb と上昇する。POP-006 の ii–iii–IV–V のような順次上行に近いが、和音機能そのものは一致しないため、ベースラインの類似として部分一致とする。",
+          "theoryRefs": [
+            "POP-006"
+          ],
+          "sources": [
+            {
+              "recordId": "POP-006",
+              "libraryFile": "progressions.json",
+              "title": "作曲初心者が知るべき3つのコード進行のパターン",
+              "author": "SRM.",
+              "url": "https://srm-music.com/3motions/",
+              "evidenceType": "human-authored-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF p.3"
+        }
       ]
     }
   ],
   "createdAt": "2026-11-27T18:02:00+09:00",
-  "updatedAt": "2026-11-27T18:02:00+09:00"
+  "updatedAt": "2026-11-27T19:04:00+09:00"
 }
