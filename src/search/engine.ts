@@ -397,6 +397,15 @@ export function formatSectionForChatGpt(track: Track, section: Section): string 
   if (section.cadenceOrMotion) {
     lines.push(`- Motion: ${section.cadenceOrMotion}`);
   }
+  for (const annotation of section.theoryAnnotations ?? []) {
+    lines.push(`- Theory: ${annotation.technique} [${annotation.matchType}; ${annotation.confidence}] — ${annotation.note}`);
+    if (annotation.theoryRefs.length) lines.push(`  Theory refs: ${annotation.theoryRefs.join(', ')}`);
+    for (const source of annotation.sources) {
+      lines.push(`  Source: [${source.recordId}] ${source.title}${source.url ? ` (${source.url})` : ''}${source.reviewStatus === 'pending' ? ' [pending]' : ''}`);
+    }
+    if (annotation.sourceNote) lines.push(`  Chord source: ${annotation.sourceNote}`);
+    if (annotation.caveat) lines.push(`  Caveat: ${annotation.caveat}`);
+  }
   lines.push(
     '',
     'このコード進行の雰囲気を活かして、別のキーへの移調案や代理コードのアレンジ案を `コード名(拍数)` の1行記法で提案してください。'
