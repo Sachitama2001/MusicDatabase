@@ -20,7 +20,6 @@ export function chordProgressionToSmf(
   });
   const midi = new Midi();
   const ppq = midi.header.ppq;
-  const [tsNum, tsDen] = parseTimeSignature(options.timeSignature ?? '4/4');
 
   midi.header.name = options.name ?? 'Chord Progression';
   midi.header.setTempo(options.bpm);
