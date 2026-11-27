@@ -203,6 +203,56 @@
           "beatOffset": 1,
           "note": "ChordTube 8小節目"
         }
+      ],
+      "theoryAnnotations": [
+        {
+          "id": "royal-road-pattern",
+          "technique": "Royal Road progression（IV–V–iii–vi）",
+          "matchType": "direct",
+          "confidence": "low",
+          "location": "1〜2・5〜6小節",
+          "note": "E major の AM7→B→G#m7→C#m7 は IV–V–iii–vi と一致し、理論DBの POP-002（Royal road progression）に該当する。ただし POP-002 は理論DB内で review_status=pending のため、パターン一致は記録するが出典の確定度は低として扱う。",
+          "theoryRefs": [
+            "POP-002"
+          ],
+          "sources": [
+            {
+              "recordId": "POP-002",
+              "libraryFile": "progressions.json",
+              "title": "DTM Hacker — コード進行パターン集",
+              "author": "DTM Hacker (author metadata to verify)",
+              "url": "https://dtmhacker.com/chord-progression-pattern/",
+              "evidenceType": "human-authored-source-to-review",
+              "sourceConfidence": "low",
+              "reviewStatus": "pending"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF（イントロ1〜8小節）",
+          "caveat": "POP-002 の理論レコードは確認待ち。名称・一般化は暫定扱い。"
+        },
+        {
+          "id": "passing-cdim",
+          "technique": "パッシング・ディミニッシュ",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "3・5小節",
+          "note": "Cdim が C#m の直前に挿入され、半音上の C# minor へつなぐ経過的な減和音として機能する。HARM-004 のパッシング・ディミニッシュに一致。",
+          "theoryRefs": [
+            "HARM-004"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-004",
+              "libraryFile": "harmony-techniques.json",
+              "title": "SoundQuest — パッシング・ディミニッシュ",
+              "author": "yuta",
+              "url": "https://soundquest.jp/quest/chord/chord-mv4/passing-chord/",
+              "evidenceType": "human-authored-theory-to-review",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF（イントロ1〜8小節）"
+        }
       ]
     },
     {
@@ -275,9 +325,57 @@
           "beatOffset": 0,
           "note": "ChordTube 80小節目"
         }
+      ],
+      "theoryAnnotations": [
+        {
+          "id": "hybrid-e-fsharp",
+          "technique": "ハイブリッドコード／テンションベース",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "75・77小節",
+          "note": "E/F# は E major の上部構造に F# ベースを置く形。F# は E の基本三和音外のベース音で、宙ぶらりんな響きと次の動きへの接続を作る。",
+          "theoryRefs": [
+            "HARM-013"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-013",
+              "libraryFile": "harmony-techniques.json",
+              "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+              "author": "SRM.",
+              "url": "https://srm-music.com/stylish-chord/",
+              "evidenceType": "human-authored-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF（75〜80小節）"
+        },
+        {
+          "id": "first-inversion-e-gsharp",
+          "technique": "第1転回形によるベース配置",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "78小節",
+          "note": "E/G# は E major triad の第3音 G# をベースに置いた第1転回形。E/F# の非和声音ベースとは異なり、ここではコード構成音の転回形を使ってベースを上昇させる。",
+          "theoryRefs": [
+            "HARM-007"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-007",
+              "libraryFile": "harmony-techniques.json",
+              "title": "和声 : 第一転回形",
+              "author": "yuta",
+              "url": "https://soundquest.jp/quest/chord/chord-mv7/harmony-1st-inversion/",
+              "evidenceType": "human-authored-source+project-example",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF（75〜80小節）"
+        }
       ]
     }
   ],
   "createdAt": "2026-11-27T16:54:00+09:00",
-  "updatedAt": "2026-11-27T16:54:00+09:00"
+  "updatedAt": "2026-11-27T19:10:00+09:00"
 }
