@@ -1,0 +1,396 @@
+{
+  "schemaVersion": "2.0",
+  "id": "kmnz--synchronizer",
+  "title": "Synchronizer",
+  "artist": "KMNZ",
+  "source": {
+    "platform": "chordtube",
+    "url": "https://chordtube.net/"
+  },
+  "bpm": 130,
+  "key": "D# minor",
+  "timeSignature": "4/4",
+  "overallFeelings": [
+    "循環性",
+    "ダンサブル",
+    "高揚感",
+    "マイナー",
+    "グルーヴ"
+  ],
+  "notes": "ユーザー提供ChordTube印刷PDF（10ページ）に基づく。対象は33〜48小節のサビ用セクション。PDF 1ページにD# minor、4/4、130 BPM、転調2回と記載。ChordTubeの曲ページ個別URL・動画IDは印刷PDFから確認できなかったため、source.urlはChordTubeトップページを暫定登録。コード・小節番号はPDF 3〜4ページの譜面表示から読み取り。拍内の切替位置はカード内グリッドおよび「食い」「裏」表示からの概算。ユーザーの6514はD# minorにおけるVI–V–i–iv（B–A#–D#m–G#m）として記録。コード名はChordTube表記を維持し、romanはD# minorを基準に付与。",
+  "sections": [
+    {
+      "id": "sec-01-chorus",
+      "label": "chorus",
+      "displayName": "サビ用",
+      "order": 1,
+      "startBar": 33,
+      "endBar": 48,
+      "localKey": "D# minor",
+      "feelings": [
+        "循環性",
+        "ダンサブル",
+        "踊りたくなる",
+        "マイナー"
+      ],
+      "feelingSummary": "マイナーキーの6514進行。循環性がよく、踊りたくなる。",
+      "cadenceOrMotion": "D# minorのVI–V–i–iv（B–A#–D#m–G#m）を軸にした循環。A#7からD#mへのドミナント解決と、G#m7(9)およびG#m7(9)/C#によるベースの動きでループ感を作る。譜面上はD#m7/F#、Dm7(9)、C#m7(9)、F#7(13)などの変形・経過和音も挿入されている。",
+      "tags": [
+        "bars-33-48",
+        "chordtube-pdf",
+        "chorus",
+        "minor-6514",
+        "danceable",
+        "looping"
+      ],
+      "chords": [
+        {
+          "symbol": "BM7",
+          "roman": "VIM7",
+          "beats": 2,
+          "bar": 33,
+          "beatOffset": 0,
+          "note": "ChordTube 33小節目"
+        },
+        {
+          "symbol": "A#7(b13)",
+          "roman": "V7(b13)",
+          "beats": 1.5,
+          "bar": 33,
+          "beatOffset": 2,
+          "note": "33小節目後半。D#mへの食いを含む可能性があるため拍位置は概算"
+        },
+        {
+          "symbol": "D#m",
+          "roman": "i",
+          "beats": 0.5,
+          "bar": 33,
+          "beatOffset": 3.5,
+          "note": "33小節目末の食いとして表示"
+        },
+        {
+          "symbol": "D#m7(9)",
+          "roman": "i7(9)",
+          "beats": 2,
+          "bar": 34,
+          "beatOffset": 0,
+          "note": "ChordTube 34小節目"
+        },
+        {
+          "symbol": "D#m7/F#",
+          "roman": "i7/III",
+          "beats": 2,
+          "bar": 34,
+          "beatOffset": 2,
+          "note": "34小節目後半"
+        },
+        {
+          "symbol": "G#m7(9)",
+          "roman": "ivm7(9)",
+          "beats": 3,
+          "bar": 35,
+          "beatOffset": 0,
+          "note": "ChordTube 35小節目"
+        },
+        {
+          "symbol": "G#m7(9)/C#",
+          "roman": "ivm7(9)/bVII",
+          "beats": 0.5,
+          "bar": 35,
+          "beatOffset": 3,
+          "note": "35小節目末の食い・ベース変化（拍位置概算）"
+        },
+        {
+          "symbol": "D#m",
+          "roman": "i",
+          "beats": 0.5,
+          "bar": 35,
+          "beatOffset": 3.5,
+          "note": "35小節目末の食い"
+        },
+        {
+          "symbol": "D#m7(9)",
+          "roman": "i7(9)",
+          "beats": 1,
+          "bar": 36,
+          "beatOffset": 0,
+          "note": "ChordTube 36小節目"
+        },
+        {
+          "symbol": "Dm7(9)",
+          "roman": "bVIIIm7(9)",
+          "beats": 1,
+          "bar": 36,
+          "beatOffset": 1,
+          "note": "36小節目内の半音下変化"
+        },
+        {
+          "symbol": "C#m7(9)",
+          "roman": "bVIIm7(9)",
+          "beats": 1,
+          "bar": 36,
+          "beatOffset": 2,
+          "note": "36小節目"
+        },
+        {
+          "symbol": "F#7",
+          "roman": "II7",
+          "beats": 1,
+          "bar": 36,
+          "beatOffset": 3,
+          "note": "36小節目。次のBM7へ接続"
+        },
+        {
+          "symbol": "BM7",
+          "roman": "VIM7",
+          "beats": 2,
+          "bar": 37,
+          "beatOffset": 0,
+          "note": "ChordTube 37小節目"
+        },
+        {
+          "symbol": "A#7",
+          "roman": "V7",
+          "beats": 1.5,
+          "bar": 37,
+          "beatOffset": 2,
+          "note": "37小節目後半"
+        },
+        {
+          "symbol": "D#m",
+          "roman": "i",
+          "beats": 0.5,
+          "bar": 37,
+          "beatOffset": 3.5,
+          "note": "37小節目末の食い"
+        },
+        {
+          "symbol": "D#m7(9)",
+          "roman": "i7(9)",
+          "beats": 2,
+          "bar": 38,
+          "beatOffset": 0,
+          "note": "ChordTube 38小節目"
+        },
+        {
+          "symbol": "F#7(13)",
+          "roman": "II7(13)",
+          "beats": 2,
+          "bar": 38,
+          "beatOffset": 2,
+          "note": "38小節目。裏拍からの表示"
+        },
+        {
+          "symbol": "G#m7(9)",
+          "roman": "ivm7(9)",
+          "beats": 3,
+          "bar": 39,
+          "beatOffset": 0,
+          "note": "ChordTube 39小節目"
+        },
+        {
+          "symbol": "G#m7(9)/C#",
+          "roman": "ivm7(9)/bVII",
+          "beats": 1,
+          "bar": 39,
+          "beatOffset": 3,
+          "note": "39小節目後半"
+        },
+        {
+          "symbol": "D#m7(9)",
+          "roman": "i7(9)",
+          "beats": 1,
+          "bar": 40,
+          "beatOffset": 0,
+          "note": "ChordTube 40小節目"
+        },
+        {
+          "symbol": "Dm7(9)",
+          "roman": "bVIIIm7(9)",
+          "beats": 1,
+          "bar": 40,
+          "beatOffset": 1,
+          "note": "40小節目"
+        },
+        {
+          "symbol": "C#m7(9)",
+          "roman": "bVIIm7(9)",
+          "beats": 1,
+          "bar": 40,
+          "beatOffset": 2,
+          "note": "40小節目"
+        },
+        {
+          "symbol": "F#7",
+          "roman": "II7",
+          "beats": 1,
+          "bar": 40,
+          "beatOffset": 3,
+          "note": "40小節目"
+        },
+        {
+          "symbol": "BM7",
+          "roman": "VIM7",
+          "beats": 2,
+          "bar": 41,
+          "beatOffset": 0,
+          "note": "ChordTube 41小節目"
+        },
+        {
+          "symbol": "A#7",
+          "roman": "V7",
+          "beats": 1.5,
+          "bar": 41,
+          "beatOffset": 2,
+          "note": "41小節目後半"
+        },
+        {
+          "symbol": "D#m",
+          "roman": "i",
+          "beats": 0.5,
+          "bar": 41,
+          "beatOffset": 3.5,
+          "note": "41小節目末の食い"
+        },
+        {
+          "symbol": "D#m7(9)",
+          "roman": "i7(9)",
+          "beats": 2,
+          "bar": 42,
+          "beatOffset": 0,
+          "note": "ChordTube 42小節目"
+        },
+        {
+          "symbol": "F#7(13)",
+          "roman": "II7(13)",
+          "beats": 2,
+          "bar": 42,
+          "beatOffset": 2,
+          "note": "42小節目"
+        },
+        {
+          "symbol": "G#m7(9)",
+          "roman": "ivm7(9)",
+          "beats": 3,
+          "bar": 43,
+          "beatOffset": 0,
+          "note": "ChordTube 43小節目"
+        },
+        {
+          "symbol": "G#m7(9)/C#",
+          "roman": "ivm7(9)/bVII",
+          "beats": 1,
+          "bar": 43,
+          "beatOffset": 3,
+          "note": "43小節目後半"
+        },
+        {
+          "symbol": "D#m7(9)",
+          "roman": "i7(9)",
+          "beats": 1,
+          "bar": 44,
+          "beatOffset": 0,
+          "note": "ChordTube 44小節目"
+        },
+        {
+          "symbol": "Dm7(9)",
+          "roman": "bVIIIm7(9)",
+          "beats": 1,
+          "bar": 44,
+          "beatOffset": 1,
+          "note": "44小節目"
+        },
+        {
+          "symbol": "C#m7(9)",
+          "roman": "bVIIm7(9)",
+          "beats": 1,
+          "bar": 44,
+          "beatOffset": 2,
+          "note": "44小節目"
+        },
+        {
+          "symbol": "F#7",
+          "roman": "II7",
+          "beats": 1,
+          "bar": 44,
+          "beatOffset": 3,
+          "note": "44小節目"
+        },
+        {
+          "symbol": "BM7",
+          "roman": "VIM7",
+          "beats": 2,
+          "bar": 45,
+          "beatOffset": 0,
+          "note": "ChordTube 45小節目"
+        },
+        {
+          "symbol": "A#7",
+          "roman": "V7",
+          "beats": 1.5,
+          "bar": 45,
+          "beatOffset": 2,
+          "note": "45小節目後半"
+        },
+        {
+          "symbol": "D#m",
+          "roman": "i",
+          "beats": 0.5,
+          "bar": 45,
+          "beatOffset": 3.5,
+          "note": "45小節目末の食い"
+        },
+        {
+          "symbol": "D#m7(9)",
+          "roman": "i7(9)",
+          "beats": 2,
+          "bar": 46,
+          "beatOffset": 0,
+          "note": "ChordTube 46小節目"
+        },
+        {
+          "symbol": "F#7(13)",
+          "roman": "II7(13)",
+          "beats": 2,
+          "bar": 46,
+          "beatOffset": 2,
+          "note": "46小節目"
+        },
+        {
+          "symbol": "G#m7(9)",
+          "roman": "ivm7(9)",
+          "beats": 3,
+          "bar": 47,
+          "beatOffset": 0,
+          "note": "ChordTube 47小節目"
+        },
+        {
+          "symbol": "G#m7(9)/C#",
+          "roman": "ivm7(9)/bVII",
+          "beats": 1,
+          "bar": 47,
+          "beatOffset": 3,
+          "note": "47小節目後半"
+        },
+        {
+          "symbol": "D#m7(9)",
+          "roman": "i7(9)",
+          "beats": 1,
+          "bar": 48,
+          "beatOffset": 0,
+          "note": "ChordTube 48小節目"
+        },
+        {
+          "symbol": "A#m7/D#",
+          "roman": "v7/i",
+          "beats": 3,
+          "bar": 48,
+          "beatOffset": 1,
+          "note": "48小節目後半のコード表記。拍位置概算"
+        }
+      ]
+    }
+  ],
+  "createdAt": "2026-11-27T16:54:00+09:00",
+  "updatedAt": "2026-11-27T16:54:00+09:00"
+}
