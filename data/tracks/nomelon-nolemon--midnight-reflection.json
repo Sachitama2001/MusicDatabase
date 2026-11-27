@@ -17,7 +17,7 @@
     "切ない",
     "不安定からの着地"
   ],
-  "notes": "ユーザー提供ChordTube印刷PDF pp.1–4、AI解析v2.1。感想対象の初回4セクション（1–47小節）を登録。弱起は除外。空欄は直前コードの持続と解釈（1小節は直前のN.C.）。食いの拍位置は印刷譜のグリッドから暫定的に0.5拍前と推定、12・20・24・26小節末の小さいコード表記は次小節の表示を優先。D7(13)はエンジン対応のD13に正規化。度数はPDFの実音コードと区間キーから算出し、サイトの度数表示を直接転記したものではない。31小節は転調境界。小節番号は既存スキーマに専用欄がないため各イベントnoteとsection tagsに記録。後続のセクションは未登録。",
+  "notes": "ユーザー提供ChordTube印刷PDF（全13ページ）のうち、最初の4セクション（弱起〜47小節）を登録。全体Key F# major、イントロ〜BメロはE major、31小節にE major→F# majorの転調境界、サビはF# major。PDFでは弱起にN.C.、1小節目はコード表記なし。空欄の小節は直前コードの持続と解釈。小さい食い表記の正確な拍位置は印刷グリッドから推定し、ChordEvent.beatOffsetに四分音符単位の小節内オフセット（0始まり）として記録。D7(13)はChordEngine対応表記D13に正規化し、原表記をnoteに保持。romanはPDF上のコード名と各セクションのKeyから算出した値で、ChordTubeの度数表示を直接転記したものではない。AメロとBメロは独立したSectionとして保持。48小節以降の間奏・2回目Aメロ・2回目Bメロ・後続サビ・アウトロは今回の登録対象外。",
   "sections": [
     {
       "id": "sec-01-intro",
@@ -42,81 +42,109 @@
           "symbol": "N.C.",
           "roman": "N.C.",
           "beats": 4,
-          "note": "ChordTube 1小節・1拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 1小節・1拍目（印刷譜の食い位置から推定）",
+          "bar": 1,
+          "beatOffset": 0
         },
         {
           "symbol": "AM7(9)",
           "roman": "IVM7(9)",
           "beats": 3.5,
-          "note": "ChordTube 2小節・1拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 2小節・1拍目（印刷譜の食い位置から推定）",
+          "bar": 2,
+          "beatOffset": 0
         },
         {
           "symbol": "B7",
           "roman": "V7",
           "beats": 0.5,
-          "note": "ChordTube 2小節・4.5拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 2小節・4.5拍目（印刷譜の食い位置から推定）",
+          "bar": 2,
+          "beatOffset": 3.5
         },
         {
           "symbol": "B7",
           "roman": "V7",
           "beats": 4,
-          "note": "ChordTube 3小節・1拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 3小節・1拍目（印刷譜の食い位置から推定）",
+          "bar": 3,
+          "beatOffset": 0
         },
         {
           "symbol": "G#m7/C#",
           "roman": "IIIm7/VI",
           "beats": 2,
-          "note": "ChordTube 4小節・1拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 4小節・1拍目（印刷譜の食い位置から推定）",
+          "bar": 4,
+          "beatOffset": 0
         },
         {
           "symbol": "G#m7",
           "roman": "IIIm7",
           "beats": 2,
-          "note": "ChordTube 4小節・3拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 4小節・3拍目（印刷譜の食い位置から推定）",
+          "bar": 4,
+          "beatOffset": 2
         },
         {
           "symbol": "G#m7",
           "roman": "IIIm7",
           "beats": 4,
-          "note": "ChordTube 5小節・1拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 5小節・1拍目（印刷譜の食い位置から推定）",
+          "bar": 5,
+          "beatOffset": 0
         },
         {
           "symbol": "AM7(9)",
           "roman": "IVM7(9)",
           "beats": 3.5,
-          "note": "ChordTube 6小節・1拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 6小節・1拍目（印刷譜の食い位置から推定）",
+          "bar": 6,
+          "beatOffset": 0
         },
         {
           "symbol": "B",
           "roman": "V",
           "beats": 0.5,
-          "note": "ChordTube 6小節・4.5拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 6小節・4.5拍目（印刷譜の食い位置から推定）",
+          "bar": 6,
+          "beatOffset": 3.5
         },
         {
           "symbol": "B",
           "roman": "V",
           "beats": 4,
-          "note": "ChordTube 7小節・1拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 7小節・1拍目（印刷譜の食い位置から推定）",
+          "bar": 7,
+          "beatOffset": 0
         },
         {
           "symbol": "C#m7",
           "roman": "VIm7",
           "beats": 2,
-          "note": "ChordTube 8小節・1拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 8小節・1拍目（印刷譜の食い位置から推定）",
+          "bar": 8,
+          "beatOffset": 0
         },
         {
           "symbol": "C#m7/G#",
           "roman": "VIm7/III",
           "beats": 2,
-          "note": "ChordTube 8小節・3拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 8小節・3拍目（印刷譜の食い位置から推定）",
+          "bar": 8,
+          "beatOffset": 2
         },
         {
           "symbol": "C#m7/G#",
           "roman": "VIm7/III",
           "beats": 4,
-          "note": "ChordTube 9小節・1拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 9小節・1拍目（印刷譜の食い位置から推定）",
+          "bar": 9,
+          "beatOffset": 0
         }
-      ]
+      ],
+      "startBar": 1,
+      "endBar": 9
     },
     {
       "id": "sec-02-verse",
@@ -141,135 +169,181 @@
           "symbol": "AM7",
           "roman": "IVM7",
           "beats": 3.5,
-          "note": "ChordTube 10小節・1拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 10小節・1拍目（印刷譜の食い位置から推定）",
+          "bar": 10,
+          "beatOffset": 0
         },
         {
           "symbol": "B",
           "roman": "V",
           "beats": 0.5,
-          "note": "ChordTube 10小節・4.5拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 10小節・4.5拍目（印刷譜の食い位置から推定）",
+          "bar": 10,
+          "beatOffset": 3.5
         },
         {
           "symbol": "B",
           "roman": "V",
           "beats": 4,
-          "note": "ChordTube 11小節・1拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 11小節・1拍目（印刷譜の食い位置から推定）",
+          "bar": 11,
+          "beatOffset": 0
         },
         {
           "symbol": "B",
           "roman": "V",
           "beats": 1,
-          "note": "ChordTube 12小節・1拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 12小節・1拍目（印刷譜の食い位置から推定）",
+          "bar": 12,
+          "beatOffset": 0
         },
         {
           "symbol": "G#m7/C#",
           "roman": "IIIm7/VI",
           "beats": 2.5,
-          "note": "ChordTube 12小節・2拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 12小節・2拍目（印刷譜の食い位置から推定）",
+          "bar": 12,
+          "beatOffset": 1
         },
         {
           "symbol": "G#m7",
           "roman": "IIIm7",
           "beats": 0.5,
-          "note": "ChordTube 12小節・4.5拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 12小節・4.5拍目（印刷譜の食い位置から推定）",
+          "bar": 12,
+          "beatOffset": 3.5
         },
         {
           "symbol": "G#m7",
           "roman": "IIIm7",
           "beats": 4,
-          "note": "ChordTube 13小節・1拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 13小節・1拍目（印刷譜の食い位置から推定）",
+          "bar": 13,
+          "beatOffset": 0
         },
         {
           "symbol": "AM7",
           "roman": "IVM7",
           "beats": 3.5,
-          "note": "ChordTube 14小節・1拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 14小節・1拍目（印刷譜の食い位置から推定）",
+          "bar": 14,
+          "beatOffset": 0
         },
         {
           "symbol": "B",
           "roman": "V",
           "beats": 0.5,
-          "note": "ChordTube 14小節・4.5拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 14小節・4.5拍目（印刷譜の食い位置から推定）",
+          "bar": 14,
+          "beatOffset": 3.5
         },
         {
           "symbol": "B",
           "roman": "V",
           "beats": 4,
-          "note": "ChordTube 15小節・1拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 15小節・1拍目（印刷譜の食い位置から推定）",
+          "bar": 15,
+          "beatOffset": 0
         },
         {
           "symbol": "C#m7",
           "roman": "VIm7",
           "beats": 4,
-          "note": "ChordTube 16小節・1拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 16小節・1拍目（印刷譜の食い位置から推定）",
+          "bar": 16,
+          "beatOffset": 0
         },
         {
           "symbol": "C#m7/B",
           "roman": "VIm7/V",
           "beats": 4,
-          "note": "ChordTube 17小節・1拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 17小節・1拍目（印刷譜の食い位置から推定）",
+          "bar": 17,
+          "beatOffset": 0
         },
         {
           "symbol": "AM7(9)",
           "roman": "IVM7(9)",
           "beats": 3.5,
-          "note": "ChordTube 18小節・1拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 18小節・1拍目（印刷譜の食い位置から推定）",
+          "bar": 18,
+          "beatOffset": 0
         },
         {
           "symbol": "B6",
           "roman": "V6",
           "beats": 0.5,
-          "note": "ChordTube 18小節・4.5拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 18小節・4.5拍目（印刷譜の食い位置から推定）",
+          "bar": 18,
+          "beatOffset": 3.5
         },
         {
           "symbol": "B6",
           "roman": "V6",
           "beats": 4,
-          "note": "ChordTube 19小節・1拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 19小節・1拍目（印刷譜の食い位置から推定）",
+          "bar": 19,
+          "beatOffset": 0
         },
         {
           "symbol": "G#m7/C#",
           "roman": "IIIm7/VI",
           "beats": 3.5,
-          "note": "ChordTube 20小節・1拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 20小節・1拍目（印刷譜の食い位置から推定）",
+          "bar": 20,
+          "beatOffset": 0
         },
         {
           "symbol": "G#m7",
           "roman": "IIIm7",
           "beats": 0.5,
-          "note": "ChordTube 20小節・4.5拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 20小節・4.5拍目（印刷譜の食い位置から推定）",
+          "bar": 20,
+          "beatOffset": 3.5
         },
         {
           "symbol": "G#m7",
           "roman": "IIIm7",
           "beats": 2,
-          "note": "ChordTube 21小節・1拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 21小節・1拍目（印刷譜の食い位置から推定）",
+          "bar": 21,
+          "beatOffset": 0
         },
         {
           "symbol": "Gdim7",
           "roman": "bIIIdim7",
           "beats": 2,
-          "note": "ChordTube 21小節・3拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 21小節・3拍目（印刷譜の食い位置から推定）",
+          "bar": 21,
+          "beatOffset": 2
         },
         {
           "symbol": "F#m7(9)",
           "roman": "IIm7(9)",
           "beats": 3.5,
-          "note": "ChordTube 22小節・1拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 22小節・1拍目（印刷譜の食い位置から推定）",
+          "bar": 22,
+          "beatOffset": 0
         },
         {
           "symbol": "G#7",
           "roman": "III7",
           "beats": 0.5,
-          "note": "ChordTube 22小節・4.5拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 22小節・4.5拍目（印刷譜の食い位置から推定）",
+          "bar": 22,
+          "beatOffset": 3.5
         },
         {
           "symbol": "G#7",
           "roman": "III7",
           "beats": 4,
-          "note": "ChordTube 23小節・1拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 23小節・1拍目（印刷譜の食い位置から推定）",
+          "bar": 23,
+          "beatOffset": 0
         }
-      ]
+      ],
+      "startBar": 10,
+      "endBar": 23
     },
     {
       "id": "sec-03-pre_chorus",
@@ -295,63 +369,85 @@
           "symbol": "CM7",
           "roman": "bVIM7",
           "beats": 3.5,
-          "note": "ChordTube 24小節・1拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 24小節・1拍目（印刷譜の食い位置から推定）",
+          "bar": 24,
+          "beatOffset": 0
         },
         {
           "symbol": "D13",
           "roman": "bVII13",
           "beats": 0.5,
-          "note": "ChordTube 24小節・4.5拍目（拍位置は印刷譜から推定）・原表記 D7(13)"
+          "note": "ChordTube 24小節・4.5拍目（印刷譜の食い位置から推定）・原表記 D7(13)",
+          "bar": 24,
+          "beatOffset": 3.5
         },
         {
           "symbol": "D13",
           "roman": "bVII13",
           "beats": 4,
-          "note": "ChordTube 25小節・1拍目（拍位置は印刷譜から推定）・原表記 D7(13)"
+          "note": "ChordTube 25小節・1拍目（印刷譜の食い位置から推定）・原表記 D7(13)",
+          "bar": 25,
+          "beatOffset": 0
         },
         {
           "symbol": "E7",
           "roman": "I7",
           "beats": 3.5,
-          "note": "ChordTube 26小節・1拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 26小節・1拍目（印刷譜の食い位置から推定）",
+          "bar": 26,
+          "beatOffset": 0
         },
         {
           "symbol": "C#m7",
           "roman": "VIm7",
           "beats": 0.5,
-          "note": "ChordTube 26小節・4.5拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 26小節・4.5拍目（印刷譜の食い位置から推定）",
+          "bar": 26,
+          "beatOffset": 3.5
         },
         {
           "symbol": "C#m7",
           "roman": "VIm7",
           "beats": 4,
-          "note": "ChordTube 27小節・1拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 27小節・1拍目（印刷譜の食い位置から推定）",
+          "bar": 27,
+          "beatOffset": 0
         },
         {
           "symbol": "F#m7(9)",
           "roman": "IIm7(9)",
           "beats": 4,
-          "note": "ChordTube 28小節・1拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 28小節・1拍目（印刷譜の食い位置から推定）",
+          "bar": 28,
+          "beatOffset": 0
         },
         {
           "symbol": "G#m7",
           "roman": "IIIm7",
           "beats": 4,
-          "note": "ChordTube 29小節・1拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 29小節・1拍目（印刷譜の食い位置から推定）",
+          "bar": 29,
+          "beatOffset": 0
         },
         {
           "symbol": "G#m7/C#",
           "roman": "IIIm7/VI",
           "beats": 4,
-          "note": "ChordTube 30小節・1拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 30小節・1拍目（印刷譜の食い位置から推定）",
+          "bar": 30,
+          "beatOffset": 0
         },
         {
           "symbol": "N.C.",
           "roman": "N.C.",
           "beats": 4,
-          "note": "ChordTube 31小節・1拍目（拍位置は印刷譜から推定）"
+          "note": "ChordTube 31小節・1拍目（印刷譜の食い位置から推定）",
+          "bar": 31,
+          "beatOffset": 0
         }
-      ]
+      ],
+      "startBar": 24,
+      "endBar": 31
     },
     {
       "id": "sec-04-chorus",
@@ -376,101 +472,135 @@
           "symbol": "BM7",
           "roman": "IVM7",
           "beats": 4,
-          "note": "ChordTube 32小節・1拍目"
+          "note": "ChordTube 32小節・1拍目",
+          "bar": 32,
+          "beatOffset": 0
         },
         {
           "symbol": "C#7",
           "roman": "V7",
           "beats": 4,
-          "note": "ChordTube 33小節・1拍目"
+          "note": "ChordTube 33小節・1拍目",
+          "bar": 33,
+          "beatOffset": 0
         },
         {
           "symbol": "F#M7(9)",
           "roman": "IM7(9)",
           "beats": 4,
-          "note": "ChordTube 34小節・1拍目"
+          "note": "ChordTube 34小節・1拍目",
+          "bar": 34,
+          "beatOffset": 0
         },
         {
           "symbol": "D#m7(9)",
           "roman": "VIm7(9)",
           "beats": 4,
-          "note": "ChordTube 35小節・1拍目"
+          "note": "ChordTube 35小節・1拍目",
+          "bar": 35,
+          "beatOffset": 0
         },
         {
           "symbol": "BM7",
           "roman": "IVM7",
           "beats": 4,
-          "note": "ChordTube 36小節・1拍目"
+          "note": "ChordTube 36小節・1拍目",
+          "bar": 36,
+          "beatOffset": 0
         },
         {
           "symbol": "A#7",
           "roman": "III7",
           "beats": 4,
-          "note": "ChordTube 37小節・1拍目"
+          "note": "ChordTube 37小節・1拍目",
+          "bar": 37,
+          "beatOffset": 0
         },
         {
           "symbol": "D#m7(9)",
           "roman": "VIm7(9)",
           "beats": 4,
-          "note": "ChordTube 38小節・1拍目"
+          "note": "ChordTube 38小節・1拍目",
+          "bar": 38,
+          "beatOffset": 0
         },
         {
           "symbol": "F#7",
           "roman": "I7",
           "beats": 4,
-          "note": "ChordTube 39小節・1拍目"
+          "note": "ChordTube 39小節・1拍目",
+          "bar": 39,
+          "beatOffset": 0
         },
         {
           "symbol": "BM7",
           "roman": "IVM7",
           "beats": 4,
-          "note": "ChordTube 40小節・1拍目"
+          "note": "ChordTube 40小節・1拍目",
+          "bar": 40,
+          "beatOffset": 0
         },
         {
           "symbol": "C#7",
           "roman": "V7",
           "beats": 4,
-          "note": "ChordTube 41小節・1拍目"
+          "note": "ChordTube 41小節・1拍目",
+          "bar": 41,
+          "beatOffset": 0
         },
         {
           "symbol": "A#m7",
           "roman": "IIIm7",
           "beats": 4,
-          "note": "ChordTube 42小節・1拍目"
+          "note": "ChordTube 42小節・1拍目",
+          "bar": 42,
+          "beatOffset": 0
         },
         {
           "symbol": "D#m7(9)",
           "roman": "VIm7(9)",
           "beats": 4,
-          "note": "ChordTube 43小節・1拍目"
+          "note": "ChordTube 43小節・1拍目",
+          "bar": 43,
+          "beatOffset": 0
         },
         {
           "symbol": "BM7",
           "roman": "IVM7",
           "beats": 4,
-          "note": "ChordTube 44小節・1拍目"
+          "note": "ChordTube 44小節・1拍目",
+          "bar": 44,
+          "beatOffset": 0
         },
         {
           "symbol": "A#7",
           "roman": "III7",
           "beats": 4,
-          "note": "ChordTube 45小節・1拍目"
+          "note": "ChordTube 45小節・1拍目",
+          "bar": 45,
+          "beatOffset": 0
         },
         {
           "symbol": "D#m7(9)",
           "roman": "VIm7(9)",
           "beats": 4,
-          "note": "ChordTube 46小節・1拍目"
+          "note": "ChordTube 46小節・1拍目",
+          "bar": 46,
+          "beatOffset": 0
         },
         {
           "symbol": "F#7",
           "roman": "I7",
           "beats": 4,
-          "note": "ChordTube 47小節・1拍目"
+          "note": "ChordTube 47小節・1拍目",
+          "bar": 47,
+          "beatOffset": 0
         }
-      ]
+      ],
+      "startBar": 32,
+      "endBar": 47
     }
   ],
   "createdAt": "2026-11-27T07:22:00Z",
-  "updatedAt": "2026-11-27T07:22:00Z"
+  "updatedAt": "2026-11-27T07:30:00Z"
 }
