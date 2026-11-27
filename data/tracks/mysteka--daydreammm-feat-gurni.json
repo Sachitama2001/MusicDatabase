@@ -17,7 +17,7 @@
     "上昇感",
     "気持ちのいい着地"
   ],
-  "notes": "ユーザー提供ChordTube印刷PDF（12ページ）に基づく。対象は36〜51小節のBメロ。PDF 1ページにEb major、4/4、174 BPM、転調0回と記載。コードと小節番号はPDF 3〜4ページの譜面表示から転記。印刷PDFには楽曲個別のChordTube URLが含まれていないため、source.urlはChordTubeトップページを暫定登録し、youtubeIdは未設定。小節内のコード切替位置はカードのグリッドと「裏」「16分」表示から概算。空欄の小節は直前コードの持続と解釈。romanはEb majorを基準とした機能的な分析表記で、ChordTubeからの直接転記ではない。",
+  "notes": "ユーザー提供ChordTube印刷PDF（12ページ）に基づく。対象は36〜51小節のBメロ。PDF 1ページにEb major、4/4、174 BPM、転調0回と記載。コードと小節番号はPDF 3〜4ページの譜面表示から転記。印刷PDFには楽曲個別のChordTube URLが含まれていないため、source.urlはChordTubeトップページを暫定登録し、youtubeIdは未設定。小節内のコード切替位置はカードのグリッドと「裏」「16分」表示から概算。空欄の小節は直前コードの持続と解釈。romanはEb majorを基準とした機能的な分析表記で、ChordTubeからの直接転記ではない。 追加で52〜67小節のサビ／ドロップを登録。コードの小節内分割は印刷PDFのカード配置から概算。",
   "sections": [
     {
       "id": "sec-01-b-melody",
@@ -221,8 +221,189 @@
           "note": "ChordTube 51小節目。次のサビへの接続"
         }
       ]
+    },
+    {
+      "id": "sec-02-chorus-drop",
+      "label": "chorus",
+      "displayName": "サビ／ドロップ",
+      "order": 2,
+      "startBar": 52,
+      "endBar": 67,
+      "localKey": "Eb major",
+      "feelings": [
+        "高揚感",
+        "気持ちいい着地",
+        "半音下降",
+        "Future Bass",
+        "変化"
+      ],
+      "feelingSummary": "4356王道進行をベースに4回繰り返す。future bassあるあるの、コードの終わりでベースを半音ずつ下げる奴を採用している。色んな形に変形して気持ちのいい着地をする。",
+      "cadenceOrMotion": "AbM7–G7–Cm7を核とする4356系の循環を反復。各ループでF7/Fm7、G7、Cm7系へ形を変えながら、58〜60小節付近ではBm7(9)→Bbm→Bbm7(9)の半音下降するベースラインを挿入。後半はDb7(9,#11)–Cm7(9)–Am7(9)–Fm7–Gm7–AbM7–AbM7/Bbと展開し、着地へ向かう。",
+      "tags": [
+        "bars-52-67",
+        "chordtube-pdf",
+        "chorus",
+        "drop",
+        "4356-progression",
+        "chromatic-bass-descent",
+        "future-bass"
+      ],
+      "chords": [
+        {
+          "symbol": "AbM7",
+          "roman": "IVM7",
+          "beats": 4,
+          "bar": 52,
+          "beatOffset": 0,
+          "note": "ChordTube 52小節目"
+        },
+        {
+          "symbol": "G7",
+          "roman": "III7",
+          "beats": 4,
+          "bar": 53,
+          "beatOffset": 0,
+          "note": "ChordTube 53小節目"
+        },
+        {
+          "symbol": "Cm7(9)",
+          "roman": "VIm7(9)",
+          "beats": 4,
+          "bar": 54,
+          "beatOffset": 0,
+          "note": "ChordTube 54小節目"
+        },
+        {
+          "symbol": "F7(9)",
+          "roman": "II7(9)",
+          "beats": 4,
+          "bar": 55,
+          "beatOffset": 0,
+          "note": "ChordTube 55小節目"
+        },
+        {
+          "symbol": "Fm7(9)",
+          "roman": "IIm7(9)",
+          "beats": 4,
+          "bar": 56,
+          "beatOffset": 0,
+          "note": "ChordTube 56小節目"
+        },
+        {
+          "symbol": "G7",
+          "roman": "III7",
+          "beats": 4,
+          "bar": 57,
+          "beatOffset": 0,
+          "note": "ChordTube 57小節目"
+        },
+        {
+          "symbol": "Cm7(9)",
+          "roman": "VIm7(9)",
+          "beats": 4,
+          "bar": 58,
+          "beatOffset": 0,
+          "note": "ChordTube 58小節目"
+        },
+        {
+          "symbol": "Bm7(9)",
+          "roman": "#Vm7(9)",
+          "beats": 1,
+          "bar": 59,
+          "beatOffset": 0,
+          "note": "ChordTube 59小節目。半音下降ベースの開始（拍位置は印刷譜から概算）"
+        },
+        {
+          "symbol": "Bbm",
+          "roman": "#IVm",
+          "beats": 1,
+          "bar": 59,
+          "beatOffset": 1,
+          "note": "59小節目。Bmから半音下降"
+        },
+        {
+          "symbol": "Bbm7(9)",
+          "roman": "#IVm7(9)",
+          "beats": 2,
+          "bar": 59,
+          "beatOffset": 2,
+          "note": "59小節目。半音下降後の響きを保持"
+        },
+        {
+          "symbol": "Eb7",
+          "roman": "I7",
+          "beats": 2,
+          "bar": 60,
+          "beatOffset": 0,
+          "note": "ChordTube 60小節目"
+        },
+        {
+          "symbol": "AbM7(9)",
+          "roman": "IVM7(9)",
+          "beats": 2,
+          "bar": 60,
+          "beatOffset": 2,
+          "note": "60小節目後半"
+        },
+        {
+          "symbol": "Db7(9,#11)",
+          "roman": "bVII7(9,#11)",
+          "beats": 4,
+          "bar": 61,
+          "beatOffset": 0,
+          "note": "ChordTube 61小節目"
+        },
+        {
+          "symbol": "Cm7(9)",
+          "roman": "VIm7(9)",
+          "beats": 4,
+          "bar": 62,
+          "beatOffset": 0,
+          "note": "ChordTube 62小節目"
+        },
+        {
+          "symbol": "Am7(9)",
+          "roman": "VIIm7(9)",
+          "beats": 4,
+          "bar": 63,
+          "beatOffset": 0,
+          "note": "ChordTube 63小節目"
+        },
+        {
+          "symbol": "Fm7",
+          "roman": "IIm7",
+          "beats": 4,
+          "bar": 64,
+          "beatOffset": 0,
+          "note": "ChordTube 64小節目"
+        },
+        {
+          "symbol": "Gm7",
+          "roman": "IIIm7",
+          "beats": 4,
+          "bar": 65,
+          "beatOffset": 0,
+          "note": "ChordTube 65小節目"
+        },
+        {
+          "symbol": "AbM7",
+          "roman": "IVM7",
+          "beats": 4,
+          "bar": 66,
+          "beatOffset": 0,
+          "note": "ChordTube 66小節目"
+        },
+        {
+          "symbol": "AbM7/Bb",
+          "roman": "IVM7/V",
+          "beats": 4,
+          "bar": 67,
+          "beatOffset": 0,
+          "note": "ChordTube 67小節目。次の間奏へ向かう接続"
+        }
+      ]
     }
   ],
   "createdAt": "2026-11-27T16:54:00+09:00",
-  "updatedAt": "2026-11-27T16:54:00+09:00"
+  "updatedAt": "2026-11-27T16:55:00+09:00"
 }
