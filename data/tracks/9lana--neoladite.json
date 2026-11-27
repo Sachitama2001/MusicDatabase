@@ -195,6 +195,31 @@
           "beatOffset": 2,
           "note": "13小節目"
         }
+      ],
+      "theoryAnnotations": [
+        {
+          "id": "and-01",
+          "technique": "アンダルシア型・短調下降進行 i–VII–VI–V7",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "6〜11小節",
+          "note": "C#m–B–A–G#7 が反復し、C# minor の i–VII–VI–V7 と一致。ルートが C#→B→A→G# と順次下降し、G#7 の導音が C#m への回帰を強める。",
+          "theoryRefs": [
+            "MIN-001"
+          ],
+          "sources": [
+            {
+              "recordId": "MIN-001",
+              "libraryFile": "progressions.json",
+              "title": "Andalusian Cadence",
+              "author": "piano.org",
+              "url": "https://piano.org/chord-progressions/andalusian-cadence/",
+              "evidenceType": "human-authored-theory-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF p.2"
+        }
       ]
     },
     {
@@ -334,6 +359,54 @@
           "bar": 21,
           "beatOffset": 0,
           "note": "21小節目。サビ直前の緊張"
+        }
+      ],
+      "theoryAnnotations": [
+        {
+          "id": "minor-iio-v-i",
+          "technique": "短調の iiø7–V7–i カデンツ",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "16〜17小節",
+          "note": "D#m7-5（iiø7）→G#7（V7）→C#m7（i）が成立。短調の iiø–V–i の形で、Bメロ末の緊張をサビ前のトニックへ解決する。",
+          "theoryRefs": [
+            "HARM-023"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-023",
+              "libraryFile": "harmony-techniques.json",
+              "title": "Chapter 10: Altered Pitches — iiø V7(♭9) i in Minor",
+              "author": "Brigham Young University, Lessons from the Master: Charlie Parker — Note Choices",
+              "url": "https://content.byui.edu/file/c34fadd4-a15c-41e5-8a31-36c7763012d0/1/Chapter%2010-Altered%20Pitches.pdf",
+              "evidenceType": "human-authored-educational-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF p.2"
+        },
+        {
+          "id": "hybrid-fsm7-b",
+          "technique": "ハイブリッドコード／テンションベース",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "14小節",
+          "note": "F#m7/B は F#m7 の上部構造に B ベースを組み合わせる。B は F#m7 の基本三和音外のベース音で、単純な F#m7 とは異なるサスペンド感を作る。",
+          "theoryRefs": [
+            "HARM-013"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-013",
+              "libraryFile": "harmony-techniques.json",
+              "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+              "author": "SRM.",
+              "url": "https://srm-music.com/stylish-chord/",
+              "evidenceType": "human-authored-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF p.2"
         }
       ]
     },
@@ -616,9 +689,34 @@
           "beatOffset": 0,
           "note": "37小節目。次のセクションへ接続"
         }
+      ],
+      "theoryAnnotations": [
+        {
+          "id": "chromatic-root-descent",
+          "technique": "短い下降クロマチック・ベースライン",
+          "matchType": "partial",
+          "confidence": "high",
+          "location": "25・33小節",
+          "note": "C#m7→Cm7→Bm7→A#m7-5 はルート／ベースが C#→C→B→A# と半音ずつ下降する。HARM-024 の下降クロマチック・ベースの短い断片に相当するが、完全な lament bass（長い下降テトラコード）とまでは呼ばない。",
+          "theoryRefs": [
+            "HARM-024"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-024",
+              "libraryFile": "harmony-techniques.json",
+              "title": "Music Theory for the 21st-Century Classroom — 21.7 Descending Chromatic Bass Lines",
+              "url": "https://musictheory.pugetsound.edu/mt21c/DescendingChromaticBassLines.html",
+              "evidenceType": "human-authored-educational-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF pp.3–4",
+          "caveat": "ルートポジション表記からベースもルートとみなした分析。実演ボイシングの最低音は別途確認が必要。"
+        }
       ]
     }
   ],
   "createdAt": "2026-11-27T18:02:00+09:00",
-  "updatedAt": "2026-11-27T18:02:00+09:00"
+  "updatedAt": "2026-11-27T19:10:00+09:00"
 }
