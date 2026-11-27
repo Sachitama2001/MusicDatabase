@@ -11,6 +11,7 @@ export interface PianoPlaybackOptions {
   key?: string;
   transpose: number;
   voicing: VoicingStyle;
+  beatsPerBar?: number;
   loop: boolean;
   onProgress?: (currentBeat: number, activeChordIndex: number | null) => void;
   onEnd?: () => void;
@@ -29,13 +30,14 @@ class PianoChordPlayer {
 
   private ensureSynth(): void {
     if (!this.piano) {
-      const reverb = new Tone.Reverb({ decay: 1.6, wet: 0.16 }).toDestination();
+      const limiter = new Tone.Limiter(-6).toDestination();
+      const reverb = new Tone.Reverb({ decay: 1.2, wet: 0.1 }).connect(limiter);
       const filter = new Tone.Filter(4200, 'lowpass').connect(reverb);
       this.piano = new Tone.PolySynth(Tone.Synth, {
         oscillator: { type: 'triangle8' },
         envelope: { attack: 0.012, decay: 0.45, sustain: 0.4, release: 1.1 }
       }).connect(filter);
-      this.piano.volume.value = -5;
+      this.piano.volume.value = -10;
     }
   }
 
@@ -47,7 +49,8 @@ class PianoChordPlayer {
     const seq = generatePianoSequence(chords, {
       key: options.key,
       transpose: options.transpose,
-      voicing: options.voicing
+      voicing: options.voicing,
+      beatsPerBar: options.beatsPerBar
     });
 
     const totalBeats = Math.max(1, seq.totalBeats);
