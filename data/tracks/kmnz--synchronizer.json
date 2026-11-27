@@ -173,12 +173,12 @@
           "note": "ChordTube 38小節目"
         },
         {
-          "symbol": "F#7(13)",
+          "symbol": "F#13",
           "roman": "II7(13)",
           "beats": 2,
           "bar": 38,
           "beatOffset": 2,
-          "note": "38小節目。裏拍からの表示"
+          "note": "38小節目。裏拍からの表示; ChordTube原表記 F#7(13)（ChordEngine対応のF#13に正規化）"
         },
         {
           "symbol": "G#m7(9)",
@@ -261,12 +261,12 @@
           "note": "ChordTube 42小節目"
         },
         {
-          "symbol": "F#7(13)",
+          "symbol": "F#13",
           "roman": "II7(13)",
           "beats": 2,
           "bar": 42,
           "beatOffset": 2,
-          "note": "42小節目"
+          "note": "42小節目; ChordTube原表記 F#7(13)（ChordEngine対応のF#13に正規化）"
         },
         {
           "symbol": "G#m7(9)",
@@ -349,12 +349,12 @@
           "note": "ChordTube 46小節目"
         },
         {
-          "symbol": "F#7(13)",
+          "symbol": "F#13",
           "roman": "II7(13)",
           "beats": 2,
           "bar": 46,
           "beatOffset": 2,
-          "note": "46小節目"
+          "note": "46小節目; ChordTube原表記 F#7(13)（ChordEngine対応のF#13に正規化）"
         },
         {
           "symbol": "G#m7(9)",
