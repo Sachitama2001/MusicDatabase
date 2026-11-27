@@ -38,7 +38,7 @@ function buildIndex(): DatabaseIndex {
   const sectionCount = tracks.reduce((sum, t) => sum + t.sections.length, 0);
 
   const index: DatabaseIndex = DatabaseIndexSchema.parse({
-    schemaVersion: '1.0',
+    schemaVersion: '2.0',
     generatedAt: new Date().toISOString(),
     trackCount: tracks.length,
     sectionCount,
@@ -60,5 +60,5 @@ function buildIndex(): DatabaseIndex {
 
 const index = buildIndex();
 console.log(
-  `Built index: ${index.trackCount} track(s), ${index.sectionCount} section(s) -> data/index.json & public/data/index.json`
+  `Built index (v2.0): ${index.trackCount} track(s), ${index.sectionCount} section(s) -> data/index.json & public/data/index.json`
 );

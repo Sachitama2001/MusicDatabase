@@ -1,64 +1,49 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { validateMidiClipData, validateTrackData } from './index';
+import { validateTrackData } from './index';
 
-const SAMPLE_TRACK_PATH = path.resolve(process.cwd(), 'data/tracks/polyphia--yas.json');
-const sampleTrack = JSON.parse(fs.readFileSync(SAMPLE_TRACK_PATH, 'utf-8'));
+const SAMPLE_PATH = path.resolve(
+  process.cwd(),
+  'data/tracks/chordtube-sample--marusa-progression.json'
+);
+const sampleTrack = JSON.parse(fs.readFileSync(SAMPLE_PATH, 'utf-8'));
 
-describe('TrackSchema and invariants', () => {
-  it('accepts the repository sample track polyphia--yas.json', () => {
+describe('v2 ChordTube TrackSchema and invariants', () => {
+  it('accepts the repository ChordTube sample file', () => {
     const result = validateTrackData(sampleTrack);
     expect(result.success).toBe(true);
     expect(result.issues).toHaveLength(0);
   });
 
-  it('rejects a section where rhythm, melody, and harmony are all empty', () => {
+  it('rejects non-chordtube.net URLs', () => {
     const broken = structuredClone(sampleTrack);
-    delete broken.sections[0].rhythm;
-    delete broken.sections[0].melody;
-    delete broken.sections[0].harmony;
-
+    broken.source.url = 'https://example.com/songs/123';
     const result = validateTrackData(broken);
     expect(result.success).toBe(false);
-    expect(result.issues.some((i) => i.message.includes('At least one of rhythm'))).toBe(true);
+    expect(result.issues.some((i) => i.message.includes('https://chordtube.net/'))).toBe(true);
   });
 
-  it('rejects invalid bar/sec ranges and duplicate section IDs', () => {
+  it('rejects unparseable chord symbols and non-positive beat durations', () => {
     const broken = structuredClone(sampleTrack);
-    broken.sections[0].startBar = 16;
-    broken.sections[0].endBar = 8;
-    broken.sections.push(structuredClone(broken.sections[0]));
+    broken.sections[0].chords[0].symbol = 'H#maj99';
+    broken.sections[0].chords[1].beats = 0;
 
     const result = validateTrackData(broken);
     expect(result.success).toBe(false);
-    expect(result.issues.some((i) => i.path.includes('endBar'))).toBe(true);
+    expect(result.issues.some((i) => i.path.includes('symbol'))).toBe(true);
+    expect(result.issues.some((i) => i.path.includes('beats'))).toBe(true);
+  });
+
+  it('rejects duplicate section IDs and invalid startSec > endSec', () => {
+    const broken = structuredClone(sampleTrack);
+    broken.sections[0].startSec = 45;
+    broken.sections[0].endSec = 10;
+    broken.sections[1].id = broken.sections[0].id;
+
+    const result = validateTrackData(broken);
+    expect(result.success).toBe(false);
+    expect(result.issues.some((i) => i.path.includes('endSec'))).toBe(true);
     expect(result.issues.some((i) => i.message.includes('Duplicate section id'))).toBe(true);
-  });
-
-  it('rejects Track.id not matching "<artist-slug>--<track-slug>"', () => {
-    const broken = structuredClone(sampleTrack);
-    broken.id = 'Polyphia_Yas';
-    const result = validateTrackData(broken);
-    expect(result.success).toBe(false);
-  });
-
-  it('rejects MidiClip with out-of-range pitch, unsupported role, or zero velocity', () => {
-    const badClip = {
-      id: 'bad-clip',
-      name: 'Bad',
-      bpm: 120,
-      timeSignature: '4/4',
-      bars: 2,
-      tracks: [
-        {
-          role: 'guitar',
-          notes: [{ midi: 128, startBeat: 0, durationBeats: 1, velocity: 0 }]
-        }
-      ]
-    };
-    const result = validateMidiClipData(badClip);
-    expect(result.success).toBe(false);
-    expect(result.issues.length).toBeGreaterThanOrEqual(3);
   });
 });

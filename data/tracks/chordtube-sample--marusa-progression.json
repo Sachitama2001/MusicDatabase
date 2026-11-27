@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "2.0",
+  "id": "chordtube-sample--marusa-progression",
+  "title": "丸サ進行 (動作確認サンプル)",
+  "artist": "ChordTube Reference",
+  "source": {
+    "platform": "chordtube",
+    "url": "https://chordtube.net/",
+    "isSample": true
+  },
+  "bpm": 120,
+  "key": "C major",
+  "timeSignature": "4/4",
+  "overallFeelings": ["スタイリッシュ", "切ない", "浮遊感"],
+  "notes": "ChordTubeトップページに掲載されている定番度数進行（丸サ進行 IVM7 III7 VIm7 Vm7 I7、王道進行 IV V IIIm VIm）を用いた動作確認用サンプル。実曲の登録はChatGPTでchordtube.netを検索して追加する。",
+  "sections": [
+    {
+      "id": "sec-01-marusa",
+      "label": "chorus",
+      "displayName": "丸サ進行 (IVM7 III7 VIm7 Vm7 I7)",
+      "order": 1,
+      "feelings": ["スタイリッシュ", "切ない", "浮遊感"],
+      "feelingSummary": "都会的でおしゃれな浮遊感がありつつ、セカンダリードミナントで少し切なく循環する響き。",
+      "chords": [
+        { "symbol": "FM7", "roman": "IVM7", "beats": 2, "note": "浮遊感のあるトニック代理的な着地" },
+        { "symbol": "E7", "roman": "III7", "beats": 2, "note": "VIm7へ向かうセカンダリードミナントの切なさ" },
+        { "symbol": "Am7", "roman": "VIm7", "beats": 2 },
+        { "symbol": "Gm7", "roman": "Vm7", "beats": 1, "note": "次のIVM7へ向かうツーファイブ導入" },
+        { "symbol": "C7", "roman": "I7", "beats": 1 }
+      ],
+      "cadenceOrMotion": "IVM7からIII7のセカンダリードミナントでVIm7へ進み、Vm7-I7のセカンダリーツーファイブで再びIVM7へ滑らかに循環する。",
+      "rating": 5,
+      "tags": ["marusa", "secondary-dominant", "loop"]
+    },
+    {
+      "id": "sec-02-odo",
+      "label": "verse",
+      "displayName": "王道進行 (IV V IIIm VIm)",
+      "order": 2,
+      "feelings": ["切ない", "高揚感", "ノスタルジック"],
+      "feelingSummary": "J-POPで馴染み深く、胸を締め付けるような切なさとサビの広がりを同時に作れる王道の流れ。",
+      "chords": [
+        { "symbol": "F", "roman": "IV", "beats": 4 },
+        { "symbol": "G", "roman": "V", "beats": 4 },
+        { "symbol": "Em", "roman": "IIIm", "beats": 4 },
+        { "symbol": "Am", "roman": "VIm", "beats": 4 }
+      ],
+      "cadenceOrMotion": "IVからVで盛り上げ、トニックIではなくIIIm-VImへ着地させることで解決しきらない切ない余韻を残す。",
+      "rating": 4,
+      "tags": ["odo", "j-pop", "emotional"]
+    }
+  ],
+  "createdAt": "2026-11-27T06:25:00Z",
+  "updatedAt": "2026-11-27T06:25:00Z"
+}

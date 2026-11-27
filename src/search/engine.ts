@@ -1,7 +1,7 @@
 import MiniSearch from 'minisearch';
 import type {
+  ChordEvent,
   FeelingLexicon,
-  RhythmFeel,
   Section,
   SectionLabel,
   Track
@@ -11,25 +11,23 @@ export interface SectionRecord {
   uid: string;
   track: Track;
   section: Section;
-  effectiveBpm: number | undefined;
-  effectiveKey: string | undefined;
-  effectiveTimeSignature: string | undefined;
+  effectiveBpm: number;
+  effectiveKey: string;
+  effectiveTimeSignature: string;
   expandedFeelings: string[];
   searchableText: string;
 }
 
 export type SortOption = 'relevance' | 'newest' | 'bpmAsc' | 'bpmDesc' | 'ratingDesc';
-export type ElementFilter = 'all' | 'rhythm' | 'melody' | 'harmony' | 'hasMidi';
 
 export interface SearchFilter {
   query: string;
   romanQuery?: string;
+  chordQuery?: string;
   keyQuery?: string;
   bpmMin?: number;
   bpmMax?: number;
   sectionLabels?: SectionLabel[];
-  rhythmFeels?: RhythmFeel[];
-  elementFilter?: ElementFilter;
   feelingTags?: string[];
   feelingTagMode?: 'AND' | 'OR';
   sort?: SortOption;
@@ -74,7 +72,6 @@ export function expandQueryTerm(term: string, lookup: Map<string, Set<string>>):
     for (const s of direct) expanded.add(s);
   }
 
-  // Also expand if query term is a substring of a lexicon term or vice versa (helpful for Japanese inflection)
   for (const [key, group] of lookup.entries()) {
     if (norm.length >= 2 && (key.includes(norm) || norm.includes(key))) {
       for (const s of group) expanded.add(s);
@@ -86,7 +83,7 @@ export function expandQueryTerm(term: string, lookup: Map<string, Set<string>>):
 
 function parseRomanToken(token: string): { degree: string; quality: string } {
   const cleaned = token.trim().replace(/♭/g, 'b').replace(/♯/g, '#');
-  const match = /^([b#]*[ivIV]+)(.*)$/.exec(cleaned);
+  const match = /^([b#]*(?:VII|VI|IV|V|III|II|I|vii|vi|iv|v|iii|ii|i))(.*)$/.exec(cleaned);
   if (!match) {
     return { degree: '', quality: cleaned.toLowerCase() };
   }
@@ -97,16 +94,16 @@ function parseRomanToken(token: string): { degree: string; quality: string } {
 }
 
 export function matchesRomanSubsequence(
-  romanNumerals: string[] | undefined,
+  romanNumerals: string[],
   romanQuery: string
 ): boolean {
   const queryTokens = romanQuery
-    .split(/[\s,\->→/]+/)
+    .split(/[\s,\->→|]+/)
     .map((t) => t.trim())
     .filter(Boolean)
     .map(parseRomanToken);
   if (queryTokens.length === 0) return true;
-  if (!romanNumerals || romanNumerals.length < queryTokens.length) return false;
+  if (romanNumerals.length < queryTokens.length) return false;
 
   const target = romanNumerals.map(parseRomanToken);
   for (let start = 0; start <= target.length - queryTokens.length; start++) {
@@ -129,6 +126,33 @@ export function matchesRomanSubsequence(
   return false;
 }
 
+export function matchesChordSubsequence(
+  chordSymbols: string[],
+  chordQuery: string
+): boolean {
+  const queryTokens = chordQuery
+    .split(/[\s,\->→|]+/)
+    .map((t) => t.trim().replace(/♯/g, '#').replace(/♭/g, 'b').toLowerCase())
+    .filter(Boolean);
+  if (queryTokens.length === 0) return true;
+  if (chordSymbols.length < queryTokens.length) return false;
+
+  const target = chordSymbols.map((s) =>
+    s.trim().replace(/♯/g, '#').replace(/♭/g, 'b').toLowerCase()
+  );
+  for (let start = 0; start <= target.length - queryTokens.length; start++) {
+    let allMatch = true;
+    for (let offset = 0; offset < queryTokens.length; offset++) {
+      if (!target[start + offset].includes(queryTokens[offset])) {
+        allMatch = false;
+        break;
+      }
+    }
+    if (allMatch) return true;
+  }
+  return false;
+}
+
 function tokenizeMixedText(text: string): string[] {
   const tokens = new Set<string>();
   const normalized = text.toLowerCase();
@@ -136,7 +160,6 @@ function tokenizeMixedText(text: string): string[] {
 
   for (const seg of segments) {
     tokens.add(seg);
-    // Add Japanese bigrams so substring queries work smoothly with MiniSearch
     if (/[^\x00-\x7f]/.test(seg) && seg.length >= 2) {
       for (let i = 0; i < seg.length - 1; i++) {
         tokens.add(seg.slice(i, i + 2));
@@ -146,7 +169,7 @@ function tokenizeMixedText(text: string): string[] {
   return Array.from(tokens);
 }
 
-export class MusicSearchEngine {
+export class ChordSearchEngine {
   private readonly records: SectionRecord[];
   private readonly lookup: Map<string, Set<string>>;
   private readonly miniSearch: MiniSearch<{ uid: string; text: string; feelings: string; title: string }>;
@@ -158,7 +181,7 @@ export class MusicSearchEngine {
     for (const track of tracks) {
       for (const section of track.sections) {
         const expandedSet = new Set<string>();
-        for (const f of [...(track.overallFeelings ?? []), ...section.feelings]) {
+        for (const f of section.feelings) {
           for (const exp of expandQueryTerm(f, this.lookup)) {
             expandedSet.add(exp);
           }
@@ -167,30 +190,15 @@ export class MusicSearchEngine {
         const textParts = [
           track.title,
           track.artist,
+          track.key,
           ...(track.genres ?? []),
-          ...(track.overallFeelings ?? []),
-          track.notes ?? '',
           section.displayName,
           section.label,
+          section.localKey ?? '',
           ...section.feelings,
           section.feelingSummary,
-          section.rhythm?.feel ?? '',
-          section.rhythm?.grooveDescription ?? '',
-          section.rhythm?.drumNotes ?? '',
-          section.rhythm?.bassNotes ?? '',
-          ...(section.rhythm?.tags ?? []),
-          section.melody?.scaleOrMode ?? '',
-          section.melody?.contour ?? '',
-          section.melody?.hookDescription ?? '',
-          section.melody?.register ?? '',
-          ...(section.melody?.tags ?? []),
-          ...(section.harmony?.chordProgression ?? []),
-          ...(section.harmony?.romanNumerals ?? []),
-          section.harmony?.cadenceOrMotion ?? '',
-          section.harmony?.voicingNotes ?? '',
-          section.harmony?.modulationNotes ?? '',
-          ...(section.harmony?.tags ?? []),
-          ...(section.instruments ?? []),
+          section.cadenceOrMotion ?? '',
+          ...section.chords.flatMap((c) => [c.symbol, c.roman, c.note ?? '']),
           ...(section.tags ?? []),
           ...Array.from(expandedSet)
         ];
@@ -228,10 +236,6 @@ export class MusicSearchEngine {
     );
   }
 
-  getAllRecords(): SectionRecord[] {
-    return this.records;
-  }
-
   getAllFeelingTags(): string[] {
     const counts = new Map<string, number>();
     for (const r of this.records) {
@@ -265,9 +269,7 @@ export class MusicSearchEngine {
     const hits: SearchHit[] = [];
 
     for (const record of this.records) {
-      if (!this.passesStructuredFilters(record, filter)) {
-        continue;
-      }
+      if (!this.passesStructuredFilters(record, filter)) continue;
 
       if (rawTerms.length === 0) {
         hits.push({ record, score: 1, matchedTerms: [] });
@@ -291,13 +293,10 @@ export class MusicSearchEngine {
         }
       }
 
-      const msScore = miniScores.get(record.uid) ?? 0;
-
-      // Require every query term to match (either directly or via synonym expansion)
       if (matchedTerms.length === rawTerms.length) {
         hits.push({
           record,
-          score: termScore + msScore,
+          score: termScore + (miniScores.get(record.uid) ?? 0),
           matchedTerms
         });
       }
@@ -311,41 +310,27 @@ export class MusicSearchEngine {
       if (!filter.sectionLabels.includes(record.section.label)) return false;
     }
 
-    if (filter.rhythmFeels && filter.rhythmFeels.length > 0) {
-      const feel = record.section.rhythm?.feel;
-      if (!feel || !filter.rhythmFeels.includes(feel)) return false;
-    }
-
-    if (filter.elementFilter && filter.elementFilter !== 'all') {
-      if (filter.elementFilter === 'rhythm' && !record.section.rhythm) return false;
-      if (filter.elementFilter === 'melody' && !record.section.melody) return false;
-      if (filter.elementFilter === 'harmony' && !record.section.harmony) return false;
-      if (
-        filter.elementFilter === 'hasMidi' &&
-        (!record.section.midiClips || record.section.midiClips.length === 0)
-      ) {
-        return false;
-      }
-    }
-
     if (filter.bpmMin !== undefined && !Number.isNaN(filter.bpmMin)) {
-      if (record.effectiveBpm === undefined || record.effectiveBpm < filter.bpmMin) return false;
+      if (record.effectiveBpm < filter.bpmMin) return false;
     }
     if (filter.bpmMax !== undefined && !Number.isNaN(filter.bpmMax)) {
-      if (record.effectiveBpm === undefined || record.effectiveBpm > filter.bpmMax) return false;
+      if (record.effectiveBpm > filter.bpmMax) return false;
     }
 
     if (filter.keyQuery && filter.keyQuery.trim().length > 0) {
-      const kq = filter.keyQuery.trim().toLowerCase();
-      if (!record.effectiveKey || !record.effectiveKey.toLowerCase().includes(kq)) {
+      if (!record.effectiveKey.toLowerCase().includes(filter.keyQuery.trim().toLowerCase())) {
         return false;
       }
     }
 
     if (filter.romanQuery && filter.romanQuery.trim().length > 0) {
-      if (!matchesRomanSubsequence(record.section.harmony?.romanNumerals, filter.romanQuery)) {
-        return false;
-      }
+      const romans = record.section.chords.map((c) => c.roman);
+      if (!matchesRomanSubsequence(romans, filter.romanQuery)) return false;
+    }
+
+    if (filter.chordQuery && filter.chordQuery.trim().length > 0) {
+      const symbols = record.section.chords.map((c) => c.symbol);
+      if (!matchesChordSubsequence(symbols, filter.chordQuery)) return false;
     }
 
     if (filter.feelingTags && filter.feelingTags.length > 0) {
@@ -374,9 +359,9 @@ export class MusicSearchEngine {
         case 'newest':
           return b.record.track.updatedAt.localeCompare(a.record.track.updatedAt);
         case 'bpmAsc':
-          return (a.record.effectiveBpm ?? 9999) - (b.record.effectiveBpm ?? 9999);
+          return a.record.effectiveBpm - b.record.effectiveBpm;
         case 'bpmDesc':
-          return (b.record.effectiveBpm ?? -1) - (a.record.effectiveBpm ?? -1);
+          return b.record.effectiveBpm - a.record.effectiveBpm;
         case 'ratingDesc':
           return (b.record.section.rating ?? 0) - (a.record.section.rating ?? 0);
         case 'relevance':
@@ -392,55 +377,29 @@ export class MusicSearchEngine {
   }
 }
 
+export function formatChordsAsQuickLine(chords: ChordEvent[]): string {
+  return chords.map((c) => `${c.symbol}(${c.beats})`).join(' ');
+}
+
 export function formatSectionForChatGpt(track: Track, section: Section): string {
   const bpm = section.localBpm ?? track.bpm;
   const key = section.localKey ?? track.key;
-  const ts = section.localTimeSignature ?? track.timeSignature ?? '4/4';
-
-  const lines: string[] = [
-    `### 参照セクション: ${track.artist} - ${track.title} [${section.displayName}]`,
-    `- Track ID: \`${track.id}\` / Section ID: \`${section.id}\``,
-    `- BPM: ${bpm ?? '未設定'} / Key: ${key ?? '未設定'} / Time Signature: ${ts}`,
+  const ts = section.localTimeSignature ?? track.timeSignature;
+  const lines = [
+    `### 参照コード進行: ${track.artist} - ${track.title} [${section.displayName}]`,
+    `- ChordTube: ${track.source.url}`,
+    `- BPM: ${bpm} / Key: ${key} / Time: ${ts}`,
     `- Feelings: ${section.feelings.join(', ')}`,
-    `- Summary: ${section.feelingSummary}`
+    `- Summary: ${section.feelingSummary}`,
+    `- Roman: ${section.chords.map((c) => `${c.roman}(${c.beats})`).join(' -> ')}`,
+    `- Chords: ${formatChordsAsQuickLine(section.chords)}`
   ];
-
-  if (section.rhythm) {
-    lines.push(
-      `- Rhythm (${section.rhythm.feel ?? 'unspecified'}): ${[
-        section.rhythm.grooveDescription,
-        section.rhythm.drumNotes,
-        section.rhythm.bassNotes
-      ]
-        .filter(Boolean)
-        .join(' / ')}`
-    );
-  }
-  if (section.harmony) {
-    if (section.harmony.romanNumerals?.length) {
-      lines.push(`- Roman Numerals: ${section.harmony.romanNumerals.join(' -> ')}`);
-    }
-    if (section.harmony.chordProgression?.length) {
-      lines.push(`- Chords: ${section.harmony.chordProgression.join(' -> ')}`);
-    }
-    if (section.harmony.cadenceOrMotion) {
-      lines.push(`- Harmony Motion: ${section.harmony.cadenceOrMotion}`);
-    }
-  }
-  if (section.melody) {
-    lines.push(
-      `- Melody: ${[
-        section.melody.scaleOrMode,
-        section.melody.contour,
-        section.melody.hookDescription
-      ]
-        .filter(Boolean)
-        .join(' / ')}`
-    );
+  if (section.cadenceOrMotion) {
+    lines.push(`- Motion: ${section.cadenceOrMotion}`);
   }
   lines.push(
     '',
-    'この参照セクションの雰囲気と構成要素を活かして、LLM_GUIDE.md の MidiClip JSON 形式で piano / bass / drum の4小節パターンを作成してください。'
+    'このコード進行の雰囲気を活かして、別のキーへの移調案や代理コードのアレンジ案を `コード名(拍数)` の1行記法で提案してください。'
   );
   return lines.join('\n');
 }

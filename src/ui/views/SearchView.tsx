@@ -1,16 +1,17 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import type { MidiClip, RhythmFeel, SectionLabel, Track } from '../../schema';
+import type { SectionLabel, Track } from '../../schema';
 import {
+  ChordSearchEngine,
+  formatChordsAsQuickLine,
   formatSectionForChatGpt,
-  MusicSearchEngine,
-  type ElementFilter,
   type SortOption
 } from '../../search/engine';
+import { ChordMidiPlayer } from '../components/ChordMidiPlayer';
 
 interface SearchViewProps {
-  engine: MusicSearchEngine;
+  engine: ChordSearchEngine;
   onSelectTrack: (trackId: string, sectionId?: string) => void;
-  onOpenClipInStudio: (clip: MidiClip) => void;
+  onSendToLab: (quickLine: string, bpm: number, key: string) => void;
   onNotify: (msg: string) => void;
 }
 
@@ -21,42 +22,30 @@ const SECTION_LABELS: SectionLabel[] = [
   'chorus',
   'bridge',
   'drop',
-  'solo',
   'interlude',
   'outro',
-  'other'
-];
-
-const RHYTHM_FEELS: RhythmFeel[] = [
-  'straight',
-  'half-time',
-  'double-time',
-  'shuffle',
-  'swing',
-  'syncopated',
-  'polyrhythm',
   'other'
 ];
 
 export function SearchView({
   engine,
   onSelectTrack,
-  onOpenClipInStudio,
+  onSendToLab,
   onNotify
 }: SearchViewProps) {
   const searchInputRef = useRef<HTMLInputElement>(null);
 
   const [query, setQuery] = useState('');
   const [romanQuery, setRomanQuery] = useState('');
+  const [chordQuery, setChordQuery] = useState('');
   const [keyQuery, setKeyQuery] = useState('');
   const [bpmMin, setBpmMin] = useState('');
   const [bpmMax, setBpmMax] = useState('');
-  const [elementFilter, setElementFilter] = useState<ElementFilter>('all');
   const [sectionLabel, setSectionLabel] = useState<SectionLabel | ''>('');
-  const [rhythmFeel, setRhythmFeel] = useState<RhythmFeel | ''>('');
   const [selectedFeelings, setSelectedFeelings] = useState<string[]>([]);
   const [feelingTagMode, setFeelingTagMode] = useState<'AND' | 'OR'>('OR');
   const [sort, setSort] = useState<SortOption>('relevance');
+  const [expandedPlayerUid, setExpandedPlayerUid] = useState<string | null>(null);
 
   const allFeelingTags = useMemo(() => engine.getAllFeelingTags(), [engine]);
 
@@ -81,12 +70,11 @@ export function SearchView({
     return engine.search({
       query,
       romanQuery,
+      chordQuery,
       keyQuery,
       bpmMin: bpmMin.trim() ? Number(bpmMin) : undefined,
       bpmMax: bpmMax.trim() ? Number(bpmMax) : undefined,
       sectionLabels: sectionLabel ? [sectionLabel] : undefined,
-      rhythmFeels: rhythmFeel ? [rhythmFeel] : undefined,
-      elementFilter,
       feelingTags: selectedFeelings,
       feelingTagMode,
       sort
@@ -95,12 +83,11 @@ export function SearchView({
     engine,
     query,
     romanQuery,
+    chordQuery,
     keyQuery,
     bpmMin,
     bpmMax,
     sectionLabel,
-    rhythmFeel,
-    elementFilter,
     selectedFeelings,
     feelingTagMode,
     sort
@@ -115,12 +102,11 @@ export function SearchView({
   function resetAllFilters() {
     setQuery('');
     setRomanQuery('');
+    setChordQuery('');
     setKeyQuery('');
     setBpmMin('');
     setBpmMax('');
-    setElementFilter('all');
     setSectionLabel('');
-    setRhythmFeel('');
     setSelectedFeelings([]);
     setSort('relevance');
   }
@@ -128,22 +114,21 @@ export function SearchView({
   function handleCopyForChatGpt(track: Track, sectionId: string) {
     const section = track.sections.find((s) => s.id === sectionId);
     if (!section) return;
-    const text = formatSectionForChatGpt(track, section);
-    void navigator.clipboard.writeText(text).then(() => {
-      onNotify('ChatGPTへ渡す参照セクション要約をコピーしました');
+    void navigator.clipboard.writeText(formatSectionForChatGpt(track, section)).then(() => {
+      onNotify('ChatGPTへ渡す参照コード進行要約をコピーしました');
     });
   }
 
   return (
     <div>
       <section className="panel">
-        <h2 className="section-heading">フィーリング・構成要素検索</h2>
+        <h2 className="section-heading">フィーリング・コード進行検索 (ChordTube DB)</h2>
         <div className="search-bar-row">
           <input
             ref={searchInputRef}
             type="search"
             className="input"
-            placeholder="雰囲気・感情・技法を入力 (例: 切ない ハーフテンポ / 泣ける / 不安定からの着地)  [ / キーでフォーカス ]"
+            placeholder="雰囲気・感情・曲名を入力 (例: 切ない / 泣ける / おしゃれ / 浮遊感)  [ / キーでフォーカス ]"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             aria-label="フィーリング検索"
@@ -161,9 +146,22 @@ export function SearchView({
             <input
               id="roman-filter"
               className="input"
-              placeholder="例: bVImaj9 v7"
+              placeholder="例: IVM7 III7 VIm7"
               value={romanQuery}
               onChange={(e) => setRomanQuery(e.target.value)}
+            />
+          </div>
+
+          <div>
+            <label className="field-label" htmlFor="chord-filter">
+              実音コードの連続一致
+            </label>
+            <input
+              id="chord-filter"
+              className="input"
+              placeholder="例: FM7 E7 Am7"
+              value={chordQuery}
+              onChange={(e) => setChordQuery(e.target.value)}
             />
           </div>
 
@@ -174,28 +172,10 @@ export function SearchView({
             <input
               id="key-filter"
               className="input"
-              placeholder="例: F# minor / Dorian"
+              placeholder="例: C major / G# minor"
               value={keyQuery}
               onChange={(e) => setKeyQuery(e.target.value)}
             />
-          </div>
-
-          <div>
-            <label className="field-label" htmlFor="element-filter">
-              要素フィルタ
-            </label>
-            <select
-              id="element-filter"
-              className="select"
-              value={elementFilter}
-              onChange={(e) => setElementFilter(e.target.value as ElementFilter)}
-            >
-              <option value="all">すべて</option>
-              <option value="rhythm">リズム分析あり</option>
-              <option value="melody">メロディー分析あり</option>
-              <option value="harmony">コード分析あり</option>
-              <option value="hasMidi">MIDIクリップ付き</option>
-            </select>
           </div>
 
           <div>
@@ -212,25 +192,6 @@ export function SearchView({
               {SECTION_LABELS.map((lbl) => (
                 <option key={lbl} value={lbl}>
                   {lbl}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div>
-            <label className="field-label" htmlFor="rhythm-feel-filter">
-              リズムフィール
-            </label>
-            <select
-              id="rhythm-feel-filter"
-              className="select"
-              value={rhythmFeel}
-              onChange={(e) => setRhythmFeel(e.target.value as RhythmFeel | '')}
-            >
-              <option value="">すべて</option>
-              {RHYTHM_FEELS.map((feel) => (
-                <option key={feel} value={feel}>
-                  {feel}
                 </option>
               ))}
             </select>
@@ -325,7 +286,7 @@ export function SearchView({
       {hits.length === 0 ? (
         <section className="panel" style={{ marginTop: 12 }}>
           <p style={{ marginTop: 0 }}>
-            条件に一致するセクションが見つかりませんでした。条件を緩和するか、以下の登録済みフィーリングタグから探してください。
+            条件に一致するコード進行が見つかりませんでした。条件を緩和するか、以下の登録済みフィーリングタグから探してください。
           </p>
           <div className="chip-row" style={{ marginBottom: 12 }}>
             {allFeelingTags.map((tag) => (
@@ -350,6 +311,8 @@ export function SearchView({
         <div className="card-list">
           {hits.map(({ record }) => {
             const { track, section } = record;
+            const isPlayerOpen = expandedPlayerUid === record.uid;
+
             return (
               <article className="result-card" key={record.uid}>
                 <div className="card-header">
@@ -357,15 +320,25 @@ export function SearchView({
                     <h3 className="card-title">
                       {track.artist} — {track.title}{' '}
                       <span className="chip">{section.displayName}</span>
+                      {track.source.isSample && (
+                        <span className="chip" style={{ marginLeft: 6 }}>
+                          Sample
+                        </span>
+                      )}
                     </h3>
                     <div className="meta-inline" style={{ marginTop: 4 }}>
-                      <span>BPM: {record.effectiveBpm ?? '-'}</span>
-                      <span>Key: {record.effectiveKey ?? '-'}</span>
-                      <span>Time: {record.effectiveTimeSignature ?? '-'}</span>
+                      <span>BPM: {record.effectiveBpm}</span>
+                      <span>Key: {record.effectiveKey}</span>
+                      <span>Time: {record.effectiveTimeSignature}</span>
                       {section.rating && <span>Rating: {'★'.repeat(section.rating)}</span>}
-                      {section.midiClips && section.midiClips.length > 0 && (
-                        <span>MIDI: {section.midiClips.length} clip</span>
-                      )}
+                      <a
+                        href={track.source.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        style={{ color: 'var(--accent)' }}
+                      >
+                        ChordTube ↗
+                      </a>
                     </div>
                   </div>
                   <div className="chip-row">
@@ -379,99 +352,77 @@ export function SearchView({
 
                 <div className="summary-quote">{section.feelingSummary}</div>
 
-                <div className="elements-grid">
-                  {section.harmony && (
-                    <div className="element-box">
-                      <h4>Harmony / コード</h4>
-                      {section.harmony.romanNumerals && section.harmony.romanNumerals.length > 0 && (
-                        <div className="chip-row" style={{ marginBottom: 6 }}>
-                          {section.harmony.romanNumerals.map((r, idx) => (
-                            <span key={`${r}-${idx}`} className="chip chip-roman">
-                              {r}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                      {section.harmony.chordProgression &&
-                        section.harmony.chordProgression.length > 0 && (
-                          <div className="chip-row" style={{ marginBottom: 6 }}>
-                            {section.harmony.chordProgression.map((c, idx) => (
-                              <span key={`${c}-${idx}`} className="chip chip-chord">
-                                {c}
-                              </span>
-                            ))}
-                          </div>
-                        )}
-                      {section.harmony.cadenceOrMotion && (
-                        <p style={{ margin: 0 }}>{section.harmony.cadenceOrMotion}</p>
-                      )}
-                    </div>
-                  )}
-
-                  {section.rhythm && (
-                    <div className="element-box">
-                      <h4>Rhythm / リズム {section.rhythm.feel ? `[${section.rhythm.feel}]` : ''}</h4>
-                      {section.rhythm.grooveDescription && (
-                        <p style={{ margin: '0 0 6px' }}>{section.rhythm.grooveDescription}</p>
-                      )}
-                      {section.rhythm.drumNotes && (
-                        <p className="muted" style={{ margin: '0 0 4px' }}>
-                          Drum: {section.rhythm.drumNotes}
-                        </p>
-                      )}
-                      {section.rhythm.bassNotes && (
-                        <p className="muted" style={{ margin: 0 }}>
-                          Bass: {section.rhythm.bassNotes}
-                        </p>
-                      )}
-                    </div>
-                  )}
-
-                  {section.melody && (
-                    <div className="element-box">
-                      <h4>Melody / メロディー</h4>
-                      {section.melody.scaleOrMode && (
-                        <p style={{ margin: '0 0 4px', fontFamily: 'var(--mono)' }}>
-                          Scale: {section.melody.scaleOrMode}
-                        </p>
-                      )}
-                      {section.melody.contour && (
-                        <p style={{ margin: '0 0 4px' }}>{section.melody.contour}</p>
-                      )}
-                      {section.melody.hookDescription && (
-                        <p className="muted" style={{ margin: 0 }}>
-                          {section.melody.hookDescription}
-                        </p>
-                      )}
-                    </div>
+                <div className="element-box" style={{ marginTop: 10 }}>
+                  <h4>Chord Progression / コード進行</h4>
+                  <div className="chip-row" style={{ marginBottom: 6 }}>
+                    {section.chords.map((c, idx) => (
+                      <span key={`${c.roman}-${idx}`} className="chip chip-roman">
+                        {c.roman}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="chip-row" style={{ marginBottom: 6 }}>
+                    {section.chords.map((c, idx) => (
+                      <span key={`${c.symbol}-${idx}`} className="chip chip-chord">
+                        {c.symbol} ({c.beats}拍)
+                      </span>
+                    ))}
+                  </div>
+                  {section.cadenceOrMotion && (
+                    <p style={{ margin: 0 }}>{section.cadenceOrMotion}</p>
                   )}
                 </div>
 
                 <div className="action-row">
                   <button
                     type="button"
-                    className="btn btn-primary btn-sm"
+                    className={`btn btn-sm ${isPlayerOpen ? 'btn-active' : 'btn-primary'}`}
+                    onClick={() =>
+                      setExpandedPlayerUid((prev) => (prev === record.uid ? null : record.uid))
+                    }
+                  >
+                    {isPlayerOpen ? 'ピアノ試聴を閉じる' : 'その場でピアノ試聴 / .mid書き出し'}
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn-sm"
                     onClick={() => onSelectTrack(track.id, section.id)}
                   >
-                    詳細とMIDI試聴を開く
+                    楽曲詳細を開く
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn-sm"
+                    onClick={() =>
+                      onSendToLab(
+                        formatChordsAsQuickLine(section.chords),
+                        record.effectiveBpm,
+                        record.effectiveKey
+                      )
+                    }
+                  >
+                    試聴ラボでアレンジ
                   </button>
                   <button
                     type="button"
                     className="btn btn-sm"
                     onClick={() => handleCopyForChatGpt(track, section.id)}
                   >
-                    ChatGPT用要約をコピー
+                    ChatGPT用要約コピー
                   </button>
-                  {section.midiClips && section.midiClips.length > 0 && (
-                    <button
-                      type="button"
-                      className="btn btn-sm"
-                      onClick={() => onOpenClipInStudio(section.midiClips![0])}
-                    >
-                      MIDIスタジオへ送る
-                    </button>
-                  )}
                 </div>
+
+                {isPlayerOpen && (
+                  <ChordMidiPlayer
+                    title={`${track.artist}-${track.title}-${section.displayName}`}
+                    chords={section.chords}
+                    defaultBpm={record.effectiveBpm}
+                    baseKey={record.effectiveKey}
+                    timeSignature={record.effectiveTimeSignature}
+                    onNotify={onNotify}
+                    onSendToLab={onSendToLab}
+                  />
+                )}
               </article>
             );
           })}

@@ -1,13 +1,13 @@
-import type { MidiClip, Track } from '../../schema';
+import type { Track } from '../../schema';
 import { formatSectionForChatGpt } from '../../search/engine';
-import { MidiPlayerCard } from '../components/MidiPlayerCard';
+import { ChordMidiPlayer } from '../components/ChordMidiPlayer';
 
 interface TrackDetailViewProps {
   tracks: Track[];
   selectedTrackId: string | null;
   highlightSectionId: string | null;
   onSelectTrack: (trackId: string) => void;
-  onOpenClipInStudio: (clip: MidiClip) => void;
+  onSendToLab: (quickLine: string, bpm: number, key: string) => void;
   onNotify: (msg: string) => void;
 }
 
@@ -16,17 +16,11 @@ export function TrackDetailView({
   selectedTrackId,
   highlightSectionId,
   onSelectTrack,
-  onOpenClipInStudio,
+  onSendToLab,
   onNotify
 }: TrackDetailViewProps) {
   const activeTrack =
     tracks.find((t) => t.id === selectedTrackId) ?? (tracks.length > 0 ? tracks[0] : null);
-
-  function copyTrackJson(track: Track) {
-    void navigator.clipboard.writeText(JSON.stringify(track, null, 2)).then(() => {
-      onNotify(`${track.id}.json をクリップボードへコピーしました`);
-    });
-  }
 
   return (
     <div className="detail-layout">
@@ -42,8 +36,8 @@ export function TrackDetailView({
             <div style={{ fontWeight: 600 }}>{track.title}</div>
             <div className="muted">{track.artist}</div>
             <div className="meta-inline" style={{ marginTop: 4, fontSize: '0.75rem' }}>
-              <span>{track.bpm ? `${track.bpm} BPM` : '-'}</span>
-              <span>{track.key ?? '-'}</span>
+              <span>{track.bpm} BPM</span>
+              <span>{track.key}</span>
               <span>{track.sections.length} sec</span>
             </div>
           </button>
@@ -65,20 +59,34 @@ export function TrackDetailView({
                   </h2>
                   <div className="meta-inline" style={{ marginTop: 6 }}>
                     <span>ID: {activeTrack.id}</span>
-                    <span>BPM: {activeTrack.bpm ?? '-'}</span>
-                    <span>Key: {activeTrack.key ?? '-'}</span>
-                    <span>Time: {activeTrack.timeSignature ?? '-'}</span>
+                    <span>BPM: {activeTrack.bpm}</span>
+                    <span>Key: {activeTrack.key}</span>
+                    <span>Time: {activeTrack.timeSignature}</span>
                     {activeTrack.releaseYear && <span>Year: {activeTrack.releaseYear}</span>}
-                    <span>Version: {activeTrack.versionType}</span>
                   </div>
                 </div>
-                <button
-                  type="button"
-                  className="btn btn-sm"
-                  onClick={() => copyTrackJson(activeTrack)}
-                >
-                  Track JSONコピー
-                </button>
+                <div className="action-row" style={{ marginTop: 0 }}>
+                  <a
+                    href={activeTrack.source.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn btn-primary btn-sm"
+                    style={{ textDecoration: 'none' }}
+                  >
+                    ChordTube で開く ↗
+                  </a>
+                  <button
+                    type="button"
+                    className="btn btn-sm"
+                    onClick={() => {
+                      void navigator.clipboard
+                        .writeText(JSON.stringify(activeTrack, null, 2))
+                        .then(() => onNotify(`${activeTrack.id}.json をコピーしました`));
+                    }}
+                  >
+                    Track JSONコピー
+                  </button>
+                </div>
               </div>
 
               {activeTrack.overallFeelings && activeTrack.overallFeelings.length > 0 && (
@@ -94,29 +102,16 @@ export function TrackDetailView({
               {activeTrack.notes && (
                 <p style={{ marginTop: 10, marginBottom: 0 }}>{activeTrack.notes}</p>
               )}
-
-              {activeTrack.references && activeTrack.references.length > 0 && (
-                <div className="action-row">
-                  {activeTrack.references.map((ref, i) => (
-                    <a
-                      key={`${ref.url}-${i}`}
-                      href={ref.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="btn btn-sm"
-                      style={{ textDecoration: 'none' }}
-                    >
-                      [{ref.kind}] {ref.label}
-                    </a>
-                  ))}
-                </div>
-              )}
             </section>
 
             {[...activeTrack.sections]
               .sort((a, b) => a.order - b.order)
               .map((section) => {
                 const isHighlighted = highlightSectionId === section.id;
+                const secBpm = section.localBpm ?? activeTrack.bpm;
+                const secKey = section.localKey ?? activeTrack.key;
+                const secTs = section.localTimeSignature ?? activeTrack.timeSignature;
+
                 return (
                   <section
                     key={section.id}
@@ -134,14 +129,9 @@ export function TrackDetailView({
                           <span className="chip">{section.label}</span>
                         </h3>
                         <div className="meta-inline" style={{ marginTop: 4 }}>
-                          <span>BPM: {section.localBpm ?? activeTrack.bpm ?? '-'}</span>
-                          <span>Key: {section.localKey ?? activeTrack.key ?? '-'}</span>
-                          {section.startBar !== undefined && (
-                            <span>
-                              Bars: {section.startBar}
-                              {section.endBar !== undefined ? `-${section.endBar}` : ''}
-                            </span>
-                          )}
+                          <span>BPM: {secBpm}</span>
+                          <span>Key: {secKey}</span>
+                          <span>Time: {secTs}</span>
                           {section.startSec !== undefined && (
                             <span>
                               Sec: {section.startSec}s
@@ -160,7 +150,7 @@ export function TrackDetailView({
                             .then(() => onNotify('ChatGPT用セクション要約をコピーしました'));
                         }}
                       >
-                        ChatGPT用要約をコピー
+                        ChatGPT用要約コピー
                       </button>
                     </div>
 
@@ -179,92 +169,21 @@ export function TrackDetailView({
 
                     <div className="summary-quote">{section.feelingSummary}</div>
 
-                    <div className="elements-grid">
-                      {section.harmony && (
-                        <div className="element-box">
-                          <h4>Harmony / コード</h4>
-                          {section.harmony.romanNumerals && (
-                            <div className="chip-row" style={{ marginBottom: 6 }}>
-                              {section.harmony.romanNumerals.map((r, idx) => (
-                                <span key={`${r}-${idx}`} className="chip chip-roman">
-                                  {r}
-                                </span>
-                              ))}
-                            </div>
-                          )}
-                          {section.harmony.chordProgression && (
-                            <div className="chip-row" style={{ marginBottom: 6 }}>
-                              {section.harmony.chordProgression.map((c, idx) => (
-                                <span key={`${c}-${idx}`} className="chip chip-chord">
-                                  {c}
-                                </span>
-                              ))}
-                            </div>
-                          )}
-                          {section.harmony.cadenceOrMotion && (
-                            <p style={{ margin: '0 0 6px' }}>{section.harmony.cadenceOrMotion}</p>
-                          )}
-                          {section.harmony.voicingNotes && (
-                            <p className="muted" style={{ margin: 0 }}>
-                              Voicing: {section.harmony.voicingNotes}
-                            </p>
-                          )}
-                        </div>
-                      )}
-
-                      {section.rhythm && (
-                        <div className="element-box">
-                          <h4>
-                            Rhythm / リズム {section.rhythm.feel ? `[${section.rhythm.feel}]` : ''}
-                          </h4>
-                          {section.rhythm.grooveDescription && (
-                            <p style={{ margin: '0 0 6px' }}>{section.rhythm.grooveDescription}</p>
-                          )}
-                          {section.rhythm.drumNotes && (
-                            <p className="muted" style={{ margin: '0 0 4px' }}>
-                              Drum: {section.rhythm.drumNotes}
-                            </p>
-                          )}
-                          {section.rhythm.bassNotes && (
-                            <p className="muted" style={{ margin: 0 }}>
-                              Bass: {section.rhythm.bassNotes}
-                            </p>
-                          )}
-                        </div>
-                      )}
-
-                      {section.melody && (
-                        <div className="element-box">
-                          <h4>Melody / メロディー</h4>
-                          {section.melody.scaleOrMode && (
-                            <p style={{ margin: '0 0 4px', fontFamily: 'var(--mono)' }}>
-                              Scale: {section.melody.scaleOrMode}
-                            </p>
-                          )}
-                          {section.melody.contour && (
-                            <p style={{ margin: '0 0 4px' }}>{section.melody.contour}</p>
-                          )}
-                          {section.melody.hookDescription && (
-                            <p className="muted" style={{ margin: 0 }}>
-                              Hook: {section.melody.hookDescription}
-                            </p>
-                          )}
-                        </div>
-                      )}
-                    </div>
-
-                    {section.midiClips && section.midiClips.length > 0 && (
-                      <div style={{ marginTop: 12 }}>
-                        {section.midiClips.map((clip) => (
-                          <MidiPlayerCard
-                            key={clip.id}
-                            clip={clip}
-                            onNotify={onNotify}
-                            onOpenInStudio={onOpenClipInStudio}
-                          />
-                        ))}
-                      </div>
+                    {section.cadenceOrMotion && (
+                      <p className="muted" style={{ marginTop: 6 }}>
+                        進行の特徴: {section.cadenceOrMotion}
+                      </p>
                     )}
+
+                    <ChordMidiPlayer
+                      title={`${activeTrack.artist}-${activeTrack.title}-${section.displayName}`}
+                      chords={section.chords}
+                      defaultBpm={secBpm}
+                      baseKey={secKey}
+                      timeSignature={secTs}
+                      onNotify={onNotify}
+                      onSendToLab={onSendToLab}
+                    />
                   </section>
                 );
               })}

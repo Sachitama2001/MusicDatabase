@@ -429,6 +429,52 @@ textarea {
   height: 136px;
 }
 
+.chord-timeline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.chord-block {
+  flex: 1 1 88px;
+  min-width: 78px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  text-align: center;
+  transition: border-color 0.12s, background 0.12s, transform 0.12s;
+}
+
+.chord-block.active {
+  border-color: var(--success);
+  background: var(--success-soft);
+  transform: translateY(-1px);
+}
+
+.chord-block.rest {
+  opacity: 0.55;
+}
+
+.chord-block-roman {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--success);
+}
+
+.chord-block-symbol {
+  font-family: var(--mono);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 2px 0;
+}
+
+.chord-block-beats {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
 /* Studio two-column layout */
 .studio-grid {
   display: grid;

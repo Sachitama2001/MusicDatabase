@@ -1,12 +1,12 @@
 import { z } from 'zod';
 import { FeelingLexiconSchema } from './feelings';
-import { MidiClipSchema, TrackSchema } from './track';
+import { TrackSchema } from './track';
 
 export * from './track';
 export * from './feelings';
 
 export const DatabaseIndexSchema = z.object({
-  schemaVersion: z.literal('1.0'),
+  schemaVersion: z.literal('2.0'),
   generatedAt: z.string().datetime({ offset: true }),
   trackCount: z.number().int().min(0),
   sectionCount: z.number().int().min(0),
@@ -35,16 +35,6 @@ export function formatZodIssues(error: z.ZodError): ValidationIssue[] {
 
 export function validateTrackData(input: unknown): ValidationResult<z.infer<typeof TrackSchema>> {
   const result = TrackSchema.safeParse(input);
-  if (result.success) {
-    return { success: true, data: result.data, issues: [] };
-  }
-  return { success: false, issues: formatZodIssues(result.error) };
-}
-
-export function validateMidiClipData(
-  input: unknown
-): ValidationResult<z.infer<typeof MidiClipSchema>> {
-  const result = MidiClipSchema.safeParse(input);
   if (result.success) {
     return { success: true, data: result.data, issues: [] };
   }

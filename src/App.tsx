@@ -1,13 +1,12 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { DatabaseIndexSchema, type DatabaseIndex, type MidiClip } from './schema';
-import { MusicSearchEngine } from './search/engine';
-import { midiPlayer } from './midi/player';
+import { DatabaseIndexSchema, type DatabaseIndex } from './schema';
+import { ChordSearchEngine } from './search/engine';
+import { pianoPlayer } from './midi/player';
 import { SearchView } from './ui/views/SearchView';
 import { TrackDetailView } from './ui/views/TrackDetailView';
-import { MidiStudioView } from './ui/views/MidiStudioView';
-import { DataManagerView } from './ui/views/DataManagerView';
+import { ChordLabAndDataView } from './ui/views/ChordLabAndDataView';
 
-type TabId = 'search' | 'detail' | 'studio' | 'data';
+type TabId = 'search' | 'detail' | 'lab';
 
 export function App() {
   const [activeTab, setActiveTab] = useState<TabId>('search');
@@ -15,7 +14,11 @@ export function App() {
   const [loadError, setLoadError] = useState<string | null>(null);
   const [selectedTrackId, setSelectedTrackId] = useState<string | null>(null);
   const [highlightSectionId, setHighlightSectionId] = useState<string | null>(null);
-  const [studioClip, setStudioClip] = useState<MidiClip | null>(null);
+
+  const [labLine, setLabLine] = useState<string | null>(null);
+  const [labBpm, setLabBpm] = useState<number>(120);
+  const [labKey, setLabKey] = useState<string>('C major');
+
   const [toast, setToast] = useState<string | null>(null);
 
   const showToast = useCallback((message: string) => {
@@ -56,25 +59,27 @@ export function App() {
 
   const searchEngine = useMemo(() => {
     if (!db) return null;
-    return new MusicSearchEngine(db.tracks, db.feelings);
+    return new ChordSearchEngine(db.tracks, db.feelings);
   }, [db]);
 
   function handleTabChange(next: TabId) {
-    midiPlayer.stop();
+    pianoPlayer.stop();
     setActiveTab(next);
   }
 
   function handleSelectTrackFromSearch(trackId: string, sectionId?: string) {
-    midiPlayer.stop();
+    pianoPlayer.stop();
     setSelectedTrackId(trackId);
     setHighlightSectionId(sectionId ?? null);
     setActiveTab('detail');
   }
 
-  function handleOpenClipInStudio(clip: MidiClip) {
-    midiPlayer.stop();
-    setStudioClip(clip);
-    setActiveTab('studio');
+  function handleSendToLab(quickLine: string, bpm: number, key: string) {
+    pianoPlayer.stop();
+    setLabLine(quickLine);
+    setLabBpm(bpm);
+    setLabKey(key);
+    setActiveTab('lab');
   }
 
   return (
@@ -84,7 +89,7 @@ export function App() {
           <h1 className="brand-title">MusicDatabase</h1>
           <span className="brand-sub">
             {db
-              ? `${db.trackCount} tracks / ${db.sectionCount} sections`
+              ? `ChordTube DB — ${db.trackCount} tracks / ${db.sectionCount} chord sections`
               : 'Loading database...'}
           </span>
         </div>
@@ -102,21 +107,14 @@ export function App() {
             className={`nav-tab ${activeTab === 'detail' ? 'active' : ''}`}
             onClick={() => handleTabChange('detail')}
           >
-            楽曲詳細
+            楽曲詳細・MIDI試聴
           </button>
           <button
             type="button"
-            className={`nav-tab ${activeTab === 'studio' ? 'active' : ''}`}
-            onClick={() => handleTabChange('studio')}
+            className={`nav-tab ${activeTab === 'lab' ? 'active' : ''}`}
+            onClick={() => handleTabChange('lab')}
           >
-            MIDIスタジオ
-          </button>
-          <button
-            type="button"
-            className={`nav-tab ${activeTab === 'data' ? 'active' : ''}`}
-            onClick={() => handleTabChange('data')}
-          >
-            データ管理・検証
+            コード試聴ラボ・検証・LLMガイド
           </button>
         </nav>
       </header>
@@ -127,7 +125,7 @@ export function App() {
         {!loadError && !db && (
           <section className="panel">
             <p className="muted" style={{ margin: 0 }}>
-              楽曲分析データベースを読み込んでいます...
+              コード進行データベースを読み込んでいます...
             </p>
           </section>
         )}
@@ -136,7 +134,7 @@ export function App() {
           <SearchView
             engine={searchEngine}
             onSelectTrack={handleSelectTrackFromSearch}
-            onOpenClipInStudio={handleOpenClipInStudio}
+            onSendToLab={handleSendToLab}
             onNotify={showToast}
           />
         )}
@@ -150,20 +148,20 @@ export function App() {
               setSelectedTrackId(id);
               setHighlightSectionId(null);
             }}
-            onOpenClipInStudio={handleOpenClipInStudio}
+            onSendToLab={handleSendToLab}
             onNotify={showToast}
           />
         )}
 
-        {db && activeTab === 'studio' && (
-          <MidiStudioView
-            tracks={db.tracks}
-            initialClip={studioClip}
+        {db && activeTab === 'lab' && (
+          <ChordLabAndDataView
+            db={db}
+            initialLabLine={labLine}
+            initialLabBpm={labBpm}
+            initialLabKey={labKey}
             onNotify={showToast}
           />
         )}
-
-        {db && activeTab === 'data' && <DataManagerView db={db} onNotify={showToast} />}
       </main>
 
       {toast && (

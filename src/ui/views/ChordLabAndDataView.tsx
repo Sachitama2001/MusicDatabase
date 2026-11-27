@@ -1,16 +1,72 @@
 import { useEffect, useMemo, useState } from 'react';
 import { validateTrackData, type DatabaseIndex } from '../../schema';
-import { extractJsonFromText } from './MidiStudioView';
+import { parseQuickChordLine } from '../../midi/chordEngine';
+import { ChordMidiPlayer } from '../components/ChordMidiPlayer';
 
-interface DataManagerViewProps {
+interface ChordLabAndDataViewProps {
   db: DatabaseIndex;
+  initialLabLine: string | null;
+  initialLabBpm: number;
+  initialLabKey: string;
   onNotify: (msg: string) => void;
 }
 
-export function DataManagerView({ db, onNotify }: DataManagerViewProps) {
+const PRESETS = [
+  {
+    label: '丸サ進行 (IVM7 III7 VIm7 Vm7 I7)',
+    line: 'FM7(2) E7(2) Am7(2) Gm7(1) C7(1)',
+    bpm: 120,
+    key: 'C major'
+  },
+  {
+    label: '王道進行 (IV V IIIm VIm)',
+    line: 'F(4) G(4) Em(4) Am(4)',
+    bpm: 128,
+    key: 'C major'
+  },
+  {
+    label: '小室進行 (VIm IV V I)',
+    line: 'Am(4) F(4) G(4) C(4)',
+    bpm: 132,
+    key: 'C major'
+  },
+  {
+    label: 'カノン進行 (I V/VII VIm IIIm/V IV I/III IV V)',
+    line: 'C(2) G/B(2) Am(2) Em/G(2) F(2) C/E(2) F(2) G(2)',
+    bpm: 108,
+    key: 'C major'
+  }
+];
+
+function extractJsonFromText(raw: string): string {
+  const trimmed = raw.trim();
+  const fenced = /```(?:json)?\s*([\s\S]*?)```/i.exec(trimmed);
+  if (fenced && fenced[1]) return fenced[1].trim();
+  return trimmed;
+}
+
+export function ChordLabAndDataView({
+  db,
+  initialLabLine,
+  initialLabBpm,
+  initialLabKey,
+  onNotify
+}: ChordLabAndDataViewProps) {
+  const [labLine, setLabLine] = useState(initialLabLine ?? PRESETS[0].line);
+  const [labBpm, setLabBpm] = useState(initialLabBpm);
+  const [labKey, setLabKey] = useState(initialLabKey);
+
   const [rawTrackJson, setRawTrackJson] = useState('');
-  const [llmGuideText, setLlmGuideText] = useState<string>('');
+  const [llmGuideText, setLlmGuideText] = useState('');
   const [guideError, setGuideError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (initialLabLine) {
+      setLabLine(initialLabLine);
+      setLabBpm(initialLabBpm);
+      setLabKey(initialLabKey);
+    }
+  }, [initialLabLine, initialLabBpm, initialLabKey]);
 
   useEffect(() => {
     fetch('./LLM_GUIDE.md')
@@ -19,18 +75,28 @@ export function DataManagerView({ db, onNotify }: DataManagerViewProps) {
         return res.text();
       })
       .then((text) => setLlmGuideText(text))
-      .catch(() => setGuideError('LLM_GUIDE.md の読み込みに失敗しました。リポジトリルートの LLM_GUIDE.md を直接参照してください。'));
+      .catch(() =>
+        setGuideError(
+          'LLM_GUIDE.md の読み込みに失敗しました。リポジトリルートの LLM_GUIDE.md を直接参照してください。'
+        )
+      );
   }, []);
 
-  const midiClipCount = useMemo(() => {
-    let count = 0;
-    for (const t of db.tracks) {
-      for (const s of t.sections) {
-        count += s.midiClips?.length ?? 0;
+  const parsedLab = useMemo(() => {
+    if (!labLine.trim()) return { ok: false as const, error: 'コード進行を入力してください。' };
+    try {
+      const chords = parseQuickChordLine(labLine, labKey);
+      if (chords.length === 0) {
+        return { ok: false as const, error: '有効なコードが入力されていません。' };
       }
+      return { ok: true as const, chords };
+    } catch (err) {
+      return {
+        ok: false as const,
+        error: err instanceof Error ? err.message : String(err)
+      };
     }
-    return count;
-  }, [db]);
+  }, [labLine, labKey]);
 
   const trackValidation = useMemo(() => {
     if (!rawTrackJson.trim()) {
@@ -74,6 +140,83 @@ export function DataManagerView({ db, onNotify }: DataManagerViewProps) {
   return (
     <div>
       <section className="panel">
+        <h2 className="section-heading">クイックコード試聴ラボ (コード記号 / 度数 → Piano .mid)</h2>
+        <p className="muted" style={{ marginTop: 0 }}>
+          ChatGPTが提案したコード進行やChordTubeの度数進行（例: <code>FM7(2) E7(2) Am7(2) Gm7(1) C7(1)</code> や <code>IVM7(2) III7(2) VIm7(2) Vm7(1) I7(1)</code>）を貼り付けると即座にピアノ試聴と <code>.mid</code> 書き出しができます。拍数を省略すると4拍になります。
+        </p>
+
+        <div className="chip-row" style={{ marginBottom: 10 }}>
+          {PRESETS.map((p) => (
+            <button
+              key={p.label}
+              type="button"
+              className="chip chip-button"
+              onClick={() => {
+                setLabLine(p.line);
+                setLabBpm(p.bpm);
+                setLabKey(p.key);
+              }}
+            >
+              {p.label}
+            </button>
+          ))}
+        </div>
+
+        <div className="filter-grid" style={{ marginTop: 0, marginBottom: 10 }}>
+          <div style={{ gridColumn: 'span 2' }}>
+            <label className="field-label" htmlFor="lab-line-input">
+              コード列または度数列
+            </label>
+            <input
+              id="lab-line-input"
+              className="input"
+              style={{ fontFamily: 'var(--mono)' }}
+              value={labLine}
+              onChange={(e) => setLabLine(e.target.value)}
+              placeholder="FM7(2) E7(2) Am7(2) Gm7(1) C7(1)"
+            />
+          </div>
+          <div>
+            <label className="field-label" htmlFor="lab-key-input">
+              基準Key (度数入力時に使用)
+            </label>
+            <input
+              id="lab-key-input"
+              className="input"
+              value={labKey}
+              onChange={(e) => setLabKey(e.target.value)}
+            />
+          </div>
+          <div>
+            <label className="field-label" htmlFor="lab-bpm-input">
+              基準BPM
+            </label>
+            <input
+              id="lab-bpm-input"
+              type="number"
+              className="input"
+              min={20}
+              max={350}
+              value={labBpm}
+              onChange={(e) => setLabBpm(Number(e.target.value) || 120)}
+            />
+          </div>
+        </div>
+
+        {parsedLab.ok ? (
+          <ChordMidiPlayer
+            title="chord-lab-progression"
+            chords={parsedLab.chords}
+            defaultBpm={labBpm}
+            baseKey={labKey}
+            onNotify={onNotify}
+          />
+        ) : (
+          <div className="status-banner status-error">{parsedLab.error}</div>
+        )}
+      </section>
+
+      <section className="panel">
         <div className="card-header">
           <h2 className="section-heading" style={{ marginBottom: 0 }}>
             データベース統計とエクスポート
@@ -96,12 +239,8 @@ export function DataManagerView({ db, onNotify }: DataManagerViewProps) {
             <div className="stat-value">{db.trackCount}</div>
           </div>
           <div className="stat-box">
-            <div className="muted">分析セクション数</div>
+            <div className="muted">コード進行セクション数</div>
             <div className="stat-value">{db.sectionCount}</div>
-          </div>
-          <div className="stat-box">
-            <div className="muted">MIDIクリップ数</div>
-            <div className="stat-value">{midiClipCount}</div>
           </div>
           <div className="stat-box">
             <div className="muted">フィーリング語彙数</div>
@@ -114,14 +253,14 @@ export function DataManagerView({ db, onNotify }: DataManagerViewProps) {
       </section>
 
       <section className="panel">
-        <h2 className="section-heading">Track JSON スキーマ検証ツール</h2>
+        <h2 className="section-heading">Track JSON (v2.0) スキーマ検証ツール</h2>
         <p className="muted" style={{ marginTop: 0 }}>
-          ChatGPTが作成した <code>data/tracks/&lt;track-id&gt;.json</code> の内容を貼り付けて、コミット前にスキーマと不変条件を確認できます。
+          ChatGPTが作成した <code>data/tracks/&lt;track-id&gt;.json</code> を貼り付けて、<code>chordtube.net</code> URL制約および全コード記号のパース可能性を検証できます。
         </p>
 
         <textarea
           className="textarea"
-          rows={12}
+          rows={10}
           placeholder="Track JSON（```json コードブロック可）をここへ貼り付け..."
           value={rawTrackJson}
           onChange={(e) => setRawTrackJson(e.target.value)}
@@ -167,7 +306,7 @@ export function DataManagerView({ db, onNotify }: DataManagerViewProps) {
               LLM_GUIDE.md — ChatGPT向け1枚完結仕様書
             </h2>
             <p className="muted" style={{ margin: 0 }}>
-              新しいChatGPTスレッドでGitHub接続して作業させるとき、そのまま参照または貼り付けできます。
+              新しいChatGPTスレッドでChordTube検索とリポジトリ登録を依頼するときに参照・貼り付けできます。
             </p>
           </div>
           <button
