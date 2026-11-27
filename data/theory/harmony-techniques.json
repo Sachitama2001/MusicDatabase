@@ -791,5 +791,38 @@
     "evidence_type": "human-authored-educational-source",
     "confidence": "high",
     "notes": "The source describes the descending chromatic bass line (scale degrees 1–7–♭7–6–♭6–5) and shows harmonizations using secondary, borrowed, augmented-sixth and diatonic chords. Shorter semitone descents in song sections should be labelled as partial instances, not automatically as a full lament bass."
+  },
+  {
+    "id": "HARM-025",
+    "name": "Circle-of-fifths progression / ii–V–I",
+    "summary": "Connect chords whose roots move by ascending fourths or descending fifths. The compact ii–V–I is a common short form of this directed circle progression.",
+    "tags": [
+      "circle-of-fifths",
+      "ii-v-i",
+      "jazz",
+      "functional-harmony",
+      "forward-motion",
+      "cadence"
+    ],
+    "before": [
+      "G#m7",
+      "C#7",
+      "F#M7"
+    ],
+    "after": [
+      "G#m7",
+      "C#7",
+      "F#M7"
+    ],
+    "useWhen": "A phrase needs strong directional motion into a tonic, especially at a cadence or section boundary.",
+    "caution": "Confirm the target tonic and key context; not every adjacent fourth/fifth motion forms a complete ii–V–I.",
+    "source": {
+      "title": "Music Theory for the 21st-Century Classroom — 9.3.1 II–V–I",
+      "url": "https://musictheory.pugetsound.edu/mt21c/ShorterProgressionsFromTheCircleOfFifths.html",
+      "accessed": "2026-11-27"
+    },
+    "evidence_type": "human-authored-educational-source",
+    "confidence": "high",
+    "notes": "The source presents II–V–I as a shorter progression derived from the circle of fifths, with roots moving by ascending fourths / descending fifths."
   }
 ]
