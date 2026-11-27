@@ -1,0 +1,728 @@
+[
+  {
+    "id": "HARM-001",
+    "name": "Secondary dominant",
+    "summary": "Temporarily tonicize a diatonic chord by preceding it with its dominant seventh.",
+    "tags": [
+      "dominant",
+      "tension",
+      "resolution",
+      "pop",
+      "jazz"
+    ],
+    "before": [
+      "C",
+      "Am"
+    ],
+    "after": [
+      "E7",
+      "Am"
+    ],
+    "useWhen": "A target chord needs stronger arrival or a short lift into a section.",
+    "caution": "Check melody notes against the altered leading tone; use sparingly in a simple pop arrangement.",
+    "source": {
+      "title": "SoundQuest — 二次ドミナント",
+      "author": "yuta",
+      "url": "https://soundquest.jp/quest/chord/chord-mv2/secondary-dominant/",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-theory-to-review",
+    "confidence": "high"
+  },
+  {
+    "id": "HARM-002",
+    "name": "Modal interchange",
+    "summary": "Borrow a chord from a parallel mode while retaining the same tonic.",
+    "tags": [
+      "color",
+      "bittersweet",
+      "cinematic",
+      "pop"
+    ],
+    "before": [
+      "C",
+      "F",
+      "G",
+      "C"
+    ],
+    "after": [
+      "C",
+      "Fm",
+      "G",
+      "C"
+    ],
+    "useWhen": "A familiar progression needs a brief darker or wistful color.",
+    "caution": "Keep the borrowed chord's voice leading smooth and avoid overuse.",
+    "source": {
+      "title": "SoundQuest — パラレル・マイナー ❶",
+      "author": "yuta",
+      "url": "https://soundquest.jp/quest/chord/chord-mv2/parallel-minor/",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-theory-to-review",
+    "confidence": "high"
+  },
+  {
+    "id": "HARM-003",
+    "name": "Tritone substitution / subV (裏コード)",
+    "summary": "Replace a dominant-seventh chord with another dominant seventh whose root is a tritone away; the two chords share the guide-tone tritone enharmonically.",
+    "tags": [
+      "jazz",
+      "neo-soul",
+      "chromatic",
+      "voice-leading",
+      "sub-five",
+      "tritone-substitution"
+    ],
+    "before": [
+      "Dm7",
+      "G7",
+      "Cmaj7"
+    ],
+    "after": [
+      "Dm7",
+      "Db7",
+      "Cmaj7"
+    ],
+    "useWhen": "A chromatic bass approach or alternate dominant color is desired, especially when resolving to the tonic.",
+    "caution": "The source describes this as a distinctive, jazz-associated color. Check melody compatibility and avoid treating every flat-II chord as a tritone substitute.",
+    "source": {
+      "title": "SoundQuest — トライトーン代理",
+      "author": "plugmon",
+      "url": "https://soundquest.jp/quest/chord/chord-mv4/tritone-substitution/",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-theory-to-review",
+    "confidence": "high",
+    "related_sources": [
+      {
+        "title": "SoundQuest — トライトーン代理",
+        "author": "plugmon",
+        "url": "https://soundquest.jp/quest/chord/chord-mv4/tritone-substitution/",
+        "accessed": "2026-11-26"
+      },
+      {
+        "title": "SRM Music — 簡単！コード進行をかっこよく変えるテクニック",
+        "author": "SRM.",
+        "url": "https://srm-music.com/code/",
+        "accessed": "2026-11-26"
+      }
+    ]
+  },
+  {
+    "id": "HARM-004",
+    "name": "Passing diminished chord",
+    "summary": "Insert a diminished seventh chord between two chords to connect voices chromatically.",
+    "tags": [
+      "passing-chord",
+      "chromatic",
+      "jazz",
+      "pop"
+    ],
+    "before": [
+      "C",
+      "Dm"
+    ],
+    "after": [
+      "C",
+      "C#dim7",
+      "Dm"
+    ],
+    "useWhen": "A brief passing motion connects neighboring chord tones.",
+    "caution": "Keep duration short and ensure bass and upper voices lead into destination.",
+    "source": {
+      "title": "SoundQuest — パッシング・ディミニッシュ",
+      "author": "yuta",
+      "url": "https://soundquest.jp/quest/chord/chord-mv4/passing-chord/",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-theory-to-review",
+    "confidence": "high"
+  },
+  {
+    "id": "HARM-005",
+    "name": "Related II (リレイテッド・ツー)",
+    "summary": "Precede a secondary dominant with its related minor-seventh ii chord, forming a short ii–V approach to the target chord.",
+    "tags": [
+      "ii-v",
+      "secondary-dominant",
+      "forward-motion",
+      "pop",
+      "jazz"
+    ],
+    "before": [
+      "Am7",
+      "FM7"
+    ],
+    "after": [
+      "Am7",
+      "Gm7",
+      "C7",
+      "FM7"
+    ],
+    "useWhen": "A target chord needs a little more approach and forward motion; shorten the inserted ii and V to avoid overcrowding.",
+    "caution": "The source recommends balancing density; applying the technique everywhere may make the progression too busy.",
+    "source": {
+      "title": "SRM Music — オシャレなコード進行をつくるための２つのテクニック",
+      "author": "SRM.",
+      "url": "https://srm-music.com/two-five/",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high"
+  },
+  {
+    "id": "HARM-006",
+    "name": "Common-tone and shortest-motion voice leading",
+    "summary": "Retain shared chord tones where practical and move remaining voices by the shortest musically appropriate interval; inspect parallel, oblique and contrary motion.",
+    "tags": [
+      "voice-leading",
+      "common-tone",
+      "smooth-connection",
+      "harmony"
+    ],
+    "before": [
+      "Cmaj7",
+      "Fmaj7"
+    ],
+    "after": [
+      "Cmaj7",
+      "Fmaj7"
+    ],
+    "useWhen": "Connecting chords smoothly, especially when changing voicings or inserting a passing chord.",
+    "caution": "Shortest motion is a useful guideline, not an absolute rule; melody, register, doubling and stylistic context can justify larger leaps.",
+    "source": {
+      "title": "SoundQuest — 和声 : 標準連結と原則",
+      "author": "yuta",
+      "url": "https://soundquest.jp/quest/chord/chord-mv7/harmony-principles/",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high"
+  },
+  {
+    "id": "HARM-007",
+    "name": "First inversion for a stepwise bass",
+    "summary": "Place the chord's third in the bass while the upper voices retain the chord identity; use the inversion to connect a bass line smoothly.",
+    "tags": [
+      "inversion",
+      "slash-chord",
+      "bass",
+      "voice-leading"
+    ],
+    "before": [
+      "G",
+      "D",
+      "Em"
+    ],
+    "after": [
+      "G",
+      "D/F#",
+      "Em"
+    ],
+    "useWhen": "A G–F#–E bass descent connects the same chords more smoothly than root jumps.",
+    "caution": "The bass note determines the inversion. In four-part major triads, avoid doubling the third in the upper voices; SoundQuest discusses different doubling conventions for minor chords.",
+    "source": {
+      "title": "和声 : 第一転回形",
+      "author": "yuta",
+      "url": "https://soundquest.jp/quest/chord/chord-mv7/harmony-1st-inversion/",
+      "published": "2024-06-08",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source+project-example",
+    "confidence": "high",
+    "notes": "Chord sequence is an independently written sketchpad example; theory summary is paraphrased from the cited lesson."
+  },
+  {
+    "id": "HARM-008",
+    "name": "Cadential six-four (I6/4 before V)",
+    "summary": "In a classical cadence, place the tonic triad in second inversion over the dominant bass, then move to V before resolving to I.",
+    "tags": [
+      "second-inversion",
+      "cadence",
+      "dominant",
+      "classical"
+    ],
+    "before": [
+      "Bb",
+      "C7",
+      "F"
+    ],
+    "after": [
+      "Bb",
+      "F/C",
+      "C7",
+      "F"
+    ],
+    "useWhen": "A tonal phrase needs a prepared cadence and a clear dominant arrival.",
+    "caution": "The cadential context matters. Do not treat every second-inversion chord as a free-standing tonic or interchangeable sus chord.",
+    "source": {
+      "title": "和声 : 第二・第三転回形",
+      "author": "yuta",
+      "url": "https://soundquest.jp/quest/chord/chord-mv7/harmony-2nd-3rd-inversion/",
+      "published": "2023-10-07",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source+project-example",
+    "confidence": "high",
+    "notes": "The F-major example is independently written from the lesson's I6/4–V–I explanation."
+  },
+  {
+    "id": "HARM-009",
+    "name": "Dominant seventh third inversion resolving to tonic first inversion",
+    "summary": "Place the dominant seventh's seventh in the bass; resolve that bass note down by step into the third of the tonic chord, producing I6.",
+    "tags": [
+      "third-inversion",
+      "dominant-seventh",
+      "resolution",
+      "voice-leading"
+    ],
+    "before": [
+      "Bb",
+      "C7",
+      "F"
+    ],
+    "after": [
+      "Bb",
+      "C7/Bb",
+      "F/A"
+    ],
+    "useWhen": "A bass line needs a smooth semitone descent from the dominant into a tonic first inversion.",
+    "caution": "The dominant seventh's seventh is a tendency tone and should resolve down by step in the cited classical context.",
+    "source": {
+      "title": "和声 : 第二・第三転回形",
+      "author": "yuta",
+      "url": "https://soundquest.jp/quest/chord/chord-mv7/harmony-2nd-3rd-inversion/",
+      "published": "2023-10-07",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source+project-example",
+    "confidence": "high",
+    "notes": "Example in F major; the cited lesson specifically explains V7 third inversion resolving to I first inversion."
+  },
+  {
+    "id": "HARM-010",
+    "name": "Common-tone and stepwise voice-leading",
+    "summary": "Retain common tones in the same voice where practical; move remaining voices by step, with small leaps used when the musical context calls for them.",
+    "tags": [
+      "voice-leading",
+      "common-tone",
+      "stepwise-motion",
+      "smooth-connection"
+    ],
+    "before": [
+      "C",
+      "F"
+    ],
+    "after": [
+      "C/E",
+      "F/A"
+    ],
+    "useWhen": "A chord progression sounds jumpy or a Pad voicing needs a smoother connection.",
+    "caution": "Berklee presents these as practical guidelines. Do not force every voice to move by step if it damages the melody, register or desired style.",
+    "source": {
+      "title": "Voice Leading Paradigms for Harmony in Music Composition",
+      "author": "Berklee Online; course material by George Russell Jr., Steven Kirby, Eunmi Shim and Paul Schmeling",
+      "url": "https://online.berklee.edu/takenote/voice-leading-paradigms-for-harmony-in-music-composition/",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-educational-source",
+    "confidence": "high",
+    "notes": "Berklee lists common-tone retention, stepwise motion and avoiding large leaps as core voice-leading guidelines; this record paraphrases them."
+  },
+  {
+    "id": "HARM-011",
+    "name": "Guide-tone voicing for seventh chords",
+    "summary": "For a seventh chord, the third and seventh define much of its quality and function; keep them clear in the Pad voicing, with the bass supplying the root when present.",
+    "tags": [
+      "guide-tones",
+      "seventh-chord",
+      "voicing",
+      "jazz",
+      "pop"
+    ],
+    "before": [
+      "Dm7",
+      "G7",
+      "Cmaj7"
+    ],
+    "after": [
+      "Dm7(3,7)",
+      "G7(3,7)",
+      "Cmaj7(3,7)"
+    ],
+    "useWhen": "A Pad or keyboard voicing is muddy or the chord function is unclear.",
+    "caution": "The fifth can be omitted in many seventh-chord voicings, but altered fifths and melody notes may require it. This is a voicing guideline, not a universal chord spelling.",
+    "source": {
+      "title": "Piano Voicing Techniques",
+      "author": "Berklee Online; excerpted from Randy Felts, Reharmonization Techniques",
+      "url": "https://online.berklee.edu/takenote/basic-piano-voicing-techniques/",
+      "published": "2015-10-02",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-educational-source",
+    "confidence": "high"
+  },
+  {
+    "id": "HARM-012",
+    "name": "Pedal point",
+    "summary": "Keep one bass note fixed while the upper chord changes, creating continuity beneath changing harmony.",
+    "tags": [
+      "pedal-point",
+      "bass",
+      "continuity",
+      "floating"
+    ],
+    "before": [
+      "Dm7",
+      "Em7",
+      "Am7",
+      "Cmaj7"
+    ],
+    "after": [
+      "Dm7",
+      "Em7/D",
+      "Am7/D",
+      "Cmaj7/D"
+    ],
+    "useWhen": "A section needs a stable low anchor while the Pad changes color.",
+    "caution": "Check that upper voices remain compatible with the pedal and that the sustained bass does not obscure the intended chord function.",
+    "source": {
+      "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+      "author": "SRM.",
+      "url": "https://srm-music.com/stylish-chord/",
+      "published": "2025-02-27",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high"
+  },
+  {
+    "id": "HARM-013",
+    "name": "Hybrid chord / tension bass",
+    "summary": "Use a bass note outside the upper chord's basic triad, often a tension, to create a slash or hybrid sonority.",
+    "tags": [
+      "hybrid-chord",
+      "slash-chord",
+      "tension",
+      "voicing"
+    ],
+    "before": [
+      "Cmaj7"
+    ],
+    "after": [
+      "Cmaj7/D"
+    ],
+    "useWhen": "The upper chord should stay recognizable while the bass adds a different color or pedal-like connection.",
+    "caution": "The bass note changes the total sonority; check the combined intervals rather than assuming the upper chord label describes the whole sound.",
+    "source": {
+      "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+      "author": "SRM.",
+      "url": "https://srm-music.com/stylish-chord/",
+      "published": "2025-02-27",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high"
+  },
+  {
+    "id": "HARM-014",
+    "name": "Quartal voicing",
+    "summary": "Build a chord stack from fourths rather than thirds; the resulting voicing can sound open and less clearly major/minor.",
+    "tags": [
+      "quartal",
+      "floating",
+      "modern",
+      "voicing"
+    ],
+    "before": [
+      "Cm7"
+    ],
+    "after": [
+      "C-F-Bb-Eb"
+    ],
+    "useWhen": "A Pad needs a more open or ambiguous texture than conventional tertian voicings.",
+    "caution": "The chord label may be ambiguous; specify actual notes and register when sending it to MIDI generation.",
+    "source": {
+      "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+      "author": "SRM.",
+      "url": "https://srm-music.com/stylish-chord/",
+      "published": "2025-02-27",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high"
+  },
+  {
+    "id": "HARM-015",
+    "name": "Constant structure",
+    "summary": "Move the same chord quality or voicing shape to different roots, preserving its interval structure while changing the harmonic center.",
+    "tags": [
+      "constant-structure",
+      "neo-soul",
+      "jazz",
+      "floating"
+    ],
+    "before": [
+      "Dmaj7"
+    ],
+    "after": [
+      "Dmaj7",
+      "Amaj7",
+      "Emaj7",
+      "Bmaj7"
+    ],
+    "useWhen": "A section needs a consistent color across a non-diatonic root sequence.",
+    "caution": "The sequence may not imply a single conventional key; check melody and bass independently.",
+    "source": {
+      "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+      "author": "SRM.",
+      "url": "https://srm-music.com/stylish-chord/",
+      "published": "2025-02-27",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source+song-analysis",
+    "confidence": "medium"
+  },
+  {
+    "id": "HARM-016",
+    "name": "Cliché / chromatic inner-line motion",
+    "summary": "Retain a chord's basic root identity while moving one chord tone chromatically through successive chord qualities.",
+    "tags": [
+      "cliche",
+      "chromatic-line",
+      "inner-voice",
+      "pop",
+      "calm"
+    ],
+    "before": [
+      "C"
+    ],
+    "after": [
+      "C",
+      "Cmaj7",
+      "C7",
+      "C6"
+    ],
+    "useWhen": "A stable harmony needs a small, audible inner-line movement without a full progression change.",
+    "caution": "C7 introduces a dominant-seventh color; omit it or use C6 if the extra dominant tension is not wanted.",
+    "source": {
+      "title": "落ち着いた雰囲気を持つコード進行を考える",
+      "author": "内山敦支",
+      "url": "https://sakkyoku.info/theory/calm-chord-progression-pattern/",
+      "published": "2023-06-29",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high",
+    "notes": "The source's C–Cmaj7–C7–C6 example moves one voice C–B–Bb–A while retaining the C-root family."
+  },
+  {
+    "id": "HARM-017",
+    "name": "Subdominant minor (IV–iv–I)",
+    "summary": "Borrow the minor subdominant from the parallel minor before returning to the tonic.",
+    "tags": [
+      "modal-interchange",
+      "borrowed-chord",
+      "subdominant-minor",
+      "bittersweet",
+      "soft"
+    ],
+    "before": [
+      "C",
+      "F",
+      "C"
+    ],
+    "after": [
+      "C",
+      "F",
+      "Fm",
+      "C"
+    ],
+    "useWhen": "A familiar major-key progression needs a brief softer or wistful color before tonic return.",
+    "caution": "Check the melody against Ab in Fm; keep the borrowed chord's duration appropriate to the phrase.",
+    "source": {
+      "title": "落ち着いた雰囲気を持つコード進行を考える",
+      "author": "内山敦支",
+      "url": "https://sakkyoku.info/theory/calm-chord-progression-pattern/",
+      "published": "2023-06-29",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high",
+    "notes": "The cited author presents Fm (iv) as a subdominant-minor color that can still be used in a calm progression."
+  },
+  {
+    "id": "HARM-018",
+    "name": "Secondary dominant (V of a target chord)",
+    "summary": "Temporarily treat a diatonic target chord as a tonic and precede it with its own dominant seventh, usually a perfect fifth above the target root.",
+    "tags": [
+      "secondary-dominant",
+      "V-of",
+      "dominant-seventh",
+      "chromatic",
+      "voice-leading"
+    ],
+    "before": [
+      "Dm7",
+      "G7",
+      "Cmaj7"
+    ],
+    "after": [
+      "Dm7",
+      "D7",
+      "G7",
+      "Cmaj7"
+    ],
+    "useWhen": "A target chord needs stronger forward pull or a chromatic approach tone.",
+    "caution": "The target chord and melody must support the altered scale tone. Do not label every non-diatonic dominant as a secondary dominant without checking its resolution.",
+    "source": {
+      "title": "二次ドミナント",
+      "author": "yuta",
+      "url": "https://soundquest.jp/quest/chord/chord-mv2/secondary-dominant/",
+      "published": "2025-08-04",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high",
+    "notes": "Paraphrase of SoundQuest's explanation and examples. The D7→G movement is the secondary dominant of V in C major."
+  },
+  {
+    "id": "HARM-019",
+    "name": "Tritone substitution of a dominant seventh",
+    "summary": "Replace a dominant seventh with another dominant seventh whose root is a tritone away; the two chords share the same guide-tone tritone enharmonically.",
+    "tags": [
+      "tritone-substitution",
+      "subV",
+      "dominant",
+      "chromatic-bass",
+      "jazz"
+    ],
+    "before": [
+      "Dm7",
+      "G7",
+      "Cmaj7"
+    ],
+    "after": [
+      "Dm7",
+      "Db7",
+      "Cmaj7"
+    ],
+    "useWhen": "A dominant approach should have a chromatic bass descent into the target chord.",
+    "caution": "The substitute dominant's resolution and melody compatibility matter. SoundQuest notes that the common ♭II7 use has a focused resolution context; do not substitute indiscriminately.",
+    "source": {
+      "title": "トライトーン代理",
+      "author": "plugmon",
+      "url": "https://soundquest.jp/quest/chord/chord-mv4/tritone-substitution/",
+      "published": "2025-06-08",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high",
+    "notes": "In C major, G7 and Db7 share the F–B tritone (enharmonically respelled). This is a paraphrase, not a claim that every dominant substitution works in every context."
+  },
+  {
+    "id": "HARM-020",
+    "name": "Modal interchange from a parallel scale",
+    "summary": "Borrow a chord from a scale or mode with the same tonic while keeping the tonal center; the borrowed chord introduces one or more non-diatonic notes.",
+    "tags": [
+      "modal-interchange",
+      "parallel-scale",
+      "borrowed-chord",
+      "chromatic",
+      "mood-color"
+    ],
+    "before": [
+      "C",
+      "F",
+      "G",
+      "C"
+    ],
+    "after": [
+      "C",
+      "Fm",
+      "G",
+      "C"
+    ],
+    "useWhen": "A familiar progression needs a borrowed chord color without changing the tonic center.",
+    "caution": "Specify the source mode/scale and check the melody against the borrowed notes. The term can refer to scale-level borrowing or chord-level borrowing depending on the explanatory framework.",
+    "source": {
+      "title": "モーダル・インターチェンジ",
+      "author": "yuta",
+      "url": "https://soundquest.jp/quest/chord/chord-mv6/ttj-modal-interchange/",
+      "published": "2024-01-10",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-source",
+    "confidence": "high",
+    "notes": "SoundQuest describes modal interchange as borrowing from a parallel scale with the same tonic, and discusses both scale and chord perspectives."
+  },
+  {
+    "id": "HARM-021",
+    "name": "Substitution within a harmonic-function family",
+    "summary": "Replace a chord with another chord that serves a similar phrase function, while checking shared chord tones and the target melody.",
+    "tags": [
+      "chord-substitution",
+      "reharmonization",
+      "tonic-family",
+      "subdominant-family",
+      "dominant-family"
+    ],
+    "before": [
+      "Cmaj7",
+      "Fmaj7",
+      "G7",
+      "Cmaj7"
+    ],
+    "after": [
+      "Am7",
+      "Dm7",
+      "G7",
+      "Cmaj7"
+    ],
+    "useWhen": "A progression needs a different harmonic color without completely changing its functional direction.",
+    "caution": "Function families are useful models, not universal categories. Confirm the melody, bass line and local style; do not assume a substitution is interchangeable in every voicing.",
+    "source": {
+      "title": "Chord Substitution and Reharmonization",
+      "author": "Berklee Online; based on Randy Felts, Reharmonization Techniques",
+      "url": "https://online.berklee.edu/takenote/reharmonization-simple-substitution/",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-educational-source",
+    "confidence": "high",
+    "notes": "Berklee's lesson describes tonic, subdominant and dominant chord families and substitution by similar function."
+  },
+  {
+    "id": "HARM-022",
+    "name": "Guide-tone voice leading with common-tone retention",
+    "summary": "For successive chords, keep common tones in the same voice where possible and move remaining voices by step or small intervals. In seventh chords, the 3rd and 7th often define chord quality and function.",
+    "tags": [
+      "voice-leading",
+      "guide-tones",
+      "common-tone",
+      "stepwise-motion",
+      "seventh-chord"
+    ],
+    "before": [
+      "Dm7",
+      "G7",
+      "Cmaj7"
+    ],
+    "after": [
+      "F-C-E-A",
+      "F-B-E-A",
+      "E-B-D-G"
+    ],
+    "useWhen": "Pad voicings jump too much or chord changes sound disconnected.",
+    "caution": "Berklee's voice-leading suggestions are practical guidelines, not immutable rules. Keep register, melody and instrument range in view.",
+    "source": {
+      "title": "Voice Leading Paradigms for Harmony in Music Composition",
+      "author": "Berklee Online; courses by George Russell Jr., Steven Kirby, Eunmi Shim and Paul Schmeling",
+      "url": "https://online.berklee.edu/takenote/voice-leading-paradigms-for-harmony-in-music-composition/",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-educational-source",
+    "confidence": "high",
+    "notes": "Berklee lists common-tone retention, stepwise motion and limited leaps as voice-leading principles; guide tones for seventh chords are 3rd and 7th."
+  }
+]

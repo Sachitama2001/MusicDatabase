@@ -8,6 +8,8 @@
 - [DEFINITION.md](./DEFINITION.md): プロジェクトの要件定義書（v2: コード進行特化・ChordTube専用）
 - [docs/adr/0001-github-direct-llm-and-static-app.md](./docs/adr/0001-github-direct-llm-and-static-app.md): GitHub直結LLM運用と完全静的Webアプリ構成
 - [docs/adr/0002-chordtube-only-and-deterministic-piano-midi.md](./docs/adr/0002-chordtube-only-and-deterministic-piano-midi.md): コード進行特化・ChordTube限定・決定論的Piano MIDI生成への方針転換
+- [docs/adr/0003-integrate-musictheory-knowledge-base.md](./docs/adr/0003-integrate-musictheory-knowledge-base.md): MusicTheoryの音楽理論知識ベースの統合方針
+- [docs/SOURCES.md](./docs/SOURCES.md): 音楽理論・和声・知覚研究の出典レジストリ
 
 ## コマンド
 

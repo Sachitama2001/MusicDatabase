@@ -246,6 +246,20 @@ export function ChordLabAndDataView({
             <div className="muted">フィーリング語彙数</div>
             <div className="stat-value">{db.feelings.entries.length}</div>
           </div>
+          <div className="stat-box">
+            <div className="muted">理論・進行パターン</div>
+            <div className="stat-value">{db.theory.progressions.length}</div>
+          </div>
+          <div className="stat-box">
+            <div className="muted">和声テクニック</div>
+            <div className="stat-value">{db.theory.harmonyTechniques.length}</div>
+          </div>
+          <div className="stat-box">
+            <div className="muted">スタイル・原則</div>
+            <div className="stat-value">
+              {db.theory.styleMoods.length + db.theory.compositionRules.length}
+            </div>
+          </div>
         </div>
         <p className="muted" style={{ marginBottom: 0, marginTop: 10 }}>
           Index生成日時: {db.generatedAt} / Schema Version: {db.schemaVersion}

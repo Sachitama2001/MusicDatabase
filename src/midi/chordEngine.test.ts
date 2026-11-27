@@ -75,4 +75,15 @@ describe('chordEngine and Piano SMF export', () => {
     expect(chords.map((c) => c.symbol)).toEqual(['FM7', 'E7', 'Am7']);
     expect(chords.map((c) => c.beats)).toEqual([2, 2, 4]);
   });
+
+  it('parses extended MusicTheory chord notations including parenthesized tensions and omit3', () => {
+    expect(parseChordSymbol('Am7(9)')?.intervals).toEqual([0, 3, 7, 10, 14]);
+    expect(parseChordSymbol('G7sus(9)')?.intervals).toEqual([0, 5, 7, 10, 14]);
+    expect(parseChordSymbol('Am7(11)omit3')?.intervals).toEqual([0, 7, 10, 17]);
+    expect(parseChordSymbol('Dm(b5)')?.intervals).toEqual([0, 3, 6]);
+    const gaugOverB = parseChordSymbol('Gaug/B')!;
+    expect(gaugOverB.rootPc).toBe(7);
+    expect(gaugOverB.bassPc).toBe(11);
+    expect(gaugOverB.intervals).toEqual([0, 4, 8]);
+  });
 });

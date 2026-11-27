@@ -1,8 +1,12 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {
+  CompositionRuleLibrarySchema,
   DatabaseIndexSchema,
   FeelingLexiconSchema,
+  HarmonyTechniqueLibrarySchema,
+  ProgressionLibrarySchema,
+  StyleMoodLibrarySchema,
   TrackSchema,
   type DatabaseIndex,
   type Track
@@ -11,6 +15,7 @@ import {
 const ROOT = process.cwd();
 const DATA_DIR = path.join(ROOT, 'data');
 const TRACKS_DIR = path.join(DATA_DIR, 'tracks');
+const THEORY_DIR = path.join(DATA_DIR, 'theory');
 const FEELINGS_FILE = path.join(DATA_DIR, 'feelings.json');
 const DATA_INDEX_OUT = path.join(DATA_DIR, 'index.json');
 const PUBLIC_DATA_DIR = path.join(ROOT, 'public', 'data');
@@ -35,6 +40,21 @@ function buildIndex(): DatabaseIndex {
 
   tracks.sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
 
+  const theory = {
+    progressions: ProgressionLibrarySchema.parse(
+      JSON.parse(fs.readFileSync(path.join(THEORY_DIR, 'progressions.json'), 'utf-8'))
+    ),
+    harmonyTechniques: HarmonyTechniqueLibrarySchema.parse(
+      JSON.parse(fs.readFileSync(path.join(THEORY_DIR, 'harmony-techniques.json'), 'utf-8'))
+    ),
+    styleMoods: StyleMoodLibrarySchema.parse(
+      JSON.parse(fs.readFileSync(path.join(THEORY_DIR, 'style-moods.json'), 'utf-8'))
+    ),
+    compositionRules: CompositionRuleLibrarySchema.parse(
+      JSON.parse(fs.readFileSync(path.join(THEORY_DIR, 'composition-rules.json'), 'utf-8'))
+    )
+  };
+
   const sectionCount = tracks.reduce((sum, t) => sum + t.sections.length, 0);
 
   const index: DatabaseIndex = DatabaseIndexSchema.parse({
@@ -43,7 +63,8 @@ function buildIndex(): DatabaseIndex {
     trackCount: tracks.length,
     sectionCount,
     feelings,
-    tracks
+    tracks,
+    theory
   });
 
   fs.mkdirSync(PUBLIC_DATA_DIR, { recursive: true });
@@ -59,6 +80,11 @@ function buildIndex(): DatabaseIndex {
 }
 
 const index = buildIndex();
+const theoryTotal =
+  index.theory.progressions.length +
+  index.theory.harmonyTechniques.length +
+  index.theory.styleMoods.length +
+  index.theory.compositionRules.length;
 console.log(
-  `Built index (v2.0): ${index.trackCount} track(s), ${index.sectionCount} section(s) -> data/index.json & public/data/index.json`
+  `Built index (v2.0): ${index.trackCount} track(s), ${index.sectionCount} section(s), ${theoryTotal} theory record(s) -> data/index.json & public/data/index.json`
 );

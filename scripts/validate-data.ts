@@ -1,6 +1,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {
+  CompositionRuleLibrarySchema,
+  formatZodIssues,
+  HarmonyTechniqueLibrarySchema,
+  ProgressionLibrarySchema,
+  StyleMoodLibrarySchema,
   validateFeelingLexiconData,
   validateTrackData,
   type Track
@@ -9,6 +14,7 @@ import {
 const ROOT = process.cwd();
 const DATA_DIR = path.join(ROOT, 'data');
 const TRACKS_DIR = path.join(DATA_DIR, 'tracks');
+const THEORY_DIR = path.join(DATA_DIR, 'theory');
 const FEELINGS_FILE = path.join(DATA_DIR, 'feelings.json');
 
 interface FileError {
@@ -32,6 +38,7 @@ export function validateRepositoryData(): {
   ok: boolean;
   trackCount: number;
   sectionCount: number;
+  theoryCount: number;
   errors: FileError[];
 } {
   const errors: FileError[] = [];
@@ -107,11 +114,43 @@ export function validateRepositoryData(): {
     }
   }
 
+  const theoryFiles = [
+    { name: 'progressions.json', schema: ProgressionLibrarySchema },
+    { name: 'harmony-techniques.json', schema: HarmonyTechniqueLibrarySchema },
+    { name: 'style-moods.json', schema: StyleMoodLibrarySchema },
+    { name: 'composition-rules.json', schema: CompositionRuleLibrarySchema }
+  ] as const;
+
+  let theoryCount = 0;
+  for (const tf of theoryFiles) {
+    const relPath = `data/theory/${tf.name}`;
+    const fullPath = path.join(THEORY_DIR, tf.name);
+    if (!fs.existsSync(fullPath)) {
+      errors.push({ file: relPath, messages: ['File does not exist'] });
+      continue;
+    }
+    const parsed = readJsonFile(fullPath);
+    if (!parsed.ok) {
+      errors.push({ file: relPath, messages: [`Invalid JSON: ${parsed.error}`] });
+      continue;
+    }
+    const result = tf.schema.safeParse(parsed.data);
+    if (!result.success) {
+      errors.push({
+        file: relPath,
+        messages: formatZodIssues(result.error).map((i) => `${i.path}: ${i.message}`)
+      });
+    } else {
+      theoryCount += result.data.length;
+    }
+  }
+
   const sectionCount = validTracks.reduce((sum, t) => sum + t.sections.length, 0);
   return {
     ok: errors.length === 0,
     trackCount: validTracks.length,
     sectionCount,
+    theoryCount,
     errors
   };
 }
@@ -131,6 +170,6 @@ if (isMain) {
     process.exit(1);
   }
   console.log(
-    `Data validation OK: ${result.trackCount} track(s), ${result.sectionCount} section(s).`
+    `Data validation OK: ${result.trackCount} track(s), ${result.sectionCount} section(s), ${result.theoryCount} theory record(s).`
   );
 }

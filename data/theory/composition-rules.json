@@ -1,0 +1,83 @@
+[
+  {
+    "id": "RULE-003",
+    "name": "Resolve intentionally",
+    "rule": "When a progression loops, provide a clear return to tonic or explain the non-tonic loop.",
+    "priority": "soft",
+    "evidence_type": "project-rule"
+  },
+  {
+    "id": "RULE-004",
+    "name": "Offer alternatives, do not overwrite",
+    "rule": "Return at least two candidates when practical. Preserve original until explicit apply.",
+    "priority": "hard",
+    "evidence_type": "product-requirement"
+  },
+  {
+    "id": "RULE-005",
+    "name": "Source-aware recommendations",
+    "rule": "Cite knowledge record IDs. Distinguish sourced theory from project heuristics and generated suggestions.",
+    "priority": "hard",
+    "evidence_type": "data-governance"
+  },
+  {
+    "id": "RULE-006",
+    "name": "Do not map chord progressions to mood as fixed rules",
+    "rule": "Treat genre and mood tags as tendencies tied to a cited source or listening example. A chord progression alone does not guarantee a mood or genre.",
+    "priority": "hard",
+    "evidence_type": "data-governance",
+    "source": {
+      "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+      "author": "SRM.",
+      "url": "https://srm-music.com/stylish-chord/",
+      "published": "2025-02-27",
+      "accessed": "2026-11-26"
+    },
+    "notes": "Genre descriptions in SRM are qualitative; the Kawase study also tests chord progression, tempo and rhythmic patterns together rather than treating harmony alone as the full cause."
+  },
+  {
+    "id": "RULE-008",
+    "name": "Specify harmonic rhythm as well as chord identity",
+    "rule": "When proposing a progression, state how long each chord lasts and where changes occur. A passing ii or subV should be shorter than the chord it approaches when that is the intended effect.",
+    "priority": "soft",
+    "evidence_type": "human-authored-source",
+    "source": {
+      "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+      "author": "SRM.",
+      "url": "https://srm-music.com/stylish-chord/",
+      "published": "2025-02-27",
+      "accessed": "2026-11-26"
+    },
+    "notes": "Based on SRM's discussion of harmonic rhythm and short inserted chords."
+  },
+  {
+    "id": "RULE-009",
+    "name": "Keep reharmonization selective",
+    "rule": "Start from a clear diatonic or familiar progression. Add only the substitutions, borrowed chords or passing chords that serve the section's purpose; compare against the unmodified version.",
+    "priority": "soft",
+    "evidence_type": "human-authored-source",
+    "source": {
+      "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+      "author": "SRM.",
+      "url": "https://srm-music.com/stylish-chord/",
+      "published": "2025-02-27",
+      "accessed": "2026-11-26"
+    },
+    "notes": "SRM cautions against overcomplicating progressions and recommends keeping a diatonic base."
+  },
+  {
+    "id": "RULE-010",
+    "name": "Separate interval role from emotional label",
+    "rule": "The wheel may show scale membership, chord-tone membership and conventional interval role, but must not claim that a pitch or interval always produces a specific emotion. Context, timbre, culture, register and progression affect perception.",
+    "priority": "hard",
+    "evidence_type": "academic-research",
+    "source": {
+      "title": "Consonance and dissonance perception: A critical review of the historical sources, multidisciplinary findings, and main hypotheses",
+      "author": "Nicola Di Stefano, Peter Vuust and Elvira Brattico",
+      "url": "https://doi.org/10.1016/j.plrev.2022.10.004",
+      "published": "2022-12",
+      "accessed": "2026-11-26"
+    },
+    "notes": "Based on the critical review of consonance/dissonance perception; the review emphasizes multiple interacting explanations and limitations."
+  }
+]

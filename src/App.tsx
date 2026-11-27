@@ -4,9 +4,10 @@ import { ChordSearchEngine } from './search/engine';
 import { pianoPlayer } from './midi/player';
 import { SearchView } from './ui/views/SearchView';
 import { TrackDetailView } from './ui/views/TrackDetailView';
+import { TheoryLibraryView } from './ui/views/TheoryLibraryView';
 import { ChordLabAndDataView } from './ui/views/ChordLabAndDataView';
 
-type TabId = 'search' | 'detail' | 'lab';
+type TabId = 'search' | 'detail' | 'theory' | 'lab';
 
 export function App() {
   const [activeTab, setActiveTab] = useState<TabId>('search');
@@ -89,7 +90,12 @@ export function App() {
           <h1 className="brand-title">MusicDatabase</h1>
           <span className="brand-sub">
             {db
-              ? `ChordTube DB — ${db.trackCount} tracks / ${db.sectionCount} chord sections`
+              ? `ChordTube ${db.trackCount} tracks (${db.sectionCount} sec) + Theory ${
+                  db.theory.progressions.length +
+                  db.theory.harmonyTechniques.length +
+                  db.theory.styleMoods.length +
+                  db.theory.compositionRules.length
+                } records`
               : 'Loading database...'}
           </span>
         </div>
@@ -111,10 +117,17 @@ export function App() {
           </button>
           <button
             type="button"
+            className={`nav-tab ${activeTab === 'theory' ? 'active' : ''}`}
+            onClick={() => handleTabChange('theory')}
+          >
+            音楽理論ライブラリ
+          </button>
+          <button
+            type="button"
             className={`nav-tab ${activeTab === 'lab' ? 'active' : ''}`}
             onClick={() => handleTabChange('lab')}
           >
-            コード試聴ラボ・検証・LLMガイド
+            試聴ラボ・検証・LLMガイド
           </button>
         </nav>
       </header>
@@ -148,6 +161,14 @@ export function App() {
               setSelectedTrackId(id);
               setHighlightSectionId(null);
             }}
+            onSendToLab={handleSendToLab}
+            onNotify={showToast}
+          />
+        )}
+
+        {db && activeTab === 'theory' && (
+          <TheoryLibraryView
+            theory={db.theory}
             onSendToLab={handleSendToLab}
             onNotify={showToast}
           />

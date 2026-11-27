@@ -1,7 +1,14 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { validateTrackData } from './index';
+import { isValidChordSymbol } from '../midi/chordEngine';
+import {
+  CompositionRuleLibrarySchema,
+  HarmonyTechniqueLibrarySchema,
+  ProgressionLibrarySchema,
+  StyleMoodLibrarySchema,
+  validateTrackData
+} from './index';
 
 const SAMPLE_PATH = path.resolve(
   process.cwd(),
@@ -45,5 +52,32 @@ describe('v2 ChordTube TrackSchema and invariants', () => {
     expect(result.success).toBe(false);
     expect(result.issues.some((i) => i.path.includes('endSec'))).toBe(true);
     expect(result.issues.some((i) => i.message.includes('Duplicate section id'))).toBe(true);
+  });
+
+  it('validates all integrated MusicTheory knowledge files and confirms every progression example is playable', () => {
+    const theoryDir = path.resolve(process.cwd(), 'data/theory');
+    const progressions = ProgressionLibrarySchema.parse(
+      JSON.parse(fs.readFileSync(path.join(theoryDir, 'progressions.json'), 'utf-8'))
+    );
+    const techniques = HarmonyTechniqueLibrarySchema.parse(
+      JSON.parse(fs.readFileSync(path.join(theoryDir, 'harmony-techniques.json'), 'utf-8'))
+    );
+    const styles = StyleMoodLibrarySchema.parse(
+      JSON.parse(fs.readFileSync(path.join(theoryDir, 'style-moods.json'), 'utf-8'))
+    );
+    const rules = CompositionRuleLibrarySchema.parse(
+      JSON.parse(fs.readFileSync(path.join(theoryDir, 'composition-rules.json'), 'utf-8'))
+    );
+
+    expect(progressions.length).toBeGreaterThanOrEqual(37);
+    expect(techniques.length).toBeGreaterThanOrEqual(22);
+    expect(styles.length).toBeGreaterThanOrEqual(12);
+    expect(rules.length).toBeGreaterThanOrEqual(7);
+
+    for (const p of progressions) {
+      for (const sym of p.example) {
+        expect(isValidChordSymbol(sym), `Unparseable symbol "${sym}" in ${p.id}`).toBe(true);
+      }
+    }
   });
 });

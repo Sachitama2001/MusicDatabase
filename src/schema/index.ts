@@ -1,9 +1,11 @@
 import { z } from 'zod';
 import { FeelingLexiconSchema } from './feelings';
+import { TheoryKnowledgeBaseSchema } from './theory';
 import { TrackSchema } from './track';
 
 export * from './track';
 export * from './feelings';
+export * from './theory';
 
 export const DatabaseIndexSchema = z.object({
   schemaVersion: z.literal('2.0'),
@@ -11,7 +13,8 @@ export const DatabaseIndexSchema = z.object({
   trackCount: z.number().int().min(0),
   sectionCount: z.number().int().min(0),
   feelings: FeelingLexiconSchema,
-  tracks: z.array(TrackSchema)
+  tracks: z.array(TrackSchema),
+  theory: TheoryKnowledgeBaseSchema
 });
 export type DatabaseIndex = z.infer<typeof DatabaseIndexSchema>;
 

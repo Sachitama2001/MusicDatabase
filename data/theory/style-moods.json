@@ -1,0 +1,332 @@
+[
+  {
+    "id": "STYLE-001",
+    "name": "Kawaii Future Bass",
+    "tags": [
+      "cute",
+      "bright",
+      "playful",
+      "sparkling",
+      "uplifting"
+    ],
+    "harmonyTendencies": [
+      "major-key pop cycles",
+      "extended add9/maj7 colors"
+    ],
+    "arrangementTendencies": [
+      "bright pluck",
+      "supersaw chord stabs",
+      "vocal chops",
+      "bouncy sidechain-like phrasing"
+    ],
+    "evidence_type": "project-heuristic",
+    "confidence": "medium",
+    "notes": "Production and rhythm matter at least as much as chord choice."
+  },
+  {
+    "id": "STYLE-002",
+    "name": "Math Rock",
+    "tags": [
+      "angular",
+      "playful",
+      "technical",
+      "rhythmic"
+    ],
+    "harmonyTendencies": [
+      "add9",
+      "maj7",
+      "sus voicings",
+      "open-string colors"
+    ],
+    "arrangementTendencies": [
+      "interlocking guitar parts",
+      "syncopation",
+      "odd-meter accents"
+    ],
+    "evidence_type": "project-heuristic",
+    "confidence": "medium",
+    "notes": "Do not equate genre with unplayable virtuosity; specify register and technique."
+  },
+  {
+    "id": "STYLE-003",
+    "name": "Riddim-inspired drop",
+    "tags": [
+      "heavy",
+      "hypnotic",
+      "groovy",
+      "minimal"
+    ],
+    "harmonyTendencies": [
+      "static or slowly changing harmony"
+    ],
+    "arrangementTendencies": [
+      "half-time backbeat",
+      "repeated bass motifs",
+      "rests",
+      "call-and-response",
+      "syncopated fills"
+    ],
+    "evidence_type": "project-heuristic",
+    "confidence": "medium",
+    "notes": "Broad arrangement heuristic, not a universal definition of Riddim."
+  },
+  {
+    "id": "STYLE-004",
+    "name": "Pop harmony tendency (SRM)",
+    "tags": [
+      "pop",
+      "j-pop",
+      "familiar",
+      "accessible"
+    ],
+    "harmonyTendencies": [
+      "simple, familiar diatonic progressions",
+      "inversions for smooth bass",
+      "occasional ii–V or borrowed-chord accents"
+    ],
+    "arrangementTendencies": [
+      "keep the base progression easy to follow",
+      "use reharmonization as a small accent rather than constant complexity"
+    ],
+    "source": {
+      "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+      "author": "SRM.",
+      "url": "https://srm-music.com/stylish-chord/",
+      "published": "2025-02-27",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-genre-description",
+    "confidence": "medium",
+    "notes": "This is SRM's description of common pop practice, not a rule for every pop song."
+  },
+  {
+    "id": "STYLE-005",
+    "name": "Jazz harmony tendency (SRM)",
+    "tags": [
+      "jazz",
+      "rich",
+      "deep",
+      "tension"
+    ],
+    "harmonyTendencies": [
+      "tension chords",
+      "subV / tritone substitution",
+      "quartal and hybrid voicings"
+    ],
+    "arrangementTendencies": [
+      "allow richer harmonic movement and voicing variation"
+    ],
+    "source": {
+      "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+      "author": "SRM.",
+      "url": "https://srm-music.com/stylish-chord/",
+      "published": "2025-02-27",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-genre-description",
+    "confidence": "medium",
+    "notes": "SRM's qualitative genre description; not a universal definition of jazz."
+  },
+  {
+    "id": "STYLE-006",
+    "name": "R&B / Neo-soul harmony tendency (SRM)",
+    "tags": [
+      "r-and-b",
+      "neo-soul",
+      "warm",
+      "soft",
+      "floating"
+    ],
+    "harmonyTendencies": [
+      "modal interchange",
+      "dominant-seventh substitutes",
+      "omit chords",
+      "constant-structure chords"
+    ],
+    "arrangementTendencies": [
+      "soft or acoustic timbres can expose chord color"
+    ],
+    "source": {
+      "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+      "author": "SRM.",
+      "url": "https://srm-music.com/stylish-chord/",
+      "published": "2025-02-27",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-genre-description",
+    "confidence": "medium",
+    "notes": "The source describes a warm, deep and floating color. Treat this as a tendency, not a fixed recipe."
+  },
+  {
+    "id": "STYLE-007",
+    "name": "City-pop harmony tendency (SRM)",
+    "tags": [
+      "city-pop",
+      "j-pop",
+      "polished",
+      "sophisticated"
+    ],
+    "harmonyTendencies": [
+      "simple pop progressions as a base",
+      "moderate use of tensions",
+      "modal interchange"
+    ],
+    "arrangementTendencies": [
+      "balance pop accessibility with jazz/R&B color"
+    ],
+    "source": {
+      "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+      "author": "SRM.",
+      "url": "https://srm-music.com/stylish-chord/",
+      "published": "2025-02-27",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-genre-description",
+    "confidence": "medium",
+    "notes": "SRM describes city pop as combining pop accessibility with jazz/R&B sophistication."
+  },
+  {
+    "id": "STYLE-008",
+    "name": "Calm / stable harmony",
+    "tags": [
+      "calm",
+      "stable",
+      "settled",
+      "quiet"
+    ],
+    "harmonyTendencies": [
+      "I–vi and I–iii–vi tonic-family cycles",
+      "tonic and subdominant alternation (I–IV, I–ii)",
+      "subdominant-minor as a soft borrowed color",
+      "tonic pedal / slash-chord patterns",
+      "dominant tension is often reduced in the source examples"
+    ],
+    "arrangementTendencies": [
+      "Longer chord holds can support a calm impression; avoid excessive dominant tension",
+      "The author also notes that melody, arrangement and other musical elements affect the result"
+    ],
+    "source": {
+      "title": "落ち着いた雰囲気を持つコード進行を考える",
+      "author": "内山敦支",
+      "url": "https://sakkyoku.info/theory/calm-chord-progression-pattern/",
+      "published": "2023-06-29",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "human-authored-mood-description",
+    "confidence": "medium",
+    "notes": "Paraphrases the examples and listening interpretation in Uchiyama's article. These are the author's examples and interpretation; do not infer mood from chords alone."
+  },
+  {
+    "id": "STYLE-009",
+    "name": "Chord progression affect and groove (research)",
+    "tags": [
+      "groove",
+      "happy",
+      "sad",
+      "chord-progression",
+      "research"
+    ],
+    "harmonyTendencies": [
+      "In the study's stimuli, progressions judged happier were more likely to elicit groove than sadder progressions."
+    ],
+    "arrangementTendencies": [
+      "Drum-break accompaniment increased groove ratings for both happy and sad progressions."
+    ],
+    "source": {
+      "title": "Is happier music groovier? The influence of emotional characteristics of musical chord progressions on groove",
+      "author": "Satoshi Kawase",
+      "url": "https://link.springer.com/article/10.1007/s00426-023-01869-x",
+      "published": "2023-08-24",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "academic-research",
+    "confidence": "high",
+    "notes": "Single study with professionally composed drum-break stimuli; results should not be generalized to every genre or listener."
+  },
+  {
+    "id": "STYLE-011",
+    "name": "Tonic-relative interval color map",
+    "tags": [
+      "scale",
+      "tonic",
+      "interval",
+      "mood",
+      "harmony",
+      "visualization"
+    ],
+    "harmonyTendencies": [
+      "1st: tonal center and strongest reference point.",
+      "3rd: major/minor quality; a central source of tonal color.",
+      "5th: stable structural tone in common triadic harmony.",
+      "2nd/9th and 6th/13th: color tones that can add openness or extension.",
+      "4th/11th: suspended or unresolved color when placed against the 3rd.",
+      "Major 7th and minor 2nd: close semitone relations to the tonic; often create strong directional tension.",
+      "Tritone: high intervallic tension, often associated with dominant function in tonal contexts."
+    ],
+    "arrangementTendencies": [
+      "Display scale membership separately from interval character.",
+      "Use color as a theory-oriented tendency, not as a deterministic emotion label."
+    ],
+    "evidence_type": "project-interpretation",
+    "confidence": "medium",
+    "notes": "App visualization heuristic based on conventional interval and chord-function descriptions. It describes tonal roles relative to the selected tonic; perceived mood also depends on melody, rhythm, register, timbre and context."
+  },
+  {
+    "id": "STYLE-012",
+    "name": "Consonance and dissonance are context-dependent",
+    "tags": [
+      "interval",
+      "consonance",
+      "dissonance",
+      "perception",
+      "culture",
+      "timbre"
+    ],
+    "harmonyTendencies": [
+      "Simple frequency ratios and roughness are relevant to sensory consonance, but cultural familiarity and musical context also influence preference.",
+      "A theory label such as 'consonant' or 'dissonant' should not be treated as a universal emotional label."
+    ],
+    "arrangementTendencies": [
+      "Use interval color as a descriptive cue, then evaluate it in the actual voicing, register, instrument timbre and surrounding progression."
+    ],
+    "source": {
+      "title": "Consonance and dissonance perception: A critical review of the historical sources, multidisciplinary findings, and main hypotheses",
+      "author": "Nicola Di Stefano, Peter Vuust and Elvira Brattico",
+      "url": "https://doi.org/10.1016/j.plrev.2022.10.004",
+      "published": "2022-12",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "academic-review",
+    "confidence": "high",
+    "notes": "The review synthesizes historical, psychoacoustic, neurobiological and cultural explanations and explicitly notes conceptual and methodological limitations. It does not establish one universal interval-to-emotion mapping."
+  },
+  {
+    "id": "STYLE-013",
+    "name": "Timbre can reshape perceived consonance",
+    "tags": [
+      "timbre",
+      "consonance",
+      "dissonance",
+      "interval",
+      "sound-design",
+      "perception"
+    ],
+    "harmonyTendencies": [
+      "Perceived consonance preferences can change when timbre changes, including with inharmonic spectra.",
+      "Interval color should be interpreted together with the sound source, not only pitch-class distance."
+    ],
+    "arrangementTendencies": [
+      "When evaluating a chord or interval map, compare the same pitches with different timbres if the target instrument is a synth, guitar or sampled source."
+    ],
+    "source": {
+      "title": "Timbral effects on consonance disentangle psychoacoustic mechanisms and suggest perceptual origins for musical scales",
+      "author": "Raja Marjieh, Peter M. C. Harrison, Harin Lee, Fotini Deligiannaki, Nori Jacoby et al.",
+      "url": "https://www.nature.com/articles/s41467-024-45812-z",
+      "published": "2024-02-19",
+      "accessed": "2026-11-26"
+    },
+    "evidence_type": "academic-research",
+    "confidence": "high",
+    "notes": "Five behavioral studies with 235,440 judgments found timbral manipulations reshaped consonance preferences in US and South Korean participants. This cautions against treating the wheel's colors as fixed emotional outcomes."
+  }
+]
