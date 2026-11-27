@@ -44,6 +44,32 @@ export const SectionLabelSchema = z.enum([
 ]);
 export type SectionLabel = z.infer<typeof SectionLabelSchema>;
 
+export const TheoryAnnotationSourceSchema = z.object({
+  recordId: z.string().min(1),
+  libraryFile: z.enum(['progressions.json', 'harmony-techniques.json', 'style-moods.json', 'composition-rules.json']),
+  title: z.string().min(1),
+  author: z.string().optional(),
+  url: z.string().url().optional(),
+  evidenceType: z.string().min(1),
+  sourceConfidence: z.enum(['high', 'medium', 'low']).optional(),
+  reviewStatus: z.enum(['approved', 'pending', 'merged']).optional()
+});
+export type TheoryAnnotationSource = z.infer<typeof TheoryAnnotationSourceSchema>;
+
+export const SectionTheoryAnnotationSchema = z.object({
+  id: z.string().min(1).max(120),
+  technique: z.string().min(1).max(160),
+  matchType: z.enum(['direct', 'partial', 'inference']),
+  confidence: z.enum(['high', 'medium', 'low']),
+  location: z.string().optional(),
+  note: z.string().min(1),
+  theoryRefs: z.array(z.string().min(1)).default([]),
+  sources: z.array(TheoryAnnotationSourceSchema).default([]),
+  sourceNote: z.string().optional(),
+  caveat: z.string().optional()
+});
+export type SectionTheoryAnnotation = z.infer<typeof SectionTheoryAnnotationSchema>;
+
 export const SectionSchema = z
   .object({
     id: z.string().min(1).max(120),
@@ -61,6 +87,7 @@ export const SectionSchema = z
     feelingSummary: z.string().min(1),
     chords: z.array(ChordEventSchema).min(1),
     cadenceOrMotion: z.string().optional(),
+    theoryAnnotations: z.array(SectionTheoryAnnotationSchema).optional(),
     rating: z.number().int().min(1).max(5).optional(),
     tags: z.array(z.string().min(1)).optional()
   })
