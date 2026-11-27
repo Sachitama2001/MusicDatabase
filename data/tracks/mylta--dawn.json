@@ -392,6 +392,51 @@
             }
           ],
           "sourceNote": "ChordTube印刷PDF p.7"
+        },
+        {
+          "id": "extended-altered-tensions",
+          "technique": "拡張和音・オルタード・テンション",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "127〜140小節",
+          "note": "C#7(9,13)、A#7(b9,b13)、F#M7(9,13)、D#m7(9)など、9th・13th・変化テンションを和音の色彩として使っている。特にA#7(b9,b13)はD#m7へのドミナントの緊張を強める。テンション名だけで響きや機能を決めず、ベース・ボイシング・解決先と合わせて読む。",
+          "theoryRefs": [
+            "HARM-028"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-028",
+              "libraryFile": "harmony-techniques.json",
+              "title": "Open Music Theory — Altered and Extended Dominant Chords",
+              "author": "Bryn Hughes",
+              "url": "https://viva.pressbooks.pub/openmusictheory/chapter/altered-and-extended-dominant-chords/",
+              "evidenceType": "human-authored-open-textbook",
+              "sourceConfidence": "high"
+            }
+          ]
+        },
+        {
+          "id": "harmonic-rhythm-interlude",
+          "technique": "ハーモニック・リズムの変化",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "125〜140小節",
+          "note": "1小節4拍の中で1.5拍・2拍・0.5拍などコードの持続が変化する。長く保つF#M7系と、短い食い・経過コードを組み合わせることで、同じ間奏内に滞留と前進の両方を作る。",
+          "theoryRefs": [
+            "HARM-029"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-029",
+              "libraryFile": "harmony-techniques.json",
+              "title": "Music Theory for the 21st-Century Classroom — 9.2 Harmonic Rhythm",
+              "author": "Robert Hutchinson",
+              "url": "https://musictheory.pugetsound.edu/mt21c/HarmonicRhythm.html",
+              "evidenceType": "human-authored-open-textbook",
+              "sourceConfidence": "high"
+            }
+          ],
+          "caveat": "拍内位置は印刷譜グリッドからの概算を含む。"
         }
       ]
     }
