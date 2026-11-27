@@ -457,6 +457,51 @@
             }
           ],
           "sourceNote": "ChordTube印刷PDF（33〜48小節）"
+        },
+        {
+          "id": "extended-altered-tensions",
+          "technique": "拡張和音・オルタード・テンション",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "33〜48小節",
+          "note": "A#7(b13)、D#m7(9)、G#m7(9)、F#13など、9th・13thや変化テンションを循環進行に加えている。基本の6514循環を維持しながら、テンションが和音の色彩を増やしている。",
+          "theoryRefs": [
+            "HARM-028"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-028",
+              "libraryFile": "harmony-techniques.json",
+              "title": "Open Music Theory — Altered and Extended Dominant Chords",
+              "author": "Bryn Hughes",
+              "url": "https://viva.pressbooks.pub/openmusictheory/chapter/altered-and-extended-dominant-chords/",
+              "evidenceType": "human-authored-open-textbook",
+              "sourceConfidence": "high"
+            }
+          ]
+        },
+        {
+          "id": "harmonic-rhythm-sync",
+          "technique": "ハーモニック・リズムの細分化",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "33・35・36・37・39・40小節など",
+          "note": "1小節内で2拍・1拍・0.5拍などコードの長さが変化し、特に小節末の短いコードが次の小節への接続を速める。コードの種類だけでなく、和音がどのタイミングで変わるかもこのサビの推進力を作る。",
+          "theoryRefs": [
+            "HARM-029"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-029",
+              "libraryFile": "harmony-techniques.json",
+              "title": "Music Theory for the 21st-Century Classroom — 9.2 Harmonic Rhythm",
+              "author": "Robert Hutchinson",
+              "url": "https://musictheory.pugetsound.edu/mt21c/HarmonicRhythm.html",
+              "evidenceType": "human-authored-open-textbook",
+              "sourceConfidence": "high"
+            }
+          ],
+          "caveat": "食い・裏の正確なタイミングは印刷譜の読み取りに基づく。"
         }
       ]
     }
