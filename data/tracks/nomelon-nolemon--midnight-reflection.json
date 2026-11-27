@@ -144,7 +144,32 @@
         }
       ],
       "startBar": 1,
-      "endBar": 9
+      "endBar": 9,
+      "theoryAnnotations": [
+        {
+          "id": "hybrid-gsm7-csharp",
+          "technique": "ハイブリッドコード／テンションベース",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "4〜5小節付近",
+          "note": "G#m7/C# は G#m7 の基本三和音外の C# ベースを重ねた形。上部構造を保ちながらベース側に別の機能・色彩を加える。",
+          "theoryRefs": [
+            "HARM-013"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-013",
+              "libraryFile": "harmony-techniques.json",
+              "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+              "author": "SRM.",
+              "url": "https://srm-music.com/stylish-chord/",
+              "evidenceType": "human-authored-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF（イントロ）"
+        }
+      ]
     },
     {
       "id": "sec-02-verse",
@@ -343,7 +368,78 @@
         }
       ],
       "startBar": 10,
-      "endBar": 23
+      "endBar": 23,
+      "theoryAnnotations": [
+        {
+          "id": "secondary-dominant-gsharp",
+          "technique": "セカンダリー・ドミナント V/vi",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "21〜22小節付近",
+          "note": "E major の G#7 は C#m（vi）に対する V/vi。G#7→C#m7 の解決で Aメロ後半から次の展開への引力を作る。",
+          "theoryRefs": [
+            "HARM-018"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-018",
+              "libraryFile": "harmony-techniques.json",
+              "title": "二次ドミナント",
+              "author": "yuta",
+              "url": "https://soundquest.jp/quest/chord/chord-mv2/secondary-dominant/",
+              "evidenceType": "human-authored-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF（Aメロ）"
+        },
+        {
+          "id": "passing-gdim",
+          "technique": "リーディングトーン／パッシング・ディミニッシュ",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "20〜22小節付近",
+          "note": "Gdim7→F#m7 は F# の半音上にある減七和音から F#m7 へ進む。F# minor への導音的な減和音の接続として HARM-004 に一致する。",
+          "theoryRefs": [
+            "HARM-004"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-004",
+              "libraryFile": "harmony-techniques.json",
+              "title": "SoundQuest — パッシング・ディミニッシュ",
+              "author": "yuta",
+              "url": "https://soundquest.jp/quest/chord/chord-mv4/passing-chord/",
+              "evidenceType": "human-authored-theory-to-review",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF（Aメロ）"
+        },
+        {
+          "id": "hybrid-gsm7-csharp",
+          "technique": "ハイブリッドコード／テンションベース",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "13・21小節付近",
+          "note": "G#m7/C# は C# をベースにした非和声音ベースのスラッシュコード。上部 G#m7 の色彩を保ちつつ、次の和音へ向かう浮遊感を作る。",
+          "theoryRefs": [
+            "HARM-013"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-013",
+              "libraryFile": "harmony-techniques.json",
+              "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+              "author": "SRM.",
+              "url": "https://srm-music.com/stylish-chord/",
+              "evidenceType": "human-authored-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF（Aメロ）"
+        }
+      ]
     },
     {
       "id": "sec-03-pre_chorus",
@@ -447,7 +543,55 @@
         }
       ],
       "startBar": 24,
-      "endBar": 31
+      "endBar": 31,
+      "theoryAnnotations": [
+        {
+          "id": "modal-borrowing-c-d",
+          "technique": "モーダル・インターチェンジ",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "24〜25小節",
+          "note": "E major の CM7（♭VI）と D13（♭VII）は平行短調 E minor／E Mixolydian 側から借りた色彩として解釈できる。調の中心を E に保ったまま、♭VI–♭VII の異質な響きを導入する。",
+          "theoryRefs": [
+            "HARM-020"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-020",
+              "libraryFile": "harmony-techniques.json",
+              "title": "モーダル・インターチェンジ",
+              "author": "yuta",
+              "url": "https://soundquest.jp/quest/chord/chord-mv6/ttj-modal-interchange/",
+              "evidenceType": "human-authored-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF（Bメロ）"
+        },
+        {
+          "id": "hybrid-gsm7-csharp",
+          "technique": "ハイブリッドコード／テンションベース",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "30小節付近",
+          "note": "G#m7/C# は上部 G#m7 に C# ベースを重ねる非和声音ベースの形。",
+          "theoryRefs": [
+            "HARM-013"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-013",
+              "libraryFile": "harmony-techniques.json",
+              "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+              "author": "SRM.",
+              "url": "https://srm-music.com/stylish-chord/",
+              "evidenceType": "human-authored-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF（Bメロ）"
+        }
+      ]
     },
     {
       "id": "sec-04-chorus",
@@ -598,9 +742,57 @@
         }
       ],
       "startBar": 32,
-      "endBar": 47
+      "endBar": 47,
+      "theoryAnnotations": [
+        {
+          "id": "secondary-dominant-a-sharp",
+          "technique": "セカンダリー・ドミナント V/vi",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "38〜39・45〜46小節",
+          "note": "F# major の A#7（III7）が D#m7（vi）へ進む。A#7 は D#m を一時的に主和音化する V/vi として働く。",
+          "theoryRefs": [
+            "HARM-018"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-018",
+              "libraryFile": "harmony-techniques.json",
+              "title": "二次ドミナント",
+              "author": "yuta",
+              "url": "https://soundquest.jp/quest/chord/chord-mv2/secondary-dominant/",
+              "evidenceType": "human-authored-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF（サビ）"
+        },
+        {
+          "id": "secondary-dominant-fsharp",
+          "technique": "セカンダリー・ドミナント V/IV",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "39〜40小節付近",
+          "note": "F#7（I7）が次の B（IV）を目標にする V/IV の色彩。主和音のセブンス化によって IV への動きを強める。",
+          "theoryRefs": [
+            "HARM-018"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-018",
+              "libraryFile": "harmony-techniques.json",
+              "title": "二次ドミナント",
+              "author": "yuta",
+              "url": "https://soundquest.jp/quest/chord/chord-mv2/secondary-dominant/",
+              "evidenceType": "human-authored-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF（サビ）"
+        }
+      ]
     }
   ],
   "createdAt": "2026-11-27T07:22:00Z",
-  "updatedAt": "2026-11-27T07:30:00Z"
+  "updatedAt": "2026-11-27T19:04:00+09:00"
 }
