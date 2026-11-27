@@ -30,13 +30,18 @@
 | --- | --- | --- |
 | 楽曲 | `Track` | ChordTubeで分析されている1つの楽曲エントリ |
 | セクション | `Section` | サビ、Aメロ、Bメロ、Dropのような曲中の区間単位 |
-| コードイベント | `ChordEvent` | 1つのコード名 `symbol`、度数表記 `roman`、長さ `beats` の組 |
+| コードイベント | `ChordEvent` | コード名 `symbol`、度数表記 `roman`、長さ `beats`、小節 `bar`、小節内位置 `beatOffset` の組 |
 | フィーリング | `Feeling` | ユーザーがコード進行から感じた感情、雰囲気、聴感上の印象 |
 | ボイシングスタイル | `VoicingStyle` | コード構成音をピアノ鍵盤上へ配置する規則。`smooth`, `root`, `open`, `arpeggio` の4種 |
 | フィーリング語彙辞書 | `FeelingLexicon` | 感情表現の表記揺れや同義語を正規化して検索に使う語彙定義 |
 | LLM運用ガイド | `LLM_GUIDE.md` | 事前の会話文脈を持たないLLMがChordTube検索とリポジトリ操作を1ファイルで把握するための仕様書 |
 
 ## 4. 機能要件と受け入れ条件
+
+### 小節位置の記録
+- `Section.startBar` / `Section.endBar` は楽曲全体を通したセクションの開始・終了小節（1始まり）。
+- `ChordEvent.bar` は楽曲全体の小節番号（1始まり）、`beatOffset` は小節内の位置を四分音符単位・0始まりで表す（4/4なら0以上4未満）。
+- `beats` はコードの継続長。AメロとBメロは別々のSectionとして保存する。
 
 ### 4.1 F-01 コンテキストを持たないLLM向け運用仕様書 `LLM_GUIDE.md` の整備
 - **目的**: 新しいチャットスレッドを開いたLLMが、`LLM_GUIDE.md` を読むだけでChordTube検索、コード進行と度数の読み取り、JSON作成、リポジトリ更新、作曲提案を正確に実行できるようにする。
