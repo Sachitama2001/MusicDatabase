@@ -11,7 +11,11 @@
   "bpm": 120,
   "key": "C major",
   "timeSignature": "4/4",
-  "overallFeelings": ["スタイリッシュ", "切ない", "浮遊感"],
+  "overallFeelings": [
+    "スタイリッシュ",
+    "切ない",
+    "浮遊感"
+  ],
   "notes": "ChordTubeトップページに掲載されている定番度数進行（丸サ進行 IVM7 III7 VIm7 Vm7 I7、王道進行 IV V IIIm VIm）を用いた動作確認用サンプル。実曲の登録はChatGPTでchordtube.netを検索して追加する。",
   "sections": [
     {
@@ -19,37 +23,167 @@
       "label": "chorus",
       "displayName": "丸サ進行 (IVM7 III7 VIm7 Vm7 I7)",
       "order": 1,
-      "feelings": ["スタイリッシュ", "切ない", "浮遊感"],
+      "feelings": [
+        "スタイリッシュ",
+        "切ない",
+        "浮遊感"
+      ],
       "feelingSummary": "都会的でおしゃれな浮遊感がありつつ、セカンダリードミナントで少し切なく循環する響き。",
       "chords": [
-        { "symbol": "FM7", "roman": "IVM7", "beats": 2, "note": "浮遊感のあるトニック代理的な着地" },
-        { "symbol": "E7", "roman": "III7", "beats": 2, "note": "VIm7へ向かうセカンダリードミナントの切なさ" },
-        { "symbol": "Am7", "roman": "VIm7", "beats": 2 },
-        { "symbol": "Gm7", "roman": "Vm7", "beats": 1, "note": "次のIVM7へ向かうツーファイブ導入" },
-        { "symbol": "C7", "roman": "I7", "beats": 1 }
+        {
+          "symbol": "FM7",
+          "roman": "IVM7",
+          "beats": 2,
+          "note": "浮遊感のあるトニック代理的な着地"
+        },
+        {
+          "symbol": "E7",
+          "roman": "III7",
+          "beats": 2,
+          "note": "VIm7へ向かうセカンダリードミナントの切なさ"
+        },
+        {
+          "symbol": "Am7",
+          "roman": "VIm7",
+          "beats": 2
+        },
+        {
+          "symbol": "Gm7",
+          "roman": "Vm7",
+          "beats": 1,
+          "note": "次のIVM7へ向かうツーファイブ導入"
+        },
+        {
+          "symbol": "C7",
+          "roman": "I7",
+          "beats": 1
+        }
       ],
       "cadenceOrMotion": "IVM7からIII7のセカンダリードミナントでVIm7へ進み、Vm7-I7のセカンダリーツーファイブで再びIVM7へ滑らかに循環する。",
       "rating": 5,
-      "tags": ["marusa", "secondary-dominant", "loop"]
+      "tags": [
+        "marusa",
+        "secondary-dominant",
+        "loop"
+      ],
+      "theoryAnnotations": [
+        {
+          "id": "secondary-dominant-e7-am",
+          "technique": "セカンダリー・ドミナント V/vi",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "2小節目",
+          "note": "C major の E7（III7）が Am7（vi）へ進む。E7 は Am7 を一時的な到達点として強調する V/vi。",
+          "theoryRefs": [
+            "HARM-018"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-018",
+              "libraryFile": "harmony-techniques.json",
+              "title": "二次ドミナント",
+              "author": "yuta",
+              "url": "https://soundquest.jp/quest/chord/chord-mv2/secondary-dominant/",
+              "evidenceType": "human-authored-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "動作確認用サンプルJSON"
+        },
+        {
+          "id": "related-ii-to-iv",
+          "technique": "リレイテッドII（ii–V/IV）",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "4〜5コード目",
+          "note": "Gm7→C7→FM7 は F major を一時的な目標とする ii–V–I。C7 は C major の IV（F）に対する V/IV であり、Gm7 はその related ii。",
+          "theoryRefs": [
+            "HARM-005"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-005",
+              "libraryFile": "harmony-techniques.json",
+              "title": "SRM Music — オシャレなコード進行をつくるための２つのテクニック",
+              "author": "SRM.",
+              "url": "https://srm-music.com/two-five/",
+              "evidenceType": "human-authored-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "動作確認用サンプルJSON"
+        }
+      ]
     },
     {
       "id": "sec-02-odo",
       "label": "verse",
       "displayName": "王道進行 (IV V IIIm VIm)",
       "order": 2,
-      "feelings": ["切ない", "高揚感", "ノスタルジック"],
+      "feelings": [
+        "切ない",
+        "高揚感",
+        "ノスタルジック"
+      ],
       "feelingSummary": "J-POPで馴染み深く、胸を締め付けるような切なさとサビの広がりを同時に作れる王道の流れ。",
       "chords": [
-        { "symbol": "F", "roman": "IV", "beats": 4 },
-        { "symbol": "G", "roman": "V", "beats": 4 },
-        { "symbol": "Em", "roman": "IIIm", "beats": 4 },
-        { "symbol": "Am", "roman": "VIm", "beats": 4 }
+        {
+          "symbol": "F",
+          "roman": "IV",
+          "beats": 4
+        },
+        {
+          "symbol": "G",
+          "roman": "V",
+          "beats": 4
+        },
+        {
+          "symbol": "Em",
+          "roman": "IIIm",
+          "beats": 4
+        },
+        {
+          "symbol": "Am",
+          "roman": "VIm",
+          "beats": 4
+        }
       ],
       "cadenceOrMotion": "IVからVで盛り上げ、トニックIではなくIIIm-VImへ着地させることで解決しきらない切ない余韻を残す。",
       "rating": 4,
-      "tags": ["odo", "j-pop", "emotional"]
+      "tags": [
+        "odo",
+        "j-pop",
+        "emotional"
+      ],
+      "theoryAnnotations": [
+        {
+          "id": "royal-road-sample",
+          "technique": "Royal Road progression（IV–V–iii–vi）",
+          "matchType": "direct",
+          "confidence": "low",
+          "location": "全体",
+          "note": "F→G→Em→Am は C major の IV–V–iii–vi と一致する。ただし POP-002 は理論DB内で pending のため、パターン名は暫定参照として扱う。",
+          "theoryRefs": [
+            "POP-002"
+          ],
+          "sources": [
+            {
+              "recordId": "POP-002",
+              "libraryFile": "progressions.json",
+              "title": "DTM Hacker — コード進行パターン集",
+              "author": "DTM Hacker (author metadata to verify)",
+              "url": "https://dtmhacker.com/chord-progression-pattern/",
+              "evidenceType": "human-authored-source-to-review",
+              "sourceConfidence": "low",
+              "reviewStatus": "pending"
+            }
+          ],
+          "sourceNote": "動作確認用サンプルJSON",
+          "caveat": "理論DBの POP-002 は確認待ち。"
+        }
+      ]
     }
   ],
   "createdAt": "2026-11-27T06:25:00Z",
-  "updatedAt": "2026-11-27T06:25:00Z"
+  "updatedAt": "2026-11-27T19:04:00+09:00"
 }
