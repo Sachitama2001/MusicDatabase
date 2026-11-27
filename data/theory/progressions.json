@@ -1173,5 +1173,39 @@
     "evidence_type": "human-authored-source",
     "confidence": "high",
     "notes": "The source compares IVmaj7–V–III–vi with IVmaj7–V–III7–vi. III7 functions as a secondary dominant resolving to vi. C-major chord spellings."
+  },
+  {
+    "id": "MIN-001",
+    "name": "Andalusian descending minor cadence",
+    "degrees": [
+      "i",
+      "VII",
+      "VI",
+      "V7"
+    ],
+    "exampleKey": "C# minor",
+    "example": [
+      "C#m",
+      "B",
+      "A",
+      "G#7"
+    ],
+    "tags": [
+      "minor",
+      "descending-bass",
+      "andalusian-cadence",
+      "harmonic-minor-dominant",
+      "loop"
+    ],
+    "harmonicRhythm": "not fixed; often one chord per bar",
+    "source": {
+      "title": "Andalusian Cadence",
+      "author": "piano.org",
+      "url": "https://piano.org/chord-progressions/andalusian-cadence/",
+      "accessed": "2026-11-27"
+    },
+    "evidence_type": "human-authored-theory-source",
+    "confidence": "high",
+    "notes": "The source defines the minor-key pattern i–bVII–bVI–V and specifically lists C# minor as C#m–B–A–G#. The major V uses the raised leading tone from harmonic minor and creates a half-cadential pull back to i. This is a progression reference, not a fixed mood rule."
   }
 ]
