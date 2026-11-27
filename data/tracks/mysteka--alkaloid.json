@@ -237,6 +237,55 @@
           "beatOffset": 0,
           "note": "ChordTube 32小節目"
         }
+      ],
+      "theoryAnnotations": [
+        {
+          "id": "tritone-sub-eb7",
+          "technique": "トライトーン代理（subV）",
+          "matchType": "partial",
+          "confidence": "medium",
+          "location": "17〜19小節",
+          "note": "Eb7(9,#11) は D minor の A7 とルートがトライトーン離れ、ガイドトーンのトライトーンを共有するため、A7 の代理ドミナントとして読める可能性がある。ただし解決先は Am7/D（D ベースの sus sonority）で、通常の Dm への解決とは異なるため部分一致とする。",
+          "theoryRefs": [
+            "HARM-003"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-003",
+              "libraryFile": "harmony-techniques.json",
+              "title": "SoundQuest — トライトーン代理",
+              "author": "plugmon",
+              "url": "https://soundquest.jp/quest/chord/chord-mv4/tritone-substitution/",
+              "evidenceType": "human-authored-theory-to-review",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF（17〜32小節）",
+          "caveat": "♭II7 という位置だけで機械的に subV と断定せず、A7とのガイドトーン共有とDベースへの解決を根拠にした暫定分析。"
+        },
+        {
+          "id": "hybrid-am7-d",
+          "technique": "ハイブリッドコード／テンションベース",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "19・27・31小節",
+          "note": "Am7/D は Am7 の上部構造に、Am7 の基本三和音外の D ベースを組み合わせたハイブリッドな響き。D9sus 的な浮遊感を作る。",
+          "theoryRefs": [
+            "HARM-013"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-013",
+              "libraryFile": "harmony-techniques.json",
+              "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+              "author": "SRM.",
+              "url": "https://srm-music.com/stylish-chord/",
+              "evidenceType": "human-authored-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF（17〜32小節）"
+        }
       ]
     },
     {
@@ -425,9 +474,79 @@
           "beatOffset": 0,
           "note": "ChordTube 64小節目"
         }
+      ],
+      "theoryAnnotations": [
+        {
+          "id": "tritone-sub-eb7-dm",
+          "technique": "トライトーン代理（subV）",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "50・54・58小節付近",
+          "note": "Eb7(9) は A7 のトライトーン代理として Dm7(9) に半音下行で解決する。D minor の V7（A7）を Eb7 に置き換える subV の典型的な使い方と読める。",
+          "theoryRefs": [
+            "HARM-003"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-003",
+              "libraryFile": "harmony-techniques.json",
+              "title": "SoundQuest — トライトーン代理",
+              "author": "plugmon",
+              "url": "https://soundquest.jp/quest/chord/chord-mv4/tritone-substitution/",
+              "evidenceType": "human-authored-theory-to-review",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF（49〜64小節）"
+        },
+        {
+          "id": "secondary-dominant-bb",
+          "technique": "セカンダリー・ドミナント V/bVI",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "56〜57小節",
+          "note": "F7(9) は BbM7(9) のドミナント（V7/bVI）。D minor の bVI（Bb）を一時的な到達点として強調する。",
+          "theoryRefs": [
+            "HARM-018"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-018",
+              "libraryFile": "harmony-techniques.json",
+              "title": "二次ドミナント",
+              "author": "yuta",
+              "url": "https://soundquest.jp/quest/chord/chord-mv2/secondary-dominant/",
+              "evidenceType": "human-authored-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF（49〜64小節）"
+        },
+        {
+          "id": "chromatic-dm-db-c",
+          "technique": "短い下降クロマチック・ルート進行",
+          "matchType": "partial",
+          "confidence": "high",
+          "location": "55〜56小節",
+          "note": "Dm7(9)→Dbm7(9)→Cm7(9) は D→Db→C とルートが半音下降する短い断片。HARM-024 の下降クロマチック線に部分的に一致する。",
+          "theoryRefs": [
+            "HARM-024"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-024",
+              "libraryFile": "harmony-techniques.json",
+              "title": "Music Theory for the 21st-Century Classroom — 21.7 Descending Chromatic Bass Lines",
+              "url": "https://musictheory.pugetsound.edu/mt21c/DescendingChromaticBassLines.html",
+              "evidenceType": "human-authored-educational-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF（49〜64小節）"
+        }
       ]
     }
   ],
   "createdAt": "2026-11-27T16:54:00+09:00",
-  "updatedAt": "2026-11-27T16:55:00+09:00"
+  "updatedAt": "2026-11-27T19:10:00+09:00"
 }
