@@ -102,6 +102,8 @@
 
 ### 4.2 Section オブジェクト
 
+`theoryAnnotations` は任意の理論分析配列。各注釈は `technique`、`matchType`（`direct` / `partial` / `inference`）、`confidence`、該当箇所、説明、理論レコードID `theoryRefs`、出典 `sources`、コード譜出典 `sourceNote`、留意点 `caveat` を持つ。理論ライブラリとの一致がない場合は `theoryRefs: []` とし、推測で既存IDを付けない。`pending` の理論レコードは必ず確認待ちと明記し、確立した出典として扱わない。
+
 `startBar` / `endBar` は楽曲全体の通し小節番号（1始まり）。AメロとBメロは必ず別Sectionにする。
 
 | フィールド | 型 | 必須 | 制約 |
