@@ -70,6 +70,11 @@ describe('chordEngine and Piano SMF export', () => {
     expect(parsed.tracks[0].notes.length).toBeGreaterThan(0);
   });
 
+  it('parses combined ChordTube dominant extensions', () => {
+    expect(parseChordSymbol('Eb7(9,#11)')?.intervals).toEqual([0, 4, 7, 10, 14, 18]);
+    expect(parseChordSymbol('Eb7(9,13)')?.intervals).toEqual([0, 4, 7, 10, 14, 21]);
+  });
+
   it('defaults to arpeggio voicing', () => {
     const chords = parseQuickChordLine('Cmaj7(4) Fmaj7(4)');
     const defaultSequence = generatePianoSequence(chords);
