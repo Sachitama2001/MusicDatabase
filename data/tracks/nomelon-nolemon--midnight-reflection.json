@@ -1,0 +1,476 @@
+{
+  "schemaVersion": "2.0",
+  "id": "nomelon-nolemon--midnight-reflection",
+  "title": "ミッドナイト・リフレクション",
+  "artist": "NOMELON NOLEMON",
+  "source": {
+    "platform": "chordtube",
+    "url": "https://chordtube.net/videos/PSzQdf7zYmk",
+    "youtubeId": "PSzQdf7zYmk"
+  },
+  "bpm": 180,
+  "key": "F# major",
+  "timeSignature": "4/4",
+  "overallFeelings": [
+    "スタイリッシュ",
+    "浮遊感",
+    "切ない",
+    "不安定からの着地"
+  ],
+  "notes": "ユーザー提供ChordTube印刷PDF pp.1–4、AI解析v2.1。感想対象の初回4セクション（1–47小節）を登録。弱起は除外。空欄は直前コードの持続と解釈（1小節は直前のN.C.）。食いの拍位置は印刷譜のグリッドから暫定的に0.5拍前と推定、12・20・24・26小節末の小さいコード表記は次小節の表示を優先。D7(13)はエンジン対応のD13に正規化。度数はPDFの実音コードと区間キーから算出し、サイトの度数表示を直接転記したものではない。31小節は転調境界。小節番号は既存スキーマに専用欄がないため各イベントnoteとsection tagsに記録。後続のセクションは未登録。",
+  "sections": [
+    {
+      "id": "sec-01-intro",
+      "label": "intro",
+      "displayName": "イントロ",
+      "order": 1,
+      "localKey": "E major",
+      "feelings": [
+        "スタイリッシュ",
+        "始まり",
+        "調性の曖昧さ"
+      ],
+      "feelingSummary": "都会感のあるおしゃれの感じで、何かの始まりを感じさせて、majorでもminorでもない感じ",
+      "cadenceOrMotion": "E major表記だが主和音Eを明示せず、IVからV、III・VIへ移動するため、調性の着地点が曖昧に感じられる可能性。",
+      "tags": [
+        "bars-1-9",
+        "chordtube-pdf",
+        "timing-estimate"
+      ],
+      "chords": [
+        {
+          "symbol": "N.C.",
+          "roman": "N.C.",
+          "beats": 4,
+          "note": "ChordTube 1小節・1拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "AM7(9)",
+          "roman": "IVM7(9)",
+          "beats": 3.5,
+          "note": "ChordTube 2小節・1拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "B7",
+          "roman": "V7",
+          "beats": 0.5,
+          "note": "ChordTube 2小節・4.5拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "B7",
+          "roman": "V7",
+          "beats": 4,
+          "note": "ChordTube 3小節・1拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "G#m7/C#",
+          "roman": "IIIm7/VI",
+          "beats": 2,
+          "note": "ChordTube 4小節・1拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "G#m7",
+          "roman": "IIIm7",
+          "beats": 2,
+          "note": "ChordTube 4小節・3拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "G#m7",
+          "roman": "IIIm7",
+          "beats": 4,
+          "note": "ChordTube 5小節・1拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "AM7(9)",
+          "roman": "IVM7(9)",
+          "beats": 3.5,
+          "note": "ChordTube 6小節・1拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "B",
+          "roman": "V",
+          "beats": 0.5,
+          "note": "ChordTube 6小節・4.5拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "B",
+          "roman": "V",
+          "beats": 4,
+          "note": "ChordTube 7小節・1拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "C#m7",
+          "roman": "VIm7",
+          "beats": 2,
+          "note": "ChordTube 8小節・1拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "C#m7/G#",
+          "roman": "VIm7/III",
+          "beats": 2,
+          "note": "ChordTube 8小節・3拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "C#m7/G#",
+          "roman": "VIm7/III",
+          "beats": 4,
+          "note": "ChordTube 9小節・1拍目（拍位置は印刷譜から推定）"
+        }
+      ]
+    },
+    {
+      "id": "sec-02-verse",
+      "label": "verse",
+      "displayName": "Aメロ（1回目）",
+      "order": 2,
+      "localKey": "E major",
+      "feelings": [
+        "循環性",
+        "助走",
+        "スタイリッシュ"
+      ],
+      "feelingSummary": "イントロを上手く循環するようにしている。後半はBメロへの助走を感じる。",
+      "cadenceOrMotion": "IV–V–III・VIの循環を維持しつつ、後半に経過和音とG#7（VIへのセカンダリードミナント）を導入する。",
+      "tags": [
+        "bars-10-23",
+        "chordtube-pdf",
+        "timing-estimate"
+      ],
+      "chords": [
+        {
+          "symbol": "AM7",
+          "roman": "IVM7",
+          "beats": 3.5,
+          "note": "ChordTube 10小節・1拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "B",
+          "roman": "V",
+          "beats": 0.5,
+          "note": "ChordTube 10小節・4.5拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "B",
+          "roman": "V",
+          "beats": 4,
+          "note": "ChordTube 11小節・1拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "B",
+          "roman": "V",
+          "beats": 1,
+          "note": "ChordTube 12小節・1拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "G#m7/C#",
+          "roman": "IIIm7/VI",
+          "beats": 2.5,
+          "note": "ChordTube 12小節・2拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "G#m7",
+          "roman": "IIIm7",
+          "beats": 0.5,
+          "note": "ChordTube 12小節・4.5拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "G#m7",
+          "roman": "IIIm7",
+          "beats": 4,
+          "note": "ChordTube 13小節・1拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "AM7",
+          "roman": "IVM7",
+          "beats": 3.5,
+          "note": "ChordTube 14小節・1拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "B",
+          "roman": "V",
+          "beats": 0.5,
+          "note": "ChordTube 14小節・4.5拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "B",
+          "roman": "V",
+          "beats": 4,
+          "note": "ChordTube 15小節・1拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "C#m7",
+          "roman": "VIm7",
+          "beats": 4,
+          "note": "ChordTube 16小節・1拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "C#m7/B",
+          "roman": "VIm7/V",
+          "beats": 4,
+          "note": "ChordTube 17小節・1拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "AM7(9)",
+          "roman": "IVM7(9)",
+          "beats": 3.5,
+          "note": "ChordTube 18小節・1拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "B6",
+          "roman": "V6",
+          "beats": 0.5,
+          "note": "ChordTube 18小節・4.5拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "B6",
+          "roman": "V6",
+          "beats": 4,
+          "note": "ChordTube 19小節・1拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "G#m7/C#",
+          "roman": "IIIm7/VI",
+          "beats": 3.5,
+          "note": "ChordTube 20小節・1拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "G#m7",
+          "roman": "IIIm7",
+          "beats": 0.5,
+          "note": "ChordTube 20小節・4.5拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "G#m7",
+          "roman": "IIIm7",
+          "beats": 2,
+          "note": "ChordTube 21小節・1拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "Gdim7",
+          "roman": "bIIIdim7",
+          "beats": 2,
+          "note": "ChordTube 21小節・3拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "F#m7(9)",
+          "roman": "IIm7(9)",
+          "beats": 3.5,
+          "note": "ChordTube 22小節・1拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "G#7",
+          "roman": "III7",
+          "beats": 0.5,
+          "note": "ChordTube 22小節・4.5拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "G#7",
+          "roman": "III7",
+          "beats": 4,
+          "note": "ChordTube 23小節・1拍目（拍位置は印刷譜から推定）"
+        }
+      ]
+    },
+    {
+      "id": "sec-03-pre_chorus",
+      "label": "pre_chorus",
+      "displayName": "Bメロ（1回目・転調前）",
+      "order": 3,
+      "localKey": "E major",
+      "feelings": [
+        "浮遊感",
+        "不安定からの着地",
+        "緊張感",
+        "転調への準備"
+      ],
+      "feelingSummary": "本当に大好き。浮遊感を高めてから着地し、最後は次のサビでの転調の準備になっている。",
+      "cadenceOrMotion": "bVImaj7–bVII13–I7の非ダイアトニックな色彩からVIm7へ移り、IIm7–IIIm7–IIIm7/VIを経て31小節で無音・F# majorへの転調表示。",
+      "tags": [
+        "bars-24-31",
+        "chordtube-pdf",
+        "timing-estimate"
+      ],
+      "chords": [
+        {
+          "symbol": "CM7",
+          "roman": "bVIM7",
+          "beats": 3.5,
+          "note": "ChordTube 24小節・1拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "D13",
+          "roman": "bVII13",
+          "beats": 0.5,
+          "note": "ChordTube 24小節・4.5拍目（拍位置は印刷譜から推定）・原表記 D7(13)"
+        },
+        {
+          "symbol": "D13",
+          "roman": "bVII13",
+          "beats": 4,
+          "note": "ChordTube 25小節・1拍目（拍位置は印刷譜から推定）・原表記 D7(13)"
+        },
+        {
+          "symbol": "E7",
+          "roman": "I7",
+          "beats": 3.5,
+          "note": "ChordTube 26小節・1拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "C#m7",
+          "roman": "VIm7",
+          "beats": 0.5,
+          "note": "ChordTube 26小節・4.5拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "C#m7",
+          "roman": "VIm7",
+          "beats": 4,
+          "note": "ChordTube 27小節・1拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "F#m7(9)",
+          "roman": "IIm7(9)",
+          "beats": 4,
+          "note": "ChordTube 28小節・1拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "G#m7",
+          "roman": "IIIm7",
+          "beats": 4,
+          "note": "ChordTube 29小節・1拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "G#m7/C#",
+          "roman": "IIIm7/VI",
+          "beats": 4,
+          "note": "ChordTube 30小節・1拍目（拍位置は印刷譜から推定）"
+        },
+        {
+          "symbol": "N.C.",
+          "roman": "N.C.",
+          "beats": 4,
+          "note": "ChordTube 31小節・1拍目（拍位置は印刷譜から推定）"
+        }
+      ]
+    },
+    {
+      "id": "sec-04-chorus",
+      "label": "chorus",
+      "displayName": "サビ（1回目）",
+      "order": 4,
+      "localKey": "F# major",
+      "feelings": [
+        "切ない",
+        "高揚感",
+        "起承転結",
+        "スタイリッシュ"
+      ],
+      "feelingSummary": "8コードで1ループ。サビとして天才的過ぎる進行。起承転結の転の位置において切なさがぐっと高まる。",
+      "cadenceOrMotion": "8小節単位でIVM7–V7–IM7(9)–VIm7(9)–IVM7–III7–VIm7(9)–I7。III7からVIm7への短調側の解決が後半の切なさを強調する可能性。後半8小節は3番目がIIIm7に変化。I7はIVへ循環する。",
+      "tags": [
+        "bars-32-47",
+        "chordtube-pdf"
+      ],
+      "chords": [
+        {
+          "symbol": "BM7",
+          "roman": "IVM7",
+          "beats": 4,
+          "note": "ChordTube 32小節・1拍目"
+        },
+        {
+          "symbol": "C#7",
+          "roman": "V7",
+          "beats": 4,
+          "note": "ChordTube 33小節・1拍目"
+        },
+        {
+          "symbol": "F#M7(9)",
+          "roman": "IM7(9)",
+          "beats": 4,
+          "note": "ChordTube 34小節・1拍目"
+        },
+        {
+          "symbol": "D#m7(9)",
+          "roman": "VIm7(9)",
+          "beats": 4,
+          "note": "ChordTube 35小節・1拍目"
+        },
+        {
+          "symbol": "BM7",
+          "roman": "IVM7",
+          "beats": 4,
+          "note": "ChordTube 36小節・1拍目"
+        },
+        {
+          "symbol": "A#7",
+          "roman": "III7",
+          "beats": 4,
+          "note": "ChordTube 37小節・1拍目"
+        },
+        {
+          "symbol": "D#m7(9)",
+          "roman": "VIm7(9)",
+          "beats": 4,
+          "note": "ChordTube 38小節・1拍目"
+        },
+        {
+          "symbol": "F#7",
+          "roman": "I7",
+          "beats": 4,
+          "note": "ChordTube 39小節・1拍目"
+        },
+        {
+          "symbol": "BM7",
+          "roman": "IVM7",
+          "beats": 4,
+          "note": "ChordTube 40小節・1拍目"
+        },
+        {
+          "symbol": "C#7",
+          "roman": "V7",
+          "beats": 4,
+          "note": "ChordTube 41小節・1拍目"
+        },
+        {
+          "symbol": "A#m7",
+          "roman": "IIIm7",
+          "beats": 4,
+          "note": "ChordTube 42小節・1拍目"
+        },
+        {
+          "symbol": "D#m7(9)",
+          "roman": "VIm7(9)",
+          "beats": 4,
+          "note": "ChordTube 43小節・1拍目"
+        },
+        {
+          "symbol": "BM7",
+          "roman": "IVM7",
+          "beats": 4,
+          "note": "ChordTube 44小節・1拍目"
+        },
+        {
+          "symbol": "A#7",
+          "roman": "III7",
+          "beats": 4,
+          "note": "ChordTube 45小節・1拍目"
+        },
+        {
+          "symbol": "D#m7(9)",
+          "roman": "VIm7(9)",
+          "beats": 4,
+          "note": "ChordTube 46小節・1拍目"
+        },
+        {
+          "symbol": "F#7",
+          "roman": "I7",
+          "beats": 4,
+          "note": "ChordTube 47小節・1拍目"
+        }
+      ]
+    }
+  ],
+  "createdAt": "2026-11-27T07:22:00Z",
+  "updatedAt": "2026-11-27T07:22:00Z"
+}
