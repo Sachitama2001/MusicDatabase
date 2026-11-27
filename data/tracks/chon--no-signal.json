@@ -164,6 +164,28 @@
           ],
           "sourceNote": "ChordTube印刷PDF p.4",
           "caveat": "A#7/D の D は異名同音で C## に相当する。"
+        },
+        {
+          "id": "harmonic-rhythm-tonic-hold",
+          "technique": "ハーモニック・リズム：長いトニック保持からの展開",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "50〜55小節",
+          "note": "F#M7を8拍（2小節）保持した後、A#7(b9)を2拍、BM7(9)を長く保つ。コード持続の長短を対比させ、冒頭の安定から次の循環へ移る時間設計になっている。",
+          "theoryRefs": [
+            "HARM-029"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-029",
+              "libraryFile": "harmony-techniques.json",
+              "title": "Music Theory for the 21st-Century Classroom — 9.2 Harmonic Rhythm",
+              "author": "Robert Hutchinson",
+              "url": "https://musictheory.pugetsound.edu/mt21c/HarmonicRhythm.html",
+              "evidenceType": "human-authored-open-textbook",
+              "sourceConfidence": "high"
+            }
+          ]
         }
       ]
     }
