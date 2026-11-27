@@ -23,6 +23,30 @@ describe('v2 ChordTube TrackSchema and invariants', () => {
     expect(result.issues).toHaveLength(0);
   });
 
+  it('accepts theory annotations with source references', () => {
+    const annotated = structuredClone(sampleTrack);
+    annotated.sections[0].theoryAnnotations = [{
+      id: 'ann-secondary-dominant',
+      technique: 'Secondary dominant',
+      matchType: 'direct',
+      confidence: 'high',
+      location: 'bar 1-2',
+      note: 'E7 resolves to Am7 as V/vi.',
+      theoryRefs: ['HARM-018'],
+      sources: [{
+        recordId: 'HARM-018',
+        libraryFile: 'harmony-techniques.json',
+        title: '二次ドミナント',
+        author: 'yuta',
+        url: 'https://soundquest.jp/quest/chord/chord-mv2/secondary-dominant/',
+        evidenceType: 'human-authored-source',
+        sourceConfidence: 'high'
+      }],
+      sourceNote: 'ChordTube print PDF p. 1'
+    }];
+    expect(validateTrackData(annotated).success).toBe(true);
+  });
+
   it('accepts explicit bar locations and validates section bar ranges', () => {
     const located = structuredClone(sampleTrack);
     located.sections[0].startBar = 1;
@@ -83,8 +107,8 @@ describe('v2 ChordTube TrackSchema and invariants', () => {
       JSON.parse(fs.readFileSync(path.join(theoryDir, 'composition-rules.json'), 'utf-8'))
     );
 
-    expect(progressions.length).toBeGreaterThanOrEqual(37);
-    expect(techniques.length).toBeGreaterThanOrEqual(22);
+    expect(progressions.length).toBeGreaterThanOrEqual(38);
+    expect(techniques.length).toBeGreaterThanOrEqual(24);
     expect(styles.length).toBeGreaterThanOrEqual(12);
     expect(rules.length).toBeGreaterThanOrEqual(7);
 
