@@ -1,0 +1,624 @@
+{
+  "schemaVersion": "2.0",
+  "id": "9lana--neoladite",
+  "title": "ネオラダイト",
+  "artist": "9Lana",
+  "source": {
+    "platform": "chordtube",
+    "url": "https://chordtube.net/"
+  },
+  "bpm": 106,
+  "key": "C# minor",
+  "timeSignature": "4/4",
+  "overallFeelings": [
+    "マイナー",
+    "起承転結",
+    "ジャズ感",
+    "動きが強い",
+    "緊張感",
+    "王道ポップス"
+  ],
+  "notes": "ユーザー提供ChordTube印刷PDF（9ページ）に基づく。PDF 1ページの全体情報はC# minor、4/4、106 BPM、転調0回。個別ChordTube URLとYouTube IDはPDFから確認できないため、source.urlはChordTubeトップページを暫定登録。対象は6〜13小節のAメロ、14〜21小節のBメロ、22〜37小節のサビ。コード名・小節番号はPDF 2〜4ページから転記。小節内の複数コードの正確な拍位置は印刷カードのグリッドからの概算。romanはC# minorを基準とした機能分析値で、ChordTubeの度数表示の直接転記ではない。",
+  "sections": [
+    {
+      "id": "sec-01-verse",
+      "label": "verse",
+      "displayName": "Aメロ",
+      "order": 1,
+      "startBar": 6,
+      "endBar": 13,
+      "localKey": "C# minor",
+      "feelings": [
+        "マイナー",
+        "普通のマイナースケール",
+        "起承転結の起"
+      ],
+      "feelingSummary": "めっちゃ普通のマイナースケールのAメロ。起承転結の起。",
+      "cadenceOrMotion": "C#mを中心にB、A、G#7へ進む自然なマイナー調の下降・ドミナント進行。A#m7-5やAM7を経由してG#7へ向かい、Bメロへつなぐ。",
+      "tags": [
+        "bars-6-13",
+        "chordtube-pdf",
+        "verse",
+        "minor-scale",
+        "opening"
+      ],
+      "chords": [
+        {
+          "symbol": "C#m",
+          "roman": "i",
+          "beats": 2,
+          "bar": 6,
+          "beatOffset": 0,
+          "note": "6小節目。PDF 2ページ、配置から拍位置概算"
+        },
+        {
+          "symbol": "B",
+          "roman": "VII",
+          "beats": 2,
+          "bar": 6,
+          "beatOffset": 2,
+          "note": "6小節目"
+        },
+        {
+          "symbol": "A",
+          "roman": "VI",
+          "beats": 2,
+          "bar": 7,
+          "beatOffset": 0,
+          "note": "7小節目"
+        },
+        {
+          "symbol": "G#7",
+          "roman": "V7",
+          "beats": 2,
+          "bar": 7,
+          "beatOffset": 2,
+          "note": "7小節目"
+        },
+        {
+          "symbol": "C#m",
+          "roman": "i",
+          "beats": 2,
+          "bar": 8,
+          "beatOffset": 0,
+          "note": "8小節目"
+        },
+        {
+          "symbol": "B",
+          "roman": "VII",
+          "beats": 2,
+          "bar": 8,
+          "beatOffset": 2,
+          "note": "8小節目"
+        },
+        {
+          "symbol": "A",
+          "roman": "VI",
+          "beats": 2,
+          "bar": 9,
+          "beatOffset": 0,
+          "note": "9小節目"
+        },
+        {
+          "symbol": "G#7",
+          "roman": "V7",
+          "beats": 2,
+          "bar": 9,
+          "beatOffset": 2,
+          "note": "9小節目"
+        },
+        {
+          "symbol": "C#m",
+          "roman": "i",
+          "beats": 2,
+          "bar": 10,
+          "beatOffset": 0,
+          "note": "10小節目"
+        },
+        {
+          "symbol": "B",
+          "roman": "VII",
+          "beats": 2,
+          "bar": 10,
+          "beatOffset": 2,
+          "note": "10小節目"
+        },
+        {
+          "symbol": "A",
+          "roman": "VI",
+          "beats": 2,
+          "bar": 11,
+          "beatOffset": 0,
+          "note": "11小節目"
+        },
+        {
+          "symbol": "G#7",
+          "roman": "V7",
+          "beats": 2,
+          "bar": 11,
+          "beatOffset": 2,
+          "note": "11小節目"
+        },
+        {
+          "symbol": "C#m",
+          "roman": "i",
+          "beats": 1,
+          "bar": 12,
+          "beatOffset": 0,
+          "note": "12小節目"
+        },
+        {
+          "symbol": "B",
+          "roman": "VII",
+          "beats": 1,
+          "bar": 12,
+          "beatOffset": 1,
+          "note": "12小節目"
+        },
+        {
+          "symbol": "A#m7-5",
+          "roman": "viiø7",
+          "beats": 1,
+          "bar": 12,
+          "beatOffset": 2,
+          "note": "12小節目"
+        },
+        {
+          "symbol": "AM7",
+          "roman": "VIM7",
+          "beats": 0.5,
+          "bar": 12,
+          "beatOffset": 3,
+          "note": "12小節目終盤"
+        },
+        {
+          "symbol": "G#7",
+          "roman": "V7",
+          "beats": 0.5,
+          "bar": 12,
+          "beatOffset": 3.5,
+          "note": "12小節目末"
+        },
+        {
+          "symbol": "C#m",
+          "roman": "i",
+          "beats": 2,
+          "bar": 13,
+          "beatOffset": 0,
+          "note": "13小節目"
+        },
+        {
+          "symbol": "B",
+          "roman": "VII",
+          "beats": 2,
+          "bar": 13,
+          "beatOffset": 2,
+          "note": "13小節目"
+        }
+      ]
+    },
+    {
+      "id": "sec-02-pre-chorus",
+      "label": "pre_chorus",
+      "displayName": "Bメロ",
+      "order": 2,
+      "startBar": 14,
+      "endBar": 21,
+      "localKey": "C# minor",
+      "feelings": [
+        "5度移動",
+        "動きが強い",
+        "面白い",
+        "ジャズっぽい",
+        "緊張感"
+      ],
+      "feelingSummary": "5度移動とかがあって、動きが強くて面白い。ジャズっぽい雰囲気。緊張感を最後は高める。",
+      "cadenceOrMotion": "F#m7–F#m7/B–EM7–C#m7–D#m7-5–G#7の流れに、C#m7–C#、AM7–D7(9,13)、G#m7–C#7、D#m7-5–G#7を続ける。5度関係の進行とセカンダリー・ドミナントを交え、終盤のG#7で緊張を高めてサビへ送る。",
+      "tags": [
+        "bars-14-21",
+        "chordtube-pdf",
+        "pre-chorus",
+        "circle-of-fifths",
+        "jazz-influenced",
+        "tension-build"
+      ],
+      "chords": [
+        {
+          "symbol": "F#m7",
+          "roman": "ivm7",
+          "beats": 2,
+          "bar": 14,
+          "beatOffset": 0,
+          "note": "14小節目"
+        },
+        {
+          "symbol": "F#m7/B",
+          "roman": "ivm7/bVII",
+          "beats": 2,
+          "bar": 14,
+          "beatOffset": 2,
+          "note": "14小節目後半"
+        },
+        {
+          "symbol": "EM7",
+          "roman": "IIIM7",
+          "beats": 2,
+          "bar": 15,
+          "beatOffset": 0,
+          "note": "15小節目"
+        },
+        {
+          "symbol": "C#m7",
+          "roman": "im7",
+          "beats": 2,
+          "bar": 15,
+          "beatOffset": 2,
+          "note": "15小節目後半"
+        },
+        {
+          "symbol": "D#m7-5",
+          "roman": "iiø7",
+          "beats": 2,
+          "bar": 16,
+          "beatOffset": 0,
+          "note": "16小節目"
+        },
+        {
+          "symbol": "G#7",
+          "roman": "V7",
+          "beats": 2,
+          "bar": 16,
+          "beatOffset": 2,
+          "note": "16小節目後半"
+        },
+        {
+          "symbol": "C#m7",
+          "roman": "im7",
+          "beats": 2,
+          "bar": 17,
+          "beatOffset": 0,
+          "note": "17小節目"
+        },
+        {
+          "symbol": "C#",
+          "roman": "I",
+          "beats": 2,
+          "bar": 17,
+          "beatOffset": 2,
+          "note": "17小節目後半"
+        },
+        {
+          "symbol": "AM7",
+          "roman": "VIM7",
+          "beats": 2,
+          "bar": 18,
+          "beatOffset": 0,
+          "note": "18小節目"
+        },
+        {
+          "symbol": "D7(9,13)",
+          "roman": "bII7(9,13)",
+          "beats": 2,
+          "bar": 18,
+          "beatOffset": 2,
+          "note": "18小節目後半"
+        },
+        {
+          "symbol": "G#m7",
+          "roman": "v m7",
+          "beats": 2,
+          "bar": 19,
+          "beatOffset": 0,
+          "note": "19小節目"
+        },
+        {
+          "symbol": "C#7",
+          "roman": "I7",
+          "beats": 2,
+          "bar": 19,
+          "beatOffset": 2,
+          "note": "19小節目後半"
+        },
+        {
+          "symbol": "D#m7-5",
+          "roman": "iiø7",
+          "beats": 2,
+          "bar": 20,
+          "beatOffset": 0,
+          "note": "20小節目"
+        },
+        {
+          "symbol": "G#7",
+          "roman": "V7",
+          "beats": 2,
+          "bar": 21,
+          "beatOffset": 0,
+          "note": "21小節目。サビ直前の緊張"
+        }
+      ]
+    },
+    {
+      "id": "sec-03-chorus",
+      "label": "chorus",
+      "displayName": "サビ",
+      "order": 3,
+      "startBar": 22,
+      "endBar": 37,
+      "localKey": "C# minor",
+      "feelings": [
+        "王道",
+        "ポップス",
+        "サビらしい高揚感"
+      ],
+      "feelingSummary": "割と王道なポップスのサビ。",
+      "cadenceOrMotion": "AM7–B–G#m7–C#m7を軸に、F#m7–G#7で循環を作る。C#m7–Cm7–Bm7–A#m7-5の半音階的な下降を挟み、AM7–BやG#m7–C#m7へ戻る構成。",
+      "tags": [
+        "bars-22-37",
+        "chordtube-pdf",
+        "chorus",
+        "pop",
+        "minor-key-pop"
+      ],
+      "chords": [
+        {
+          "symbol": "AM7",
+          "roman": "VIM7",
+          "beats": 2,
+          "bar": 22,
+          "beatOffset": 0,
+          "note": "22小節目"
+        },
+        {
+          "symbol": "B",
+          "roman": "VII",
+          "beats": 2,
+          "bar": 22,
+          "beatOffset": 2,
+          "note": "22小節目"
+        },
+        {
+          "symbol": "G#m7",
+          "roman": "vm7",
+          "beats": 2,
+          "bar": 23,
+          "beatOffset": 0,
+          "note": "23小節目"
+        },
+        {
+          "symbol": "C#m7",
+          "roman": "im7",
+          "beats": 2,
+          "bar": 23,
+          "beatOffset": 2,
+          "note": "23小節目"
+        },
+        {
+          "symbol": "F#m7",
+          "roman": "ivm7",
+          "beats": 2,
+          "bar": 24,
+          "beatOffset": 0,
+          "note": "24小節目"
+        },
+        {
+          "symbol": "G#7",
+          "roman": "V7",
+          "beats": 2,
+          "bar": 24,
+          "beatOffset": 2,
+          "note": "24小節目"
+        },
+        {
+          "symbol": "C#m7",
+          "roman": "im7",
+          "beats": 1,
+          "bar": 25,
+          "beatOffset": 0,
+          "note": "25小節目"
+        },
+        {
+          "symbol": "Cm7",
+          "roman": "bim7",
+          "beats": 1,
+          "bar": 25,
+          "beatOffset": 1,
+          "note": "25小節目。半音階的下降"
+        },
+        {
+          "symbol": "Bm7",
+          "roman": "bVII m7",
+          "beats": 1,
+          "bar": 25,
+          "beatOffset": 2,
+          "note": "25小節目"
+        },
+        {
+          "symbol": "A#m7-5",
+          "roman": "viiø7",
+          "beats": 1,
+          "bar": 25,
+          "beatOffset": 3,
+          "note": "25小節目"
+        },
+        {
+          "symbol": "AM7",
+          "roman": "VIM7",
+          "beats": 2,
+          "bar": 26,
+          "beatOffset": 0,
+          "note": "26小節目"
+        },
+        {
+          "symbol": "B",
+          "roman": "VII",
+          "beats": 2,
+          "bar": 26,
+          "beatOffset": 2,
+          "note": "26小節目"
+        },
+        {
+          "symbol": "G#m7",
+          "roman": "vm7",
+          "beats": 2,
+          "bar": 27,
+          "beatOffset": 0,
+          "note": "27小節目"
+        },
+        {
+          "symbol": "C#m7",
+          "roman": "im7",
+          "beats": 2,
+          "bar": 27,
+          "beatOffset": 2,
+          "note": "27小節目"
+        },
+        {
+          "symbol": "D#m7-5",
+          "roman": "iiø7",
+          "beats": 2,
+          "bar": 28,
+          "beatOffset": 0,
+          "note": "28小節目"
+        },
+        {
+          "symbol": "G#7",
+          "roman": "V7",
+          "beats": 2,
+          "bar": 29,
+          "beatOffset": 0,
+          "note": "29小節目"
+        },
+        {
+          "symbol": "AM7",
+          "roman": "VIM7",
+          "beats": 2,
+          "bar": 30,
+          "beatOffset": 0,
+          "note": "30小節目"
+        },
+        {
+          "symbol": "B",
+          "roman": "VII",
+          "beats": 2,
+          "bar": 30,
+          "beatOffset": 2,
+          "note": "30小節目"
+        },
+        {
+          "symbol": "G#m7",
+          "roman": "vm7",
+          "beats": 2,
+          "bar": 31,
+          "beatOffset": 0,
+          "note": "31小節目"
+        },
+        {
+          "symbol": "C#m7",
+          "roman": "im7",
+          "beats": 2,
+          "bar": 31,
+          "beatOffset": 2,
+          "note": "31小節目"
+        },
+        {
+          "symbol": "F#m7",
+          "roman": "ivm7",
+          "beats": 2,
+          "bar": 32,
+          "beatOffset": 0,
+          "note": "32小節目"
+        },
+        {
+          "symbol": "G#7",
+          "roman": "V7",
+          "beats": 2,
+          "bar": 32,
+          "beatOffset": 2,
+          "note": "32小節目"
+        },
+        {
+          "symbol": "C#m7",
+          "roman": "im7",
+          "beats": 1,
+          "bar": 33,
+          "beatOffset": 0,
+          "note": "33小節目"
+        },
+        {
+          "symbol": "Cm7",
+          "roman": "bim7",
+          "beats": 1,
+          "bar": 33,
+          "beatOffset": 1,
+          "note": "33小節目"
+        },
+        {
+          "symbol": "Bm7",
+          "roman": "bVII m7",
+          "beats": 1,
+          "bar": 33,
+          "beatOffset": 2,
+          "note": "33小節目"
+        },
+        {
+          "symbol": "A#m7-5",
+          "roman": "viiø7",
+          "beats": 1,
+          "bar": 33,
+          "beatOffset": 3,
+          "note": "33小節目"
+        },
+        {
+          "symbol": "AM7",
+          "roman": "VIM7",
+          "beats": 2,
+          "bar": 34,
+          "beatOffset": 0,
+          "note": "34小節目"
+        },
+        {
+          "symbol": "B",
+          "roman": "VII",
+          "beats": 2,
+          "bar": 34,
+          "beatOffset": 2,
+          "note": "34小節目"
+        },
+        {
+          "symbol": "G#m7",
+          "roman": "vm7",
+          "beats": 2,
+          "bar": 35,
+          "beatOffset": 0,
+          "note": "35小節目"
+        },
+        {
+          "symbol": "C#m7",
+          "roman": "im7",
+          "beats": 2,
+          "bar": 35,
+          "beatOffset": 2,
+          "note": "35小節目"
+        },
+        {
+          "symbol": "D#m7-5",
+          "roman": "iiø7",
+          "beats": 4,
+          "bar": 36,
+          "beatOffset": 0,
+          "note": "36小節目"
+        },
+        {
+          "symbol": "G#7",
+          "roman": "V7",
+          "beats": 4,
+          "bar": 37,
+          "beatOffset": 0,
+          "note": "37小節目。次のセクションへ接続"
+        }
+      ]
+    }
+  ],
+  "createdAt": "2026-11-27T18:02:00+09:00",
+  "updatedAt": "2026-11-27T18:02:00+09:00"
+}
