@@ -1,0 +1,162 @@
+{
+  "schemaVersion": "1.0",
+  "id": "polyphia--yas",
+  "title": "Yas",
+  "artist": "Polyphia",
+  "versionType": "original",
+  "releaseYear": 2018,
+  "bpm": 144,
+  "key": "F# minor",
+  "timeSignature": "4/4",
+  "genres": ["math-rock", "progressive-rock", "instrumental"],
+  "overallFeelings": ["スタイリッシュ", "切ない", "ハーフテンポの重み"],
+  "notes": "初期サンプルエントリ。ドロップでのハーフテンポ切替と、不安定な導入から切ない響きへ着地するハーモニーの流れを記録。",
+  "sections": [
+    {
+      "id": "sec-01-drop",
+      "label": "drop",
+      "displayName": "Drop",
+      "order": 1,
+      "feelings": ["不安定からの着地", "切ない", "ハーフテンポの重み"],
+      "feelingSummary": "polyphia-yasのドロップセクションは、入り直前の不安定な響きを着地しながら、その次への切なくて泣ける響きへと繋げており、リズムセクションはBPMそのままにハーフテンポに変化して、ノリを変えている。",
+      "rhythm": {
+        "feel": "half-time",
+        "grooveDescription": "曲全体のBPM144を保ったままスネアを3拍目に置くハーフテンポへ移行し、体感を一気に重く広げる。",
+        "drumNotes": "キックは1拍目と2拍裏のシンコペーションを軸にし、スネアを3拍目に深く落としてノリを切り替える。ハイハットは細かい16分と休符でタイトさを残す。",
+        "bassNotes": "コード着地時はルートを長めに保ち、小節末でオクターブや経過音を入れて次の切ないコードへ繋ぐ。",
+        "tags": ["half-time", "tempo-feel-shift", "trap-influenced"]
+      },
+      "melody": {
+        "scaleOrMode": "F# Natural Minor",
+        "contour": "着地音の直後に高音域へ跳躍し、テンション音である9thや11thを経由して切なく下降する。",
+        "hookDescription": "コードの変わり目で非和声音を一瞬挟んでからコードトーンへ解決させることで泣けるニュアンスを作る。",
+        "register": "mid-high",
+        "tags": ["emotional-leap", "tension-resolution"]
+      },
+      "harmony": {
+        "chordProgression": ["C#7alt", "Dmaj9", "C#m7", "Bm9"],
+        "romanNumerals": ["V7alt", "bVImaj9", "v7", "iv9"],
+        "cadenceOrMotion": "入り直前のドミナント系テンションの不安定な響きをbVImaj9へ偽終止的に着地させ、そこからv7とiv9へ下降することで切なくて泣ける余韻へ繋げる。",
+        "voicingNotes": "メジャーセブンスに9thを重ねた透明感のあるボイシングと、マイナーナインスの陰影を対比させる。",
+        "tags": ["deceptive-resolution", "maj9", "minor-descent"]
+      },
+      "instruments": ["guitar", "bass", "drum", "piano"],
+      "rating": 5,
+      "tags": ["drop", "half-time", "emotional", "deceptive-cadence"],
+      "midiClips": [
+        {
+          "id": "clip-drop-halftime-ref",
+          "name": "Half-time Emotional Drop Reference (4 bars)",
+          "bpm": 144,
+          "key": "F# minor",
+          "timeSignature": "4/4",
+          "bars": 4,
+          "tracks": [
+            {
+              "role": "piano",
+              "program": 0,
+              "channel": 0,
+              "notes": [
+                { "midi": 62, "startBeat": 0, "durationBeats": 3.5, "velocity": 0.78 },
+                { "midi": 66, "startBeat": 0, "durationBeats": 3.5, "velocity": 0.72 },
+                { "midi": 69, "startBeat": 0, "durationBeats": 3.5, "velocity": 0.74 },
+                { "midi": 73, "startBeat": 0, "durationBeats": 3.5, "velocity": 0.76 },
+                { "midi": 76, "startBeat": 0.5, "durationBeats": 3.0, "velocity": 0.7 },
+
+                { "midi": 61, "startBeat": 4, "durationBeats": 3.5, "velocity": 0.76 },
+                { "midi": 64, "startBeat": 4, "durationBeats": 3.5, "velocity": 0.7 },
+                { "midi": 68, "startBeat": 4, "durationBeats": 3.5, "velocity": 0.72 },
+                { "midi": 71, "startBeat": 4, "durationBeats": 3.5, "velocity": 0.74 },
+
+                { "midi": 59, "startBeat": 8, "durationBeats": 3.5, "velocity": 0.78 },
+                { "midi": 62, "startBeat": 8, "durationBeats": 3.5, "velocity": 0.72 },
+                { "midi": 66, "startBeat": 8, "durationBeats": 3.5, "velocity": 0.74 },
+                { "midi": 69, "startBeat": 8, "durationBeats": 3.5, "velocity": 0.72 },
+                { "midi": 73, "startBeat": 8.5, "durationBeats": 3.0, "velocity": 0.75 },
+
+                { "midi": 61, "startBeat": 12, "durationBeats": 2.0, "velocity": 0.76 },
+                { "midi": 65, "startBeat": 12, "durationBeats": 2.0, "velocity": 0.72 },
+                { "midi": 68, "startBeat": 12, "durationBeats": 2.0, "velocity": 0.7 },
+                { "midi": 71, "startBeat": 12, "durationBeats": 2.0, "velocity": 0.76 },
+                { "midi": 74, "startBeat": 14, "durationBeats": 1.75, "velocity": 0.8 },
+                { "midi": 73, "startBeat": 14, "durationBeats": 1.75, "velocity": 0.74 }
+              ]
+            },
+            {
+              "role": "bass",
+              "program": 33,
+              "channel": 1,
+              "notes": [
+                { "midi": 38, "startBeat": 0, "durationBeats": 2.5, "velocity": 0.88 },
+                { "midi": 38, "startBeat": 2.5, "durationBeats": 1.0, "velocity": 0.78 },
+                { "midi": 40, "startBeat": 3.5, "durationBeats": 0.5, "velocity": 0.72 },
+
+                { "midi": 37, "startBeat": 4, "durationBeats": 2.5, "velocity": 0.85 },
+                { "midi": 49, "startBeat": 6.5, "durationBeats": 1.0, "velocity": 0.76 },
+                { "midi": 37, "startBeat": 7.5, "durationBeats": 0.5, "velocity": 0.74 },
+
+                { "midi": 35, "startBeat": 8, "durationBeats": 2.5, "velocity": 0.86 },
+                { "midi": 35, "startBeat": 10.5, "durationBeats": 1.0, "velocity": 0.78 },
+                { "midi": 36, "startBeat": 11.5, "durationBeats": 0.5, "velocity": 0.72 },
+
+                { "midi": 37, "startBeat": 12, "durationBeats": 2.0, "velocity": 0.88 },
+                { "midi": 42, "startBeat": 14, "durationBeats": 1.5, "velocity": 0.82 }
+              ]
+            },
+            {
+              "role": "drum",
+              "channel": 9,
+              "notes": [
+                { "midi": 36, "startBeat": 0, "durationBeats": 0.5, "velocity": 0.95 },
+                { "midi": 42, "startBeat": 0, "durationBeats": 0.25, "velocity": 0.7 },
+                { "midi": 42, "startBeat": 0.5, "durationBeats": 0.25, "velocity": 0.55 },
+                { "midi": 42, "startBeat": 1, "durationBeats": 0.25, "velocity": 0.65 },
+                { "midi": 36, "startBeat": 1.5, "durationBeats": 0.5, "velocity": 0.82 },
+                { "midi": 42, "startBeat": 1.5, "durationBeats": 0.25, "velocity": 0.58 },
+                { "midi": 38, "startBeat": 2, "durationBeats": 0.5, "velocity": 0.92 },
+                { "midi": 42, "startBeat": 2, "durationBeats": 0.25, "velocity": 0.68 },
+                { "midi": 42, "startBeat": 2.5, "durationBeats": 0.25, "velocity": 0.55 },
+                { "midi": 42, "startBeat": 3, "durationBeats": 0.25, "velocity": 0.65 },
+                { "midi": 36, "startBeat": 3.5, "durationBeats": 0.5, "velocity": 0.78 },
+                { "midi": 42, "startBeat": 3.5, "durationBeats": 0.25, "velocity": 0.6 },
+
+                { "midi": 36, "startBeat": 4, "durationBeats": 0.5, "velocity": 0.95 },
+                { "midi": 42, "startBeat": 4, "durationBeats": 0.25, "velocity": 0.7 },
+                { "midi": 42, "startBeat": 4.5, "durationBeats": 0.25, "velocity": 0.55 },
+                { "midi": 42, "startBeat": 5, "durationBeats": 0.25, "velocity": 0.65 },
+                { "midi": 42, "startBeat": 5.5, "durationBeats": 0.25, "velocity": 0.58 },
+                { "midi": 38, "startBeat": 6, "durationBeats": 0.5, "velocity": 0.92 },
+                { "midi": 42, "startBeat": 6, "durationBeats": 0.25, "velocity": 0.68 },
+                { "midi": 36, "startBeat": 6.75, "durationBeats": 0.25, "velocity": 0.75 },
+                { "midi": 42, "startBeat": 7, "durationBeats": 0.25, "velocity": 0.65 },
+                { "midi": 46, "startBeat": 7.5, "durationBeats": 0.5, "velocity": 0.68 },
+
+                { "midi": 36, "startBeat": 8, "durationBeats": 0.5, "velocity": 0.95 },
+                { "midi": 42, "startBeat": 8, "durationBeats": 0.25, "velocity": 0.7 },
+                { "midi": 42, "startBeat": 8.5, "durationBeats": 0.25, "velocity": 0.55 },
+                { "midi": 42, "startBeat": 9, "durationBeats": 0.25, "velocity": 0.65 },
+                { "midi": 36, "startBeat": 9.5, "durationBeats": 0.5, "velocity": 0.84 },
+                { "midi": 42, "startBeat": 9.5, "durationBeats": 0.25, "velocity": 0.58 },
+                { "midi": 38, "startBeat": 10, "durationBeats": 0.5, "velocity": 0.92 },
+                { "midi": 42, "startBeat": 10, "durationBeats": 0.25, "velocity": 0.68 },
+                { "midi": 42, "startBeat": 10.5, "durationBeats": 0.25, "velocity": 0.55 },
+                { "midi": 42, "startBeat": 11, "durationBeats": 0.25, "velocity": 0.65 },
+                { "midi": 36, "startBeat": 11.5, "durationBeats": 0.5, "velocity": 0.8 },
+
+                { "midi": 36, "startBeat": 12, "durationBeats": 0.5, "velocity": 0.95 },
+                { "midi": 42, "startBeat": 12, "durationBeats": 0.25, "velocity": 0.7 },
+                { "midi": 42, "startBeat": 12.5, "durationBeats": 0.25, "velocity": 0.55 },
+                { "midi": 42, "startBeat": 13, "durationBeats": 0.25, "velocity": 0.65 },
+                { "midi": 38, "startBeat": 14, "durationBeats": 0.5, "velocity": 0.94 },
+                { "midi": 38, "startBeat": 15, "durationBeats": 0.25, "velocity": 0.7 },
+                { "midi": 38, "startBeat": 15.5, "durationBeats": 0.25, "velocity": 0.84 }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "createdAt": "2026-11-27T05:45:00Z",
+  "updatedAt": "2026-11-27T05:45:00Z"
+}

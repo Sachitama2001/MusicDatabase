@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "1.0",
+  "entries": [
+    {
+      "canonical": "切ない",
+      "synonyms": ["泣ける", "エモい", "哀愁", "メランコリック", "儚い", "せつない"],
+      "category": "emotion",
+      "description": "胸を締め付けるような哀しみと美しさが同居した響き"
+    },
+    {
+      "canonical": "不安定からの着地",
+      "synonyms": ["緊張と緩和", "解決感", "テンション解放", "着地", "カタルシス"],
+      "category": "motion",
+      "description": "不協和やドミナント的緊張から安定した響きへ落ちる瞬間"
+    },
+    {
+      "canonical": "ハーフテンポの重み",
+      "synonyms": ["ハーフタイム", "ノリの変化", "ゆったり重い", "ドロップ感", "引きずるグルーヴ"],
+      "category": "groove",
+      "description": "BPMを変えずに体感テンポを半分へ落として重心を下げる感覚"
+    },
+    {
+      "canonical": "浮遊感",
+      "synonyms": ["宙に浮く", "ドリーミー", "曖昧", "透明感", "広がる"],
+      "category": "texture",
+      "description": "ルート感が薄くテンションコードやリバーブで空間に漂う印象"
+    },
+    {
+      "canonical": "高揚感",
+      "synonyms": ["盛り上がり", "開放感", "壮大", "エピック", "駆け上がる"],
+      "category": "emotion",
+      "description": "サビやドロップでエネルギーが一気に開く感覚"
+    },
+    {
+      "canonical": "緊張感",
+      "synonyms": ["不安定", "スリル", "緊迫", "不穏", "不協和"],
+      "category": "motion",
+      "description": "半音階、ディミニッシュ、オルタードテンションによる張り詰めた響き"
+    },
+    {
+      "canonical": "疾走感",
+      "synonyms": ["ドライブ感", "速い", "突き抜ける", "アグレッシブ", "前のめり"],
+      "category": "groove",
+      "description": "細かい刻みやシンコペーションで前へ押し出す推進力"
+    },
+    {
+      "canonical": "ノスタルジック",
+      "synonyms": ["懐かしい", "ノスタルジー", "夕暮れ", "ノスタルジア", "郷愁"],
+      "category": "emotion",
+      "description": "過去の記憶を呼び起こすような温かく少し寂しい響き"
+    },
+    {
+      "canonical": "スタイリッシュ",
+      "synonyms": ["おしゃれ", "都会的", "クール", "モダン", "洗練"],
+      "category": "texture",
+      "description": "9thや11thのボイシングとタイトなリズムによる都会的な印象"
+    }
+  ]
+}
