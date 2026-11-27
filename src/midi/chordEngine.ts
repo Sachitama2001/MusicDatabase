@@ -569,7 +569,12 @@ export function generatePianoSequence(
   const lastByPitch = new Map<number, PianoNote>();
   for (const note of [...notes].sort((a, b) => a.startBeat - b.startBeat)) {
     const previous = lastByPitch.get(note.midi);
-    if (previous && note.startBeat <= previous.startBeat + previous.durationBeats + 0.001) {
+    if (
+      firstBar !== undefined &&
+      previous &&
+      note.chordIndex === previous.chordIndex + 1 &&
+      note.startBeat <= previous.startBeat + previous.durationBeats + 0.001
+    ) {
       const end = Math.max(
         previous.startBeat + previous.durationBeats,
         note.startBeat + note.durationBeats
