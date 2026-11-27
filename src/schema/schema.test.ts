@@ -118,4 +118,28 @@ describe('v2 ChordTube TrackSchema and invariants', () => {
       }
     }
   });
+
+  it('keeps every track theory reference linked to a real theory record and source', () => {
+    const theoryDir = path.resolve(process.cwd(), 'data/theory');
+    const progressions = JSON.parse(fs.readFileSync(path.join(theoryDir, 'progressions.json'), 'utf-8'));
+    const techniques = JSON.parse(fs.readFileSync(path.join(theoryDir, 'harmony-techniques.json'), 'utf-8'));
+    const knownIds = new Set([...progressions, ...techniques].map((item: { id: string }) => item.id));
+    const trackDir = path.resolve(process.cwd(), 'data/tracks');
+
+    for (const file of fs.readdirSync(trackDir).filter((name) => name.endsWith('.json'))) {
+      const track = JSON.parse(fs.readFileSync(path.join(trackDir, file), 'utf-8'));
+      for (const section of track.sections) {
+        for (const annotation of section.theoryAnnotations ?? []) {
+          for (const ref of annotation.theoryRefs) {
+            expect(knownIds.has(ref), `${file}/${section.id} references missing theory ID ${ref}`).toBe(true);
+          }
+          for (const source of annotation.sources) {
+            expect(knownIds.has(source.recordId), `${file}/${section.id} has missing source record ${source.recordId}`).toBe(true);
+            expect(annotation.theoryRefs).toContain(source.recordId);
+            expect(source.title.length).toBeGreaterThan(0);
+          }
+        }
+      }
+    }
+  });
 });
