@@ -36,7 +36,7 @@ export function ChordMidiPlayer({
 }: ChordMidiPlayerProps) {
   const [bpm, setBpm] = useState(defaultBpm);
   const [transpose, setTranspose] = useState(0);
-  const [voicing, setVoicing] = useState<VoicingStyle>('smooth');
+  const [voicing, setVoicing] = useState<VoicingStyle>('arpeggio');
   const [loop, setLoop] = useState(true);
   const [isPlaying, setIsPlaying] = useState(false);
   const [playheadBeat, setPlayheadBeat] = useState(0);
@@ -56,12 +56,16 @@ export function ChordMidiPlayer({
     };
   }, []);
 
+  const [timeSigNumerator, timeSigDenominator] = parseTimeSignature(timeSignature);
+  const beatsPerBar = timeSigNumerator * (4 / timeSigDenominator);
+
   const generated = useMemo(() => {
     try {
       const seq = generatePianoSequence(chords, {
         key: baseKey,
         transpose,
-        voicing
+        voicing,
+        beatsPerBar
       });
       return { ok: true as const, seq };
     } catch (err) {
@@ -70,12 +74,7 @@ export function ChordMidiPlayer({
         error: err instanceof Error ? err.message : String(err)
       };
     }
-  }, [chords, baseKey, transpose, voicing]);
-
-  const beatsPerBar = useMemo(() => {
-    const [num, den] = parseTimeSignature(timeSignature);
-    return num * (4 / den);
-  }, [timeSignature]);
+  }, [chords, baseKey, transpose, voicing, beatsPerBar]);
 
   const pitchBounds = useMemo(() => {
     if (!generated.ok || generated.seq.notes.length === 0) return { min: 40, max: 80 };
@@ -106,6 +105,7 @@ export function ChordMidiPlayer({
         key: baseKey,
         transpose: nextTranspose,
         voicing: nextVoicing,
+        beatsPerBar,
         loop: nextLoop,
         onProgress: (beat, chordIdx) => {
           setPlayheadBeat(beat);
