@@ -24,6 +24,8 @@ export const ChordEventSchema = z.object({
     }),
   roman: z.string().min(1).max(32),
   beats: z.number().gt(0).lte(32),
+  bar: z.number().int().min(1).optional(),
+  beatOffset: z.number().min(0).lt(4).optional(),
   note: z.string().max(200).optional()
 });
 export type ChordEvent = z.infer<typeof ChordEventSchema>;
@@ -47,6 +49,8 @@ export const SectionSchema = z
     label: SectionLabelSchema,
     displayName: z.string().min(1).max(120),
     order: z.number().int().min(1),
+    startBar: z.number().int().min(1).optional(),
+    endBar: z.number().int().min(1).optional(),
     startSec: z.number().min(0).optional(),
     endSec: z.number().min(0).optional(),
     localKey: z.string().min(1).max(60).optional(),
@@ -60,6 +64,9 @@ export const SectionSchema = z
     tags: z.array(z.string().min(1)).optional()
   })
   .superRefine((section, ctx) => {
+    if (section.startBar !== undefined && section.endBar !== undefined && section.startBar > section.endBar) {
+      ctx.addIssue({ code: z.ZodIssueCode.custom, path: ['endBar'], message: 'endBar must be greater than or equal to startBar' });
+    }
     if (
       section.startSec !== undefined &&
       section.endSec !== undefined &&
