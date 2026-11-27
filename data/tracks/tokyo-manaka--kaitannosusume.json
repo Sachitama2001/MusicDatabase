@@ -1,0 +1,414 @@
+{
+  "schemaVersion": "2.0",
+  "id": "tokyo-manaka--kaitannosusume",
+  "title": "快啖ノススメ feat. はしメロ, 9Lana",
+  "artist": "東京真中",
+  "source": {
+    "platform": "chordtube",
+    "url": "https://chordtube.net/"
+  },
+  "bpm": 125,
+  "key": "Ab major",
+  "timeSignature": "4/4",
+  "overallFeelings": [
+    "循環性",
+    "上昇感",
+    "下降反復",
+    "高揚感",
+    "着地感"
+  ],
+  "notes": "ユーザー提供ChordTube印刷PDF（9ページ）に基づく。全体情報はPDF 1ページよりAb major、4/4、125 BPM、転調2回。個別ChordTube URLおよびYouTube IDはPDF内で確認できないため、source.urlはトップページを暫定登録。今回の対象は10〜17小節（イントロ、サビにも転用可能）と26〜33小節（Bメロ）。コード名・小節番号はPDF 2〜3ページから転記。拍内位置と継続拍数は印刷譜のカードグリッドから概算。括弧付きコード表記は直前コードの持続と解釈。Ddiと見える小さい表記は文脈上Ddimと読み、Ddim7表記のある箇所はそのまま採用。romanはAb majorを基準にした機能分析値で、ChordTubeからの直接転記ではない。",
+  "sections": [
+    {
+      "id": "sec-01-intro-chorus-loop",
+      "label": "intro",
+      "displayName": "イントロ／サビ用",
+      "order": 1,
+      "startBar": 10,
+      "endBar": 17,
+      "localKey": "Ab major",
+      "feelings": [
+        "循環性",
+        "4356進行",
+        "上昇感",
+        "サビ向け"
+      ],
+      "feelingSummary": "サビまたはイントロ用。4356進行。最後上昇する。",
+      "cadenceOrMotion": "DbM7（IV）とC7（III7）を軸に、Fm7（vi）・Ebm7（v）を挟んで循環する。13・15小節目ではEm7、Dm7-5へ半音階的に下降し、17小節目のBbm7–Cm7–DbM7–Ebで上昇して次の展開へつなぐ。",
+      "tags": [
+        "bars-10-17",
+        "chordtube-pdf",
+        "4356",
+        "intro",
+        "chorus-candidate",
+        "rising-ending"
+      ],
+      "chords": [
+        {
+          "symbol": "DbM7",
+          "roman": "IVM7",
+          "beats": 2,
+          "bar": 10,
+          "beatOffset": 0,
+          "note": "ChordTube 10小節目"
+        },
+        {
+          "symbol": "C7(#9)",
+          "roman": "III7(#9)",
+          "beats": 2,
+          "bar": 10,
+          "beatOffset": 2,
+          "note": "10小節目後半"
+        },
+        {
+          "symbol": "Fm7",
+          "roman": "vi7",
+          "beats": 2,
+          "bar": 11,
+          "beatOffset": 0,
+          "note": "ChordTube 11小節目"
+        },
+        {
+          "symbol": "Ebm7",
+          "roman": "vm7",
+          "beats": 2,
+          "bar": 11,
+          "beatOffset": 2,
+          "note": "11小節目後半。Ebm7/Dは譜面上の小さい表記を含む可能性あり"
+        },
+        {
+          "symbol": "DbM7",
+          "roman": "IVM7",
+          "beats": 2,
+          "bar": 12,
+          "beatOffset": 0,
+          "note": "ChordTube 12小節目"
+        },
+        {
+          "symbol": "C7",
+          "roman": "III7",
+          "beats": 2,
+          "bar": 12,
+          "beatOffset": 2,
+          "note": "12小節目後半"
+        },
+        {
+          "symbol": "Fm7",
+          "roman": "vi7",
+          "beats": 1,
+          "bar": 13,
+          "beatOffset": 0,
+          "note": "ChordTube 13小節目"
+        },
+        {
+          "symbol": "Em7",
+          "roman": "#vii m7",
+          "beats": 1,
+          "bar": 13,
+          "beatOffset": 1,
+          "note": "13小節目。半音階的な経過コード"
+        },
+        {
+          "symbol": "Ebm7",
+          "roman": "vm7",
+          "beats": 1,
+          "bar": 13,
+          "beatOffset": 2,
+          "note": "13小節目"
+        },
+        {
+          "symbol": "Dm7-5",
+          "roman": "#ivø7",
+          "beats": 1,
+          "bar": 13,
+          "beatOffset": 3,
+          "note": "13小節目"
+        },
+        {
+          "symbol": "DbM7",
+          "roman": "IVM7",
+          "beats": 2,
+          "bar": 14,
+          "beatOffset": 0,
+          "note": "ChordTube 14小節目"
+        },
+        {
+          "symbol": "C7",
+          "roman": "III7",
+          "beats": 2,
+          "bar": 14,
+          "beatOffset": 2,
+          "note": "14小節目後半"
+        },
+        {
+          "symbol": "Fm7",
+          "roman": "vi7",
+          "beats": 2,
+          "bar": 15,
+          "beatOffset": 0,
+          "note": "ChordTube 15小節目"
+        },
+        {
+          "symbol": "Ebm7",
+          "roman": "vm7",
+          "beats": 1,
+          "bar": 15,
+          "beatOffset": 2,
+          "note": "15小節目"
+        },
+        {
+          "symbol": "Dm7-5",
+          "roman": "#ivø7",
+          "beats": 1,
+          "bar": 15,
+          "beatOffset": 3,
+          "note": "15小節目"
+        },
+        {
+          "symbol": "DbM7",
+          "roman": "IVM7",
+          "beats": 2,
+          "bar": 16,
+          "beatOffset": 0,
+          "note": "ChordTube 16小節目"
+        },
+        {
+          "symbol": "C7",
+          "roman": "III7",
+          "beats": 2,
+          "bar": 16,
+          "beatOffset": 2,
+          "note": "16小節目後半"
+        },
+        {
+          "symbol": "Bbm7",
+          "roman": "ii7",
+          "beats": 1,
+          "bar": 17,
+          "beatOffset": 0,
+          "note": "ChordTube 17小節目"
+        },
+        {
+          "symbol": "Cm7",
+          "roman": "iii7",
+          "beats": 1,
+          "bar": 17,
+          "beatOffset": 1,
+          "note": "17小節目"
+        },
+        {
+          "symbol": "DbM7",
+          "roman": "IVM7",
+          "beats": 1,
+          "bar": 17,
+          "beatOffset": 2,
+          "note": "17小節目"
+        },
+        {
+          "symbol": "Eb",
+          "roman": "V",
+          "beats": 1,
+          "bar": 17,
+          "beatOffset": 3,
+          "note": "17小節目終盤。上昇する接続"
+        }
+      ]
+    },
+    {
+      "id": "sec-02-b-verse",
+      "label": "pre_chorus",
+      "displayName": "Bメロ",
+      "order": 2,
+      "startBar": 26,
+      "endBar": 33,
+      "localKey": "Ab major",
+      "feelings": [
+        "下降反復",
+        "上昇感",
+        "盛り上がり",
+        "緊張感"
+      ],
+      "feelingSummary": "下降を繰り返して、最後上昇で盛り上げる。",
+      "cadenceOrMotion": "Abを基準に、Dm7-5やDdim系の減和音を交えながらDb6–Cm7–Abの下降感を反復。終盤はDb6–Ab/CからAb/Bb–Ab/C–DbM7–Dm–Ebへ進み、ベース／和声の上昇でサビへ向けて盛り上げる。",
+      "tags": [
+        "bars-26-33",
+        "chordtube-pdf",
+        "b-verse",
+        "descending-sequence",
+        "rising-build"
+      ],
+      "chords": [
+        {
+          "symbol": "Ab",
+          "roman": "I",
+          "beats": 2,
+          "bar": 26,
+          "beatOffset": 0,
+          "note": "ChordTube 26小節目の括弧付きAb。前小節からの持続と解釈"
+        },
+        {
+          "symbol": "Dm7-5",
+          "roman": "#ivø7",
+          "beats": 2,
+          "bar": 26,
+          "beatOffset": 2,
+          "note": "26小節目後半"
+        },
+        {
+          "symbol": "Db6",
+          "roman": "IV6",
+          "beats": 2,
+          "bar": 27,
+          "beatOffset": 0,
+          "note": "ChordTube 27小節目"
+        },
+        {
+          "symbol": "Cm7",
+          "roman": "iii7",
+          "beats": 1,
+          "bar": 27,
+          "beatOffset": 2,
+          "note": "27小節目"
+        },
+        {
+          "symbol": "Ddim",
+          "roman": "#ivdim",
+          "beats": 0.5,
+          "bar": 27,
+          "beatOffset": 3,
+          "note": "27小節目の小さいDdi表記をDdimと解釈。拍位置概算"
+        },
+        {
+          "symbol": "Ab/Eb",
+          "roman": "I/V",
+          "beats": 0.25,
+          "bar": 27,
+          "beatOffset": 3.5,
+          "note": "27小節目終盤"
+        },
+        {
+          "symbol": "Ddim7",
+          "roman": "#ivdim7",
+          "beats": 0.25,
+          "bar": 27,
+          "beatOffset": 3.75,
+          "note": "27小節目末の小さいコード表記"
+        },
+        {
+          "symbol": "Ab/Eb",
+          "roman": "I/V",
+          "beats": 2,
+          "bar": 28,
+          "beatOffset": 0,
+          "note": "ChordTube 28小節目"
+        },
+        {
+          "symbol": "Ddim7",
+          "roman": "#ivdim7",
+          "beats": 2,
+          "bar": 28,
+          "beatOffset": 2,
+          "note": "28小節目後半"
+        },
+        {
+          "symbol": "Db6",
+          "roman": "IV6",
+          "beats": 1.5,
+          "bar": 29,
+          "beatOffset": 0,
+          "note": "ChordTube 29小節目"
+        },
+        {
+          "symbol": "Cm7",
+          "roman": "iii7",
+          "beats": 1,
+          "bar": 29,
+          "beatOffset": 1.5,
+          "note": "29小節目"
+        },
+        {
+          "symbol": "Ab",
+          "roman": "I",
+          "beats": 1.5,
+          "bar": 29,
+          "beatOffset": 2.5,
+          "note": "29小節目終盤"
+        },
+        {
+          "symbol": "Ab",
+          "roman": "I",
+          "beats": 2,
+          "bar": 30,
+          "beatOffset": 0,
+          "note": "ChordTube 30小節目の括弧付きAb。持続と解釈"
+        },
+        {
+          "symbol": "Ddim7",
+          "roman": "#ivdim7",
+          "beats": 2,
+          "bar": 30,
+          "beatOffset": 2,
+          "note": "30小節目後半"
+        },
+        {
+          "symbol": "Db6",
+          "roman": "IV6",
+          "beats": 2,
+          "bar": 31,
+          "beatOffset": 0,
+          "note": "ChordTube 31小節目"
+        },
+        {
+          "symbol": "Ab/C",
+          "roman": "I/III",
+          "beats": 2,
+          "bar": 31,
+          "beatOffset": 2,
+          "note": "31小節目後半"
+        },
+        {
+          "symbol": "Ab/Bb",
+          "roman": "I/II",
+          "beats": 1,
+          "bar": 32,
+          "beatOffset": 0,
+          "note": "ChordTube 32小節目"
+        },
+        {
+          "symbol": "Ab/C",
+          "roman": "I/III",
+          "beats": 1,
+          "bar": 32,
+          "beatOffset": 1,
+          "note": "32小節目"
+        },
+        {
+          "symbol": "DbM7",
+          "roman": "IVM7",
+          "beats": 1,
+          "bar": 32,
+          "beatOffset": 2,
+          "note": "32小節目"
+        },
+        {
+          "symbol": "Dm",
+          "roman": "#ivm",
+          "beats": 0.5,
+          "bar": 32,
+          "beatOffset": 3,
+          "note": "32小節目終盤の食い／裏位置。拍位置概算"
+        },
+        {
+          "symbol": "Eb",
+          "roman": "V",
+          "beats": 0.5,
+          "bar": 32,
+          "beatOffset": 3.5,
+          "note": "32小節目末。サビへの上昇接続"
+        }
+      ]
+    }
+  ],
+  "createdAt": "2026-11-27T18:02:00+09:00",
+  "updatedAt": "2026-11-27T18:02:00+09:00"
+}
