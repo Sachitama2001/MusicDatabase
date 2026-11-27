@@ -18,7 +18,7 @@
     "緊張感",
     "着地"
   ],
-  "notes": "ユーザー提供ChordTube印刷PDF（10ページ）に基づく。対象は17〜32小節で、ユーザー指定により「イントロ兼Aメロ」として独立登録。曲全体のKey D minor、4/4、142 BPM、転調0回（PDF 1ページ）。ChordEvent.barは楽曲全体の小節番号。各小節末に表示される小さいコードは「食い」と判断し、直前小節の3.5拍目から0.5拍として記録。拍位置はPDFのカード内グリッドと「食い」表示からの概算。コード名はPDF 2〜3ページから転記。romanはD minorを基準にした機能的な分析値で、ChordTubeに表示された度数の直接転記ではない。",
+  "notes": "ユーザー提供ChordTube印刷PDF（10ページ）に基づく。対象は17〜32小節で、ユーザー指定により「イントロ兼Aメロ」として独立登録。曲全体のKey D minor、4/4、142 BPM、転調0回（PDF 1ページ）。ChordEvent.barは楽曲全体の小節番号。各小節末に表示される小さいコードは「食い」と判断し、直前小節の3.5拍目から0.5拍として記録。拍位置はPDFのカード内グリッドと「食い」表示からの概算。コード名はPDF 2〜3ページから転記。romanはD minorを基準にした機能的な分析値で、ChordTubeに表示された度数の直接転記ではない。 追加で49〜64小節のサビ／ドロップ候補セクションを登録。",
   "sections": [
     {
       "id": "sec-01-intro-verse",
@@ -238,8 +238,196 @@
           "note": "ChordTube 32小節目"
         }
       ]
+    },
+    {
+      "id": "sec-02-chorus-drop",
+      "label": "chorus",
+      "displayName": "サビ／ドロップ（1回目）",
+      "order": 2,
+      "startBar": 49,
+      "endBar": 64,
+      "localKey": "D minor",
+      "feelings": [
+        "ハーフテンポ",
+        "意外性",
+        "振り回される感覚",
+        "着地への期待",
+        "緊張感"
+      ],
+      "feelingSummary": "サビまたはドロップ。ハーフテンポになる展開に合っているが、着地を予感させる直前でE flat 7(9)とくるので、ちょっとした意外感と振り回される感覚を受ける。2ループ目ではアレンジによってBm7(9)が登場し、Iコードを伸ばすという予想が裏切られて面白い。",
+      "cadenceOrMotion": "BbM7(9)からA7(#9)–Eb7(9)を経てDm7(9)へ向かう。着地直前にEb7(9)が差し込まれることで予想を外す。中盤以降はGm7(9)–A7(#9)–Eb7(9)や、Dm7(9)–Dbm7(9)–Cm7(9)–F7(9)–BbM7(9)と展開。後半のBm7(9)はI（Dm）を持続させる期待を裏切るアレンジ上の変化として記録。",
+      "tags": [
+        "bars-49-64",
+        "chordtube-pdf",
+        "chorus",
+        "drop-candidate",
+        "half-time",
+        "arrangement-variation"
+      ],
+      "chords": [
+        {
+          "symbol": "BbM7(9)",
+          "roman": "bVIIM7(9)",
+          "beats": 4,
+          "bar": 49,
+          "beatOffset": 0,
+          "note": "ChordTube 49小節目"
+        },
+        {
+          "symbol": "A7(#9)",
+          "roman": "V7(#9)",
+          "beats": 2,
+          "bar": 50,
+          "beatOffset": 0,
+          "note": "ChordTube 50小節目。小節内の分割は印刷グリッドから概算"
+        },
+        {
+          "symbol": "Eb7(9)",
+          "roman": "bII7(9)",
+          "beats": 2,
+          "bar": 50,
+          "beatOffset": 2,
+          "note": "ChordTube 50小節目。Dm7(9)への着地直前の意外な挿入"
+        },
+        {
+          "symbol": "Dm7(9)",
+          "roman": "i7(9)",
+          "beats": 8,
+          "bar": 51,
+          "beatOffset": 0,
+          "note": "ChordTube 51小節目。52小節目はコード表記がなく、持続と解釈"
+        },
+        {
+          "symbol": "Gm7(9)",
+          "roman": "ivm7(9)",
+          "beats": 4,
+          "bar": 53,
+          "beatOffset": 0,
+          "note": "ChordTube 53小節目"
+        },
+        {
+          "symbol": "A7(#9)",
+          "roman": "V7(#9)",
+          "beats": 2,
+          "bar": 54,
+          "beatOffset": 0,
+          "note": "ChordTube 54小節目。16分音符の細分表示あり"
+        },
+        {
+          "symbol": "Eb7(9)",
+          "roman": "bII7(9)",
+          "beats": 2,
+          "bar": 54,
+          "beatOffset": 2,
+          "note": "ChordTube 54小節目。16分音符の細分表示あり"
+        },
+        {
+          "symbol": "Dm7(9)",
+          "roman": "i7(9)",
+          "beats": 3.5,
+          "bar": 55,
+          "beatOffset": 0,
+          "note": "ChordTube 55小節目"
+        },
+        {
+          "symbol": "Dbm7(9)",
+          "roman": "bVIIIm7(9)",
+          "beats": 0.5,
+          "bar": 55,
+          "beatOffset": 3.5,
+          "note": "ChordTube 55小節目末の小さいコード表記。拍位置は概算"
+        },
+        {
+          "symbol": "Cm7(9)",
+          "roman": "bVIIm7(9)",
+          "beats": 2,
+          "bar": 56,
+          "beatOffset": 0,
+          "note": "ChordTube 56小節目"
+        },
+        {
+          "symbol": "F7(9)",
+          "roman": "bIII7(9)",
+          "beats": 2,
+          "bar": 56,
+          "beatOffset": 2,
+          "note": "ChordTube 56小節目"
+        },
+        {
+          "symbol": "BbM7(9)",
+          "roman": "bVIIM7(9)",
+          "beats": 4,
+          "bar": 57,
+          "beatOffset": 0,
+          "note": "ChordTube 57小節目"
+        },
+        {
+          "symbol": "A7(#9)",
+          "roman": "V7(#9)",
+          "beats": 2,
+          "bar": 58,
+          "beatOffset": 0,
+          "note": "ChordTube 58小節目"
+        },
+        {
+          "symbol": "Eb7(9)",
+          "roman": "bII7(9)",
+          "beats": 2,
+          "bar": 58,
+          "beatOffset": 2,
+          "note": "ChordTube 58小節目"
+        },
+        {
+          "symbol": "Dm7(9)",
+          "roman": "i7(9)",
+          "beats": 4,
+          "bar": 59,
+          "beatOffset": 0,
+          "note": "ChordTube 59小節目"
+        },
+        {
+          "symbol": "Bm7(9)",
+          "roman": "VIIm7(9)",
+          "beats": 4,
+          "bar": 60,
+          "beatOffset": 0,
+          "note": "ChordTube 60小節目。2ループ目のアレンジ変化としてユーザーが指摘"
+        },
+        {
+          "symbol": "Gm7(9)",
+          "roman": "ivm7(9)",
+          "beats": 4,
+          "bar": 61,
+          "beatOffset": 0,
+          "note": "ChordTube 61小節目"
+        },
+        {
+          "symbol": "Am7",
+          "roman": "v7",
+          "beats": 4,
+          "bar": 62,
+          "beatOffset": 0,
+          "note": "ChordTube 62小節目"
+        },
+        {
+          "symbol": "Am7/D",
+          "roman": "v7/i",
+          "beats": 4,
+          "bar": 63,
+          "beatOffset": 0,
+          "note": "ChordTube 63小節目"
+        },
+        {
+          "symbol": "D7(9)",
+          "roman": "I7(9)",
+          "beats": 4,
+          "bar": 64,
+          "beatOffset": 0,
+          "note": "ChordTube 64小節目"
+        }
+      ]
     }
   ],
   "createdAt": "2026-11-27T16:54:00+09:00",
-  "updatedAt": "2026-11-27T16:54:00+09:00"
+  "updatedAt": "2026-11-27T16:55:00+09:00"
 }
