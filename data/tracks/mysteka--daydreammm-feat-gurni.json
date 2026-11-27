@@ -220,6 +220,101 @@
           "beatOffset": 0,
           "note": "ChordTube 51小節目。次のサビへの接続"
         }
+      ],
+      "theoryAnnotations": [
+        {
+          "id": "modal-borrowing-abm-db",
+          "technique": "モーダル・インターチェンジ（平行短調／Mixolydian由来）",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "36〜39・43〜47小節",
+          "note": "Eb major の中で Abm7（iv）や Db 系（♭VII）を使う。Abm7 は平行短調 Eb minor からの借用、Db は Eb Mixolydian／平行短調に由来する ♭VII として説明でき、長調の基調に暗さ・異質さを混ぜる。",
+          "theoryRefs": [
+            "HARM-020"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-020",
+              "libraryFile": "harmony-techniques.json",
+              "title": "モーダル・インターチェンジ",
+              "author": "yuta",
+              "url": "https://soundquest.jp/quest/chord/chord-mv6/ttj-modal-interchange/",
+              "evidenceType": "human-authored-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF（36〜51小節）"
+        },
+        {
+          "id": "tritone-root-not-subv",
+          "technique": "トライトーン関係の非ダイアトニック開始和音（subVとは区別）",
+          "matchType": "inference",
+          "confidence": "high",
+          "location": "36小節",
+          "note": "冒頭 BM7 のルート B は Eb 主音とトライトーン関係にある。ただし BM7 は dominant seventh ではなく major seventh chord なので、HARM-003 のトライトーン代理（dominant 7th の置換）とは別物。ここではトライトーン関係の色彩和音として注釈する。",
+          "theoryRefs": [
+            "HARM-003"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-003",
+              "libraryFile": "harmony-techniques.json",
+              "title": "SoundQuest — トライトーン代理",
+              "author": "plugmon",
+              "url": "https://soundquest.jp/quest/chord/chord-mv4/tritone-substitution/",
+              "evidenceType": "human-authored-theory-to-review",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF（36〜51小節）",
+          "caveat": "ルート間のトライトーン関係だけではトライトーン代理とは呼ばない。"
+        },
+        {
+          "id": "secondary-dominant-f7-bb",
+          "technique": "セカンダリー・ドミナント V/V",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "49〜51小節",
+          "note": "F7 は Bb を目標とする V7/V。続く Fm7/Bb は Bb ベースの sus／テンション sonority として解釈でき、Bb への到達感を残しつつ次のサビへ接続する。",
+          "theoryRefs": [
+            "HARM-018"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-018",
+              "libraryFile": "harmony-techniques.json",
+              "title": "二次ドミナント",
+              "author": "yuta",
+              "url": "https://soundquest.jp/quest/chord/chord-mv2/secondary-dominant/",
+              "evidenceType": "human-authored-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF（36〜51小節）"
+        },
+        {
+          "id": "hybrid-fm7-bb",
+          "technique": "ハイブリッドコード／テンションベース",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "50小節",
+          "note": "Fm7/Bb は Fm7 の上部構造に Bb ベースを置く形。Bb は Fm7 の基本三和音外のベース音で、Bb9sus 系の浮遊した響きを作る。",
+          "theoryRefs": [
+            "HARM-013"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-013",
+              "libraryFile": "harmony-techniques.json",
+              "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+              "author": "SRM.",
+              "url": "https://srm-music.com/stylish-chord/",
+              "evidenceType": "human-authored-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF（36〜51小節）"
+        }
       ]
     },
     {
@@ -401,9 +496,112 @@
           "beatOffset": 0,
           "note": "ChordTube 67小節目。次の間奏へ向かう接続"
         }
+      ],
+      "theoryAnnotations": [
+        {
+          "id": "secondary-dominant-g7-cm",
+          "technique": "セカンダリー・ドミナント V/vi",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "53〜54・57〜58小節",
+          "note": "Eb major の G7（III7）が Cm7（vi）へ進む。G7 は Cm7 を一時的な到達点として強調する V/vi で、サビの循環に引力を与える。",
+          "theoryRefs": [
+            "HARM-018"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-018",
+              "libraryFile": "harmony-techniques.json",
+              "title": "二次ドミナント",
+              "author": "yuta",
+              "url": "https://soundquest.jp/quest/chord/chord-mv2/secondary-dominant/",
+              "evidenceType": "human-authored-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF（52〜67小節）"
+        },
+        {
+          "id": "iv-iii-vi-segment",
+          "technique": "IVmaj7–III7–vi の部分一致",
+          "matchType": "partial",
+          "confidence": "high",
+          "location": "52〜54小節",
+          "note": "AbM7→G7→Cm7 は理論DBの SQ-SEC-002（IVmaj7–V–III7–vi）に含まれる III7→vi の機構と一致するが、参照進行の V はこの箇所にないため全体一致ではない。",
+          "theoryRefs": [
+            "SQ-SEC-002"
+          ],
+          "sources": [
+            {
+              "recordId": "SQ-SEC-002",
+              "libraryFile": "progressions.json",
+              "title": "二次ドミナント",
+              "author": "yuta",
+              "url": "https://soundquest.jp/quest/chord/chord-mv2/secondary-dominant/",
+              "evidenceType": "human-authored-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF（52〜67小節）"
+        },
+        {
+          "id": "ascending-bass-build",
+          "technique": "順次上行（ii–iii–IV–V型のベース上昇）",
+          "matchType": "partial",
+          "confidence": "medium",
+          "location": "64〜67小節",
+          "note": "Fm7→Gm7→AbM7→AbM7/Bb ではベースが F→G→Ab→Bb と上昇する。POP-006 の ii–iii–IV–V 型の順次上行に近いが、最後は V 和音そのものではなく IVM7/Bb のスラッシュ形なので部分一致。",
+          "theoryRefs": [
+            "POP-006",
+            "HARM-013"
+          ],
+          "sources": [
+            {
+              "recordId": "POP-006",
+              "libraryFile": "progressions.json",
+              "title": "作曲初心者が知るべき3つのコード進行のパターン",
+              "author": "SRM.",
+              "url": "https://srm-music.com/3motions/",
+              "evidenceType": "human-authored-source",
+              "sourceConfidence": "high"
+            },
+            {
+              "recordId": "HARM-013",
+              "libraryFile": "harmony-techniques.json",
+              "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+              "author": "SRM.",
+              "url": "https://srm-music.com/stylish-chord/",
+              "evidenceType": "human-authored-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF（52〜67小節）"
+        },
+        {
+          "id": "chromatic-b-bflat",
+          "technique": "半音下降のクロマチック接続",
+          "matchType": "partial",
+          "confidence": "medium",
+          "location": "59小節",
+          "note": "Bm7(9)→Bbm→Bbm7(9) でルートが B→Bb と半音下降する。完全な下降クロマチック・ベースラインではなく、短いクロマチック接続として HARM-024 に部分的に関連する。",
+          "theoryRefs": [
+            "HARM-024"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-024",
+              "libraryFile": "harmony-techniques.json",
+              "title": "Music Theory for the 21st-Century Classroom — 21.7 Descending Chromatic Bass Lines",
+              "url": "https://musictheory.pugetsound.edu/mt21c/DescendingChromaticBassLines.html",
+              "evidenceType": "human-authored-educational-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF（52〜67小節）"
+        }
       ]
     }
   ],
   "createdAt": "2026-11-27T16:54:00+09:00",
-  "updatedAt": "2026-11-27T16:55:00+09:00"
+  "updatedAt": "2026-11-27T19:10:00+09:00"
 }
