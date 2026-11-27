@@ -13,7 +13,11 @@ export function chordProgressionToSmf(
   chords: ChordInput[],
   options: ExportChordSmfOptions
 ): Uint8Array {
-  const seq = generatePianoSequence(chords, options);
+  const [tsNum, tsDen] = parseTimeSignature(options.timeSignature ?? '4/4');
+  const seq = generatePianoSequence(chords, {
+    ...options,
+    beatsPerBar: tsNum * (4 / tsDen)
+  });
   const midi = new Midi();
   const ppq = midi.header.ppq;
   const [tsNum, tsDen] = parseTimeSignature(options.timeSignature ?? '4/4');
