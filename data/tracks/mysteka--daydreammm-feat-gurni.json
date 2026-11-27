@@ -598,6 +598,51 @@
             }
           ],
           "sourceNote": "ChordTube印刷PDF（52〜67小節）"
+        },
+        {
+          "id": "extended-altered-tensions",
+          "technique": "拡張和音・オルタード・テンション",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "52〜67小節",
+          "note": "Cm7(9)、F7(9)、Bbm7(9)、Db7(9,#11)、Am7(9)など、9th・#11を含む拡張和音を使っている。4356系の反復を保ちながら、テンションの違いでループごとの色彩を変えている。",
+          "theoryRefs": [
+            "HARM-028"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-028",
+              "libraryFile": "harmony-techniques.json",
+              "title": "Open Music Theory — Altered and Extended Dominant Chords",
+              "author": "Bryn Hughes",
+              "url": "https://viva.pressbooks.pub/openmusictheory/chapter/altered-and-extended-dominant-chords/",
+              "evidenceType": "human-authored-open-textbook",
+              "sourceConfidence": "high"
+            }
+          ]
+        },
+        {
+          "id": "harmonic-rhythm-drop",
+          "technique": "ハーモニック・リズムの変化",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "59〜60小節",
+          "note": "59小節でBm7(9)→Bbm→Bbm7(9)と1拍単位でコードが変わり、その後Eb7→AbM7(9)へ進む。長いコード保持と短い分割を対比させ、ドロップ内に局所的な加速感を作っている。",
+          "theoryRefs": [
+            "HARM-029"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-029",
+              "libraryFile": "harmony-techniques.json",
+              "title": "Music Theory for the 21st-Century Classroom — 9.2 Harmonic Rhythm",
+              "author": "Robert Hutchinson",
+              "url": "https://musictheory.pugetsound.edu/mt21c/HarmonicRhythm.html",
+              "evidenceType": "human-authored-open-textbook",
+              "sourceConfidence": "high"
+            }
+          ],
+          "caveat": "小節内の拍位置は印刷譜からの概算。"
         }
       ]
     }
