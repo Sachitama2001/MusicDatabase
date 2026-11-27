@@ -23,6 +23,20 @@ describe('v2 ChordTube TrackSchema and invariants', () => {
     expect(result.issues).toHaveLength(0);
   });
 
+  it('accepts explicit bar locations and validates section bar ranges', () => {
+    const located = structuredClone(sampleTrack);
+    located.sections[0].startBar = 1;
+    located.sections[0].endBar = 8;
+    located.sections[0].chords[0].bar = 1;
+    located.sections[0].chords[0].beatOffset = 0;
+    expect(validateTrackData(located).success).toBe(true);
+
+    located.sections[0].endBar = 0;
+    const invalid = validateTrackData(located);
+    expect(invalid.success).toBe(false);
+    expect(invalid.issues.some((i) => i.path.includes('endBar'))).toBe(true);
+  });
+
   it('rejects non-chordtube.net URLs', () => {
     const broken = structuredClone(sampleTrack);
     broken.source.url = 'https://example.com/songs/123';
