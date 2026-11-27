@@ -856,5 +856,216 @@
     "evidence_type": "human-authored-educational-source",
     "confidence": "high",
     "notes": "The source defines I as tonic function (stability/rest) and identifies vi/iii as tonic-prolongation function. This record distinguishes a sustained tonic chord from a pedal point."
+  },
+  {
+    "id": "HARM-027",
+    "name": "Common-tone diminished seventh chord",
+    "summary": "Place a fully diminished seventh chord immediately before or around a target chord while retaining one pitch common to the target. The other chord tones can move by semitone into the target, creating an ornamental chromatic intensification rather than a conventional dominant progression.",
+    "tags": [
+      "common-tone-diminished",
+      "diminished-seventh",
+      "chromatic-voice-leading",
+      "embellishment",
+      "common-tone"
+    ],
+    "before": [
+      "F#m7"
+    ],
+    "after": [
+      "F#m7",
+      "Gdim7",
+      "F#m7"
+    ],
+    "useWhen": "A stable major or minor chord needs a brief chromatic shimmer without changing the underlying tonal destination.",
+    "caution": "Do not identify every diminished seventh as a common-tone diminished chord. Verify the shared pitch and the semitone resolutions; otherwise it may be a passing or secondary leading-tone diminished chord.",
+    "source": {
+      "title": "Open Music Theory — Common-Tone Chords (CT°7 & CT+6)",
+      "author": "Brian Jarvis",
+      "url": "https://viva.pressbooks.pub/openmusictheory/chapter/common-tone-chords/",
+      "accessed": "2026-11-27"
+    },
+    "evidence_type": "human-authored-open-textbook",
+    "confidence": "high",
+    "notes": "The source distinguishes common-tone diminished chords from progressive vii°7 chords: the common-tone version embellishes an upcoming major or dominant harmony and shares a pitch with the chord being embellished."
+  },
+  {
+    "id": "HARM-028",
+    "name": "Extended and altered chord tensions (9th, 11th, 13th)",
+    "summary": "Add ninths, elevenths, or thirteenths above a seventh chord, and optionally alter chord tones such as the fifth or extensions. These colors are defined not only by the symbol but by voicing, register, duration, and how the tones resolve.",
+    "tags": [
+      "extended-chords",
+      "altered-dominant",
+      "tensions",
+      "ninth",
+      "eleventh",
+      "thirteenth",
+      "voicing",
+      "jazz",
+      "pop"
+    ],
+    "before": [
+      "G7",
+      "Cm7"
+    ],
+    "after": [
+      "G7(b9,b13)",
+      "Cm7(9)"
+    ],
+    "useWhen": "A progression needs denser color, a more specific dominant tension, or a keyboard/Pad sonority beyond basic triads and sevenths.",
+    "caution": "Do not infer mood from the chord suffix alone. Some extensions replace or displace basic chord tones in particular voicings; the same pitch collection can have different functions depending on bass and context. Chord symbols alone do not specify the actual register or voicing.",
+    "source": {
+      "title": "Open Music Theory — Altered and Extended Dominant Chords",
+      "author": "Bryn Hughes",
+      "url": "https://viva.pressbooks.pub/openmusictheory/chapter/altered-and-extended-dominant-chords/",
+      "accessed": "2026-11-27"
+    },
+    "evidence_type": "human-authored-open-textbook",
+    "confidence": "high",
+    "notes": "The source explains altered fifths and 9th/11th/13th extensions, their voice-leading tendencies, and emphasizes that extensions depend on voicing and linear context."
+  },
+  {
+    "id": "HARM-029",
+    "name": "Harmonic rhythm (rate of chord change)",
+    "summary": "Harmonic rhythm is the duration of each harmony, or the rate at which chords change. A progression with the same chord identities can feel more active when the chord durations shorten, and more spacious when they lengthen.",
+    "tags": [
+      "harmonic-rhythm",
+      "chord-duration",
+      "phrase-energy",
+      "arrangement",
+      "timing"
+    ],
+    "before": [
+      "Cmaj7 (4 beats)",
+      "Fmaj7 (4 beats)"
+    ],
+    "after": [
+      "Cmaj7 (2 beats)",
+      "Fmaj7 (2 beats)",
+      "G7 (2 beats)",
+      "Cmaj7 (2 beats)"
+    ],
+    "useWhen": "Comparing how a section builds, relaxes, or changes density even when its chord vocabulary remains similar.",
+    "caution": "Harmonic rhythm is not the same as drum groove, meter, syncopation, or bass rhythm. A chord change on an offbeat can involve anticipation, but that needs separate timing evidence.",
+    "source": {
+      "title": "Music Theory for the 21st-Century Classroom — 9.2 Harmonic Rhythm",
+      "author": "Robert Hutchinson",
+      "url": "https://musictheory.pugetsound.edu/mt21c/HarmonicRhythm.html",
+      "accessed": "2026-11-27"
+    },
+    "evidence_type": "human-authored-open-textbook",
+    "confidence": "high",
+    "notes": "The textbook defines harmonic rhythm as how long each chord lasts and contrasts whole-note (four-beat) with faster two-beat changes."
+  },
+  {
+    "id": "HARM-030",
+    "name": "Tonal ambiguity through fragile, absent, or emergent tonic",
+    "summary": "A passage can weaken or delay the listener's sense of tonic by using the tonic chord in an inversion, withholding it until a later section, or implying it without ever stating it explicitly.",
+    "tags": [
+      "tonal-ambiguity",
+      "tonic-avoidance",
+      "off-tonic-opening",
+      "emergent-tonic",
+      "pop-harmony",
+      "tonal-center"
+    ],
+    "before": [
+      "I",
+      "IV",
+      "V"
+    ],
+    "after": [
+      "IV",
+      "V",
+      "iii",
+      "vi"
+    ],
+    "useWhen": "Explaining an opening or loop that feels major/minor ambiguous even though a nominal key is given.",
+    "caution": "A missing tonic chord in a short excerpt does not prove the whole song has an absent tonic. Check the full song, melody, bass, cadence, and section boundaries before assigning fragile, absent, or emergent tonic.",
+    "source": {
+      "title": "Open Music Theory — Fragile, Absent, and Emergent Tonics",
+      "author": "Megan Lavengood",
+      "url": "https://viva.pressbooks.pub/openmusictheory/chapter/fragile-absent-and-emergent-tonics/",
+      "accessed": "2026-11-27"
+    },
+    "evidence_type": "human-authored-open-textbook",
+    "confidence": "high",
+    "notes": "The source, drawing on Mark Spicer's account of pop tonality, distinguishes fragile tonics, emergent tonics withheld until a later moment, and absent tonics implied but never explicitly stated."
+  },
+  {
+    "id": "HARM-031",
+    "name": "Tonicization versus modulation (including direct modulation)",
+    "summary": "Tonicization temporarily emphasizes a chord as a local tonic, commonly with its own dominant. Modulation establishes a new key more durably, normally supported by a cadence or sustained evidence. A direct modulation changes key without a pivot chord or preparatory dominant.",
+    "tags": [
+      "tonicization",
+      "modulation",
+      "direct-modulation",
+      "key-change",
+      "secondary-dominant",
+      "form"
+    ],
+    "before": [
+      "E7",
+      "C#m7"
+    ],
+    "after": [
+      "E major section",
+      "N.C.",
+      "F# major section"
+    ],
+    "useWhen": "Distinguishing a local V/x event from a real key change at a section boundary.",
+    "caution": "A single chromatic chord or a single Roman-numeral mismatch does not prove modulation. Use phrase length, cadence, melodic evidence, and the following section's tonal behavior.",
+    "source": {
+      "title": "Music Theory for the 21st-Century Classroom — Tonicization versus Modulation",
+      "author": "Robert Hutchinson",
+      "url": "https://musictheory.pugetsound.edu/mt21c/TonicizationVersusModulation.html",
+      "accessed": "2026-11-27"
+    },
+    "evidence_type": "human-authored-open-textbook",
+    "confidence": "high",
+    "related_sources": [
+      {
+        "title": "Music Theory for the 21st-Century Classroom — Modulations Without Pivot Chords",
+        "author": "Robert Hutchinson",
+        "url": "https://musictheory.pugetsound.edu/mt21c/ModulationsWithoutPivotChords.html",
+        "accessed": "2026-11-27"
+      }
+    ],
+    "notes": "The textbook distinguishes short tonicization by a secondary chord from modulation confirmed by a cadence in the new key, and defines direct modulation as a sudden key change without pivot chords or dominant preparation."
+  },
+  {
+    "id": "HARM-032",
+    "name": "Chromatic sequence versus chromaticized diatonic sequence",
+    "summary": "A sequence repeats a harmonic or melodic model at a regular transposition. A chromatic sequence preserves both the size and quality of the transposition interval; a chromaticized diatonic sequence may contain chromatic chords but adjusts intervals to remain within one key.",
+    "tags": [
+      "chromatic-sequence",
+      "diatonic-sequence",
+      "sequence",
+      "transposition",
+      "tonal-ambiguity",
+      "modulation"
+    ],
+    "before": [
+      "G",
+      "F#m",
+      "Em",
+      "D"
+    ],
+    "after": [
+      "G7",
+      "F7",
+      "Eb7",
+      "Db7"
+    ],
+    "useWhen": "Determining whether repeated chromatic chords form a genuine transposed sequence or are simply chromatic passing/neighbor chords inside a tonal progression.",
+    "caution": "Chromatic notes alone do not make a chromatic sequence. Verify that the model repeats with the same interval size and quality, and compare the voice leading in each repetition.",
+    "source": {
+      "title": "Open Music Theory — Chromatic Sequences",
+      "author": "Bryn Hughes",
+      "url": "https://viva.pressbooks.pub/openmusictheory/chapter/chromatic-sequences/",
+      "accessed": "2026-11-27"
+    },
+    "evidence_type": "human-authored-open-textbook",
+    "confidence": "high",
+    "notes": "The source distinguishes diatonic, chromaticized-diatonic, and fully chromatic sequences, and explains how strict interval repetition can weaken tonal clarity or lead to modulation."
   }
 ]
