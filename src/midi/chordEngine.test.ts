@@ -27,6 +27,12 @@ describe('chordEngine and Piano SMF export', () => {
     expect(rest.isRest).toBe(true);
   });
 
+  it('parses Anomalie extended altered and major thirteenth chords', () => {
+    expect(parseChordSymbol('D#7(#9b13)')?.intervals).toEqual([0, 4, 7, 10, 15, 20]);
+    expect(parseChordSymbol('EM7(9)')?.intervals).toEqual([0, 4, 7, 11, 14]);
+    expect(parseChordSymbol('CM7(9,13)')?.intervals).toEqual([0, 4, 7, 11, 14, 21]);
+  });
+
   it('resolves ChordTube Roman numerals into concrete chord symbols', () => {
     expect(resolveRomanToChord('IVM7', 'C major')).toBe('FM7');
     expect(resolveRomanToChord('V/VII', 'C major')).toBe('G/B');
