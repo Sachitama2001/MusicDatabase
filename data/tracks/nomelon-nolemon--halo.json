@@ -1,0 +1,281 @@
+{
+  "schemaVersion": "2.0",
+  "id": "nomelon-nolemon--halo",
+  "title": "HALO",
+  "artist": "NOMELON NOLEMON",
+  "source": {
+    "platform": "chordtube",
+    "url": "https://chordtube.net/videos/dDAP5OQv2RA",
+    "youtubeId": "dDAP5OQv2RA"
+  },
+  "bpm": 131,
+  "key": "E major",
+  "timeSignature": "4/4",
+  "overallFeelings": [
+    "王道感",
+    "変化",
+    "浮遊感",
+    "上昇感"
+  ],
+  "notes": "ユーザー提供ChordTube印刷PDF（10ページ）から、指定されたイントロ1〜8小節とDメロ75〜80小節のみを登録。全体Key E major、131 BPM、4/4、転調0回。ChordTubeの曲ページはPDF内の作品リンク /works/545 と、ジャンル地図リンクのsong=dDAP5OQv2RAから特定。コード名・小節番号は印刷譜から転記。イントロの拍内位置と長さはカードのグリッドおよび「裏」「食い」表示からの視覚的な概算であり、厳密な拍位置は未確定。Dメロ75〜80は各小節に1コードとして記載。ユーザーはこの区間を間奏で使える素材として評価している。",
+  "sections": [
+    {
+      "id": "sec-01-intro",
+      "label": "intro",
+      "displayName": "イントロ",
+      "order": 1,
+      "startBar": 1,
+      "endBar": 8,
+      "localKey": "E major",
+      "feelings": [
+        "王道感",
+        "変化",
+        "意外性"
+      ],
+      "feelingSummary": "王道進行を繰り返す中で、dimを挿入して変化を付けているイントロ。",
+      "cadenceOrMotion": "E majorを基準に、AM7–Bを軸とする王道進行の流れへCdimを挿入。CdimからC#m系へ進むことで、定型感の中にクロマチックな変化を加えている。",
+      "tags": [
+        "bars-1-8",
+        "chordtube-pdf",
+        "diminished-passing-chord",
+        "timing-estimate"
+      ],
+      "chords": [
+        {
+          "symbol": "AM7",
+          "roman": "IVM7",
+          "beats": 2,
+          "bar": 1,
+          "beatOffset": 0,
+          "note": "ChordTube 1小節目"
+        },
+        {
+          "symbol": "B",
+          "roman": "V",
+          "beats": 1.5,
+          "bar": 1,
+          "beatOffset": 2,
+          "note": "ChordTube 1小節目・裏の位置を含む（拍位置概算）"
+        },
+        {
+          "symbol": "G#m",
+          "roman": "IIIm",
+          "beats": 0.5,
+          "bar": 1,
+          "beatOffset": 3.5,
+          "note": "ChordTube 1小節目末の食い（拍位置概算）"
+        },
+        {
+          "symbol": "G#m7",
+          "roman": "IIIm7",
+          "beats": 1.5,
+          "bar": 2,
+          "beatOffset": 0,
+          "note": "ChordTube 2小節目"
+        },
+        {
+          "symbol": "C#m7",
+          "roman": "VIm7",
+          "beats": 2,
+          "bar": 2,
+          "beatOffset": 1.5,
+          "note": "ChordTube 2小節目"
+        },
+        {
+          "symbol": "C#m7/G#",
+          "roman": "VIm7/III",
+          "beats": 0.5,
+          "bar": 2,
+          "beatOffset": 3.5,
+          "note": "ChordTube 2小節目末の食い（拍位置概算）"
+        },
+        {
+          "symbol": "A",
+          "roman": "IV",
+          "beats": 1,
+          "bar": 3,
+          "beatOffset": 0,
+          "note": "ChordTube 3小節目"
+        },
+        {
+          "symbol": "Cdim",
+          "roman": "bVIdim",
+          "beats": 2.5,
+          "bar": 3,
+          "beatOffset": 1,
+          "note": "ChordTube 3小節目・裏から入る表示（拍位置概算）"
+        },
+        {
+          "symbol": "C#m",
+          "roman": "VIm",
+          "beats": 0.5,
+          "bar": 3,
+          "beatOffset": 3.5,
+          "note": "ChordTube 3小節目末の食い（拍位置概算）"
+        },
+        {
+          "symbol": "C#m7",
+          "roman": "VIm7",
+          "beats": 2,
+          "bar": 4,
+          "beatOffset": 0,
+          "note": "ChordTube 4小節目"
+        },
+        {
+          "symbol": "A#m7-5",
+          "roman": "#IVm7-5",
+          "beats": 2,
+          "bar": 4,
+          "beatOffset": 2,
+          "note": "ChordTube 4小節目"
+        },
+        {
+          "symbol": "AM7",
+          "roman": "IVM7",
+          "beats": 1.5,
+          "bar": 5,
+          "beatOffset": 0,
+          "note": "ChordTube 5小節目"
+        },
+        {
+          "symbol": "B",
+          "roman": "V",
+          "beats": 2,
+          "bar": 5,
+          "beatOffset": 1.5,
+          "note": "ChordTube 5小節目・裏の位置を含む（拍位置概算）"
+        },
+        {
+          "symbol": "Cdim",
+          "roman": "bVIdim",
+          "beats": 0.5,
+          "bar": 5,
+          "beatOffset": 3.5,
+          "note": "ChordTube 5小節目末の食い（拍位置概算）"
+        },
+        {
+          "symbol": "Cdim",
+          "roman": "bVIdim",
+          "beats": 2,
+          "bar": 6,
+          "beatOffset": 0,
+          "note": "ChordTube 6小節目"
+        },
+        {
+          "symbol": "C#m7",
+          "roman": "VIm7",
+          "beats": 2,
+          "bar": 6,
+          "beatOffset": 2,
+          "note": "ChordTube 6小節目"
+        },
+        {
+          "symbol": "A",
+          "roman": "IV",
+          "beats": 1,
+          "bar": 7,
+          "beatOffset": 0,
+          "note": "ChordTube 7小節目（2/4）"
+        },
+        {
+          "symbol": "B",
+          "roman": "V",
+          "beats": 1,
+          "bar": 7,
+          "beatOffset": 1,
+          "note": "ChordTube 7小節目末の食い（2/4・拍位置概算）"
+        },
+        {
+          "symbol": "B",
+          "roman": "V",
+          "beats": 1,
+          "bar": 8,
+          "beatOffset": 0,
+          "note": "ChordTube 8小節目"
+        },
+        {
+          "symbol": "E",
+          "roman": "I",
+          "beats": 3,
+          "bar": 8,
+          "beatOffset": 1,
+          "note": "ChordTube 8小節目"
+        }
+      ]
+    },
+    {
+      "id": "sec-02-d-melody",
+      "label": "other",
+      "displayName": "Dメロ（間奏向け）",
+      "order": 2,
+      "startBar": 75,
+      "endBar": 80,
+      "localKey": "E major",
+      "feelings": [
+        "浮遊感",
+        "宙ぶらりん",
+        "上昇感",
+        "自然な接続"
+      ],
+      "feelingSummary": "間奏で使える。宙ぶらりんな浮遊感から、自然に上昇に接続できる。",
+      "cadenceOrMotion": "E/F#を軸に、C#m7を経てE/F#–E/G#へベースを上昇。AM7(9)からE/Bへ移り、次の展開へ接続しやすい形。",
+      "tags": [
+        "bars-75-80",
+        "chordtube-pdf",
+        "interlude-material"
+      ],
+      "chords": [
+        {
+          "symbol": "E/F#",
+          "roman": "I/II",
+          "beats": 4,
+          "bar": 75,
+          "beatOffset": 0,
+          "note": "ChordTube 75小節目"
+        },
+        {
+          "symbol": "C#m7",
+          "roman": "VIm7",
+          "beats": 4,
+          "bar": 76,
+          "beatOffset": 0,
+          "note": "ChordTube 76小節目"
+        },
+        {
+          "symbol": "E/F#",
+          "roman": "I/II",
+          "beats": 4,
+          "bar": 77,
+          "beatOffset": 0,
+          "note": "ChordTube 77小節目"
+        },
+        {
+          "symbol": "E/G#",
+          "roman": "I/III",
+          "beats": 4,
+          "bar": 78,
+          "beatOffset": 0,
+          "note": "ChordTube 78小節目"
+        },
+        {
+          "symbol": "AM7(9)",
+          "roman": "IVM7(9)",
+          "beats": 4,
+          "bar": 79,
+          "beatOffset": 0,
+          "note": "ChordTube 79小節目"
+        },
+        {
+          "symbol": "E/B",
+          "roman": "I/V",
+          "beats": 4,
+          "bar": 80,
+          "beatOffset": 0,
+          "note": "ChordTube 80小節目"
+        }
+      ]
+    }
+  ],
+  "createdAt": "2026-11-27T16:54:00+09:00",
+  "updatedAt": "2026-11-27T16:54:00+09:00"
+}
