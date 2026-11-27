@@ -4,6 +4,8 @@ export interface ChordInput {
   symbol: string;
   roman?: string;
   beats: number;
+  bar?: number;
+  beatOffset?: number;
   note?: string;
 }
 
@@ -455,6 +457,7 @@ export interface GeneratePianoOptions {
   key?: string;
   transpose?: number;
   voicing?: VoicingStyle;
+  beatsPerBar?: number;
 }
 
 /**
@@ -465,7 +468,9 @@ export function generatePianoSequence(
   options: GeneratePianoOptions = {}
 ): GeneratedPianoSequence {
   const transpose = options.transpose ?? 0;
-  const voicing = options.voicing ?? 'smooth';
+  const voicing = options.voicing ?? 'arpeggio';
+  const beatsPerBar = options.beatsPerBar ?? 4;
+  const firstBar = chords.find((chord) => chord.bar !== undefined)?.bar;
   const notes: PianoNote[] = [];
   const chordSpans: ChordSpan[] = [];
 
@@ -475,6 +480,9 @@ export function generatePianoSequence(
   for (let i = 0; i < chords.length; i++) {
     const item = chords[i];
     const beats = Math.max(0.25, item.beats);
+    const startBeat = item.bar !== undefined && firstBar !== undefined
+      ? (item.bar - firstBar) * beatsPerBar + (item.beatOffset ?? 0)
+      : cursor;
     let symbolToParse = item.symbol.trim();
     if (!symbolToParse && item.roman && options.key) {
       symbolToParse = resolveRomanToChord(item.roman, options.key) ?? '';
@@ -494,8 +502,8 @@ export function generatePianoSequence(
       originalSymbol: symbolToParse,
       displaySymbol,
       roman: item.roman,
-      startBeat: cursor,
-      endBeat: cursor + beats,
+      startBeat,
+      endBeat: startBeat + beats,
       beats,
       isRest: parsed.isRest
     });
@@ -504,14 +512,14 @@ export function generatePianoSequence(
       const { bass, rightHand } = buildVoicingForChord(parsed, transpose, voicing, prevRightHand);
       prevRightHand = rightHand;
 
-      const sustainDur = Math.max(0.15, beats - 0.05);
+      const sustainDur = Math.max(0.15, beats);
 
       if (voicing === 'arpeggio') {
         notes.push({
           midi: bass,
-          startBeat: cursor,
+          startBeat,
           durationBeats: sustainDur,
-          velocity: 0.78,
+          velocity: 0.52,
           chordIndex: i
         });
 
@@ -522,40 +530,59 @@ export function generatePianoSequence(
             : rightHand;
         const stepCount = Math.max(1, Math.floor(beats / step));
         for (let s = 0; s < stepCount; s++) {
-          const noteStart = cursor + s * step;
-          const remaining = cursor + beats - noteStart;
+          const noteStart = startBeat + s * step;
+          const remaining = startBeat + beats - noteStart;
           notes.push({
             midi: pattern[s % pattern.length],
             startBeat: noteStart,
-            durationBeats: Math.min(step * 1.4, Math.max(0.15, remaining - 0.03)),
-            velocity: s === 0 ? 0.76 : 0.66,
+            durationBeats: Math.min(step * 1.35, Math.max(0.15, remaining)),
+            velocity: s === 0 ? 0.56 : 0.46,
             chordIndex: i
           });
         }
       } else {
         notes.push({
           midi: bass,
-          startBeat: cursor,
+          startBeat,
           durationBeats: sustainDur,
-          velocity: 0.76,
+          velocity: 0.52,
           chordIndex: i
         });
         for (let idx = 0; idx < rightHand.length; idx++) {
           notes.push({
             midi: rightHand[idx],
-            startBeat: cursor,
+            startBeat,
             durationBeats: sustainDur,
-            velocity: idx === rightHand.length - 1 ? 0.74 : 0.68,
+            velocity: idx === rightHand.length - 1 ? 0.5 : 0.44,
             chordIndex: i
           });
         }
       }
     }
 
-    cursor += beats;
+    cursor = Math.max(cursor, startBeat + beats);
   }
 
-  return { notes, chordSpans, totalBeats: cursor };
+  // Merge same-pitch notes that touch or overlap so anticipations remain tied
+  // across a bar line rather than being retriggered with a small gap.
+  const mergedNotes: PianoNote[] = [];
+  const lastByPitch = new Map<number, PianoNote>();
+  for (const note of [...notes].sort((a, b) => a.startBeat - b.startBeat)) {
+    const previous = lastByPitch.get(note.midi);
+    if (previous && note.startBeat <= previous.startBeat + previous.durationBeats + 0.001) {
+      const end = Math.max(
+        previous.startBeat + previous.durationBeats,
+        note.startBeat + note.durationBeats
+      );
+      previous.durationBeats = end - previous.startBeat;
+    } else {
+      const copy = { ...note };
+      mergedNotes.push(copy);
+      lastByPitch.set(copy.midi, copy);
+    }
+  }
+
+  return { notes: mergedNotes, chordSpans, totalBeats: cursor };
 }
 
 export function parseTimeSignature(ts: string): [number, number] {
