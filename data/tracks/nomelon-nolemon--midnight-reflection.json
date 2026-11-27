@@ -168,6 +168,29 @@
             }
           ],
           "sourceNote": "ChordTube印刷PDF（イントロ）"
+        },
+        {
+          "id": "tonic-withheld-opening",
+          "technique": "トニックの回避／保留による調性の曖昧さ",
+          "matchType": "inference",
+          "confidence": "medium",
+          "location": "1〜9小節",
+          "note": "E major と記載されているが、イントロ内にE majorの主和音が現れず、N.C.→AM7（IV）→B7（V）から始まる。主音和音を避けることで、長調・短調の確定を遅らせるオフ・トニックな導入として説明できる。ただし、この9小節だけで楽曲全体を「トニック不在」とは断定しない。",
+          "theoryRefs": [
+            "HARM-030"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-030",
+              "libraryFile": "harmony-techniques.json",
+              "title": "Open Music Theory — Fragile, Absent, and Emergent Tonics",
+              "author": "Megan Lavengood",
+              "url": "https://viva.pressbooks.pub/openmusictheory/chapter/fragile-absent-and-emergent-tonics/",
+              "evidenceType": "human-authored-open-textbook",
+              "sourceConfidence": "high"
+            }
+          ],
+          "caveat": "全曲のメロディーと後続セクションを含めた聴感確認が必要。"
         }
       ]
     },
@@ -438,6 +461,28 @@
             }
           ],
           "sourceNote": "ChordTube印刷PDF（Aメロ）"
+        },
+        {
+          "id": "common-tone-gdim-fsharp",
+          "technique": "コモントーン・ディミニッシュ7th",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "21小節：Gdim7→F#m7(9)",
+          "note": "Gdim7（G–Bb–Db–Fb）はF#m7(9)（F#–A–C#–E）とE（Fb）の共通音を持ち、残りのG・Bb・DbがF#・A・C#へ半音下降する。F#m7を一時的に装飾するコモントーン・ディミニッシュとして、単なるパッシングdimや副次導音dimと区別できる。",
+          "theoryRefs": [
+            "HARM-027"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-027",
+              "libraryFile": "harmony-techniques.json",
+              "title": "Open Music Theory — Common-Tone Chords (CT°7 & CT+6)",
+              "author": "Brian Jarvis",
+              "url": "https://viva.pressbooks.pub/openmusictheory/chapter/common-tone-chords/",
+              "evidenceType": "human-authored-open-textbook",
+              "sourceConfidence": "high"
+            }
+          ]
         }
       ]
     },
@@ -789,6 +834,29 @@
             }
           ],
           "sourceNote": "ChordTube印刷PDF（サビ）"
+        },
+        {
+          "id": "direct-modulation-e-fsharp",
+          "technique": "直接転調（E major→F# major）",
+          "matchType": "inference",
+          "confidence": "medium",
+          "location": "31〜32小節の境界",
+          "note": "ChordTube上でBメロのE majorからサビのF# majorへキーが変わる。31小節のN.C.を挟み、32小節から新しい調のIVであるBM7が始まるため、共通和音を介さないセクション境界の直接転調として読むのが自然。ただし、転調の確定感はメロディーと後続のカデンツも含めて判断する。",
+          "theoryRefs": [
+            "HARM-031"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-031",
+              "libraryFile": "harmony-techniques.json",
+              "title": "Music Theory for the 21st-Century Classroom — Tonicization versus Modulation",
+              "author": "Robert Hutchinson",
+              "url": "https://musictheory.pugetsound.edu/mt21c/TonicizationVersusModulation.html",
+              "evidenceType": "human-authored-open-textbook",
+              "sourceConfidence": "high"
+            }
+          ],
+          "caveat": "キー表示とコード表記に基づく。音源全体のカデンツ確認は未実施。"
         }
       ]
     }
