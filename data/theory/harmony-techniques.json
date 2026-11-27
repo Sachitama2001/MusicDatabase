@@ -824,5 +824,37 @@
     "evidence_type": "human-authored-educational-source",
     "confidence": "high",
     "notes": "The source presents II–V–I as a shorter progression derived from the circle of fifths, with roots moving by ascending fourths / descending fifths."
+  },
+  {
+    "id": "HARM-026",
+    "name": "Tonic stability / tonic prolongation",
+    "summary": "The tonic chord provides stability and rest. Tonic-prolonging chords such as vi and iii can extend that stable area before predominant and dominant motion begins.",
+    "tags": [
+      "tonic-function",
+      "tonic-prolongation",
+      "stability",
+      "opening",
+      "phrase-structure"
+    ],
+    "before": [
+      "I"
+    ],
+    "after": [
+      "I",
+      "vi",
+      "iii",
+      "IV",
+      "V"
+    ],
+    "useWhen": "A phrase should establish or extend a clear tonal home before moving into more active predominant or dominant harmony.",
+    "caution": "A sustained I chord is a tonic hold; the textbook tonic-prolongation progression usually involves additional chords such as vi or iii. Do not call a single held chord a pedal point unless the bass note persists under changing upper harmony.",
+    "source": {
+      "title": "Music Theory for the 21st-Century Classroom — 9.4 Harmonic Function",
+      "url": "https://musictheory.pugetsound.edu/mt21c/HarmonicFunction.html",
+      "accessed": "2026-11-27"
+    },
+    "evidence_type": "human-authored-educational-source",
+    "confidence": "high",
+    "notes": "The source defines I as tonic function (stability/rest) and identifies vi/iii as tonic-prolongation function. This record distinguishes a sustained tonic chord from a pedal point."
   }
 ]
