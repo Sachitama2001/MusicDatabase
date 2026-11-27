@@ -1,0 +1,309 @@
+{
+  "schemaVersion": "2.0",
+  "id": "mylta--dawn",
+  "title": "DAWN",
+  "artist": "Mylta",
+  "source": {
+    "platform": "chordtube",
+    "url": "https://chordtube.net/"
+  },
+  "bpm": 175,
+  "key": "F# major",
+  "timeSignature": "4/4",
+  "overallFeelings": [
+    "半音下降",
+    "クロマチック",
+    "面白い変化",
+    "浮遊感",
+    "間奏向け"
+  ],
+  "notes": "ユーザー提供ChordTube印刷PDF（13ページ）に基づく。PDF 1ページの全体情報はF# major、4/4、175 BPM、転調1回。個別ChordTube URL・YouTube IDはPDF内で確認できないためsource.urlはChordTubeトップページを暫定登録。対象は125〜140小節の間奏専用セクション。85小節付近でD# minorからF# majorへ転調しているため、この区間のlocalKeyはF# major。コード名と小節番号はPDF 7ページから転記。小節内の細かな位置はカードのグリッドと「裏」「食い」表示から概算。空欄小節は直前コードの持続と解釈。半音変化としてFm7(9)→A#7(b9,b13)、G#m7(9)→GM7(9)などを記録。",
+  "sections": [
+    {
+      "id": "sec-01-interlude",
+      "label": "interlude",
+      "displayName": "間奏",
+      "order": 1,
+      "startBar": 125,
+      "endBar": 140,
+      "localKey": "F# major",
+      "feelings": [
+        "半音下降",
+        "クロマチック",
+        "面白い",
+        "浮遊感",
+        "間奏専用"
+      ],
+      "feelingSummary": "間奏専用。半音下降を色んなとこでやって、面白い。",
+      "cadenceOrMotion": "BM7(9)からBM7(9)/C#へベースを動かし、D#m7(9)へ接続。G#m7(9)–C#7(9,13)–F#M系のII–V–I的な流れを挟みつつ、Fm7(9)–A#7(b9,b13)–D#m7(9)のクロマチックな緊張を繰り返す。さらにG#m7(9)からGM7(9)への半音上行・変化や、F#M系への着地を各所に配置する。",
+      "tags": [
+        "bars-125-140",
+        "chordtube-pdf",
+        "interlude-only",
+        "chromatic-motion",
+        "semitone-motion",
+        "half-step-color"
+      ],
+      "chords": [
+        {
+          "symbol": "BM7(9)",
+          "roman": "IVM7(9)",
+          "beats": 1.5,
+          "bar": 125,
+          "beatOffset": 0,
+          "note": "ChordTube 125小節目"
+        },
+        {
+          "symbol": "BM7(9)/C#",
+          "roman": "IVM7(9)/V",
+          "beats": 2,
+          "bar": 125,
+          "beatOffset": 1.5,
+          "note": "125小節目の裏位置。ベースC#への変化"
+        },
+        {
+          "symbol": "D#m",
+          "roman": "VIm",
+          "beats": 0.5,
+          "bar": 125,
+          "beatOffset": 3.5,
+          "note": "125小節目末の食い。次小節のD#m7(9)へ"
+        },
+        {
+          "symbol": "D#m7(9)",
+          "roman": "VIm7(9)",
+          "beats": 4,
+          "bar": 126,
+          "beatOffset": 0,
+          "note": "ChordTube 126小節目"
+        },
+        {
+          "symbol": "G#m7(9)",
+          "roman": "IIm7(9)",
+          "beats": 1.5,
+          "bar": 127,
+          "beatOffset": 0,
+          "note": "ChordTube 127小節目"
+        },
+        {
+          "symbol": "C#7(9,13)",
+          "roman": "V7(9,13)",
+          "beats": 2,
+          "bar": 127,
+          "beatOffset": 1.5,
+          "note": "127小節目"
+        },
+        {
+          "symbol": "F#M",
+          "roman": "I",
+          "beats": 0.5,
+          "bar": 127,
+          "beatOffset": 3.5,
+          "note": "127小節目末の食い。次小節のF#M7/C#へ"
+        },
+        {
+          "symbol": "F#M7/C#",
+          "roman": "IM7/V",
+          "beats": 1.5,
+          "bar": 128,
+          "beatOffset": 0,
+          "note": "ChordTube 128小節目の裏位置"
+        },
+        {
+          "symbol": "F#M7(9,13)",
+          "roman": "IM7(9,13)",
+          "beats": 2.5,
+          "bar": 128,
+          "beatOffset": 1.5,
+          "note": "128小節目"
+        },
+        {
+          "symbol": "Fm7(9)",
+          "roman": "bIm7(9)",
+          "beats": 1.5,
+          "bar": 129,
+          "beatOffset": 0,
+          "note": "ChordTube 129小節目。F#からFへの半音下降"
+        },
+        {
+          "symbol": "A#7(b9,b13)",
+          "roman": "III7(b9,b13)",
+          "beats": 2,
+          "bar": 129,
+          "beatOffset": 1.5,
+          "note": "129小節目。トリプレット表示を含むため位置概算"
+        },
+        {
+          "symbol": "D#m7",
+          "roman": "VIm7",
+          "beats": 0.5,
+          "bar": 129,
+          "beatOffset": 3.5,
+          "note": "129小節目末の食い"
+        },
+        {
+          "symbol": "D#m7(9)",
+          "roman": "VIm7(9)",
+          "beats": 4,
+          "bar": 130,
+          "beatOffset": 0,
+          "note": "ChordTube 130小節目"
+        },
+        {
+          "symbol": "G#m7(9)",
+          "roman": "IIm7(9)",
+          "beats": 1.5,
+          "bar": 131,
+          "beatOffset": 0,
+          "note": "ChordTube 131小節目"
+        },
+        {
+          "symbol": "GM7(9)",
+          "roman": "bIIM7(9)",
+          "beats": 2,
+          "bar": 131,
+          "beatOffset": 1.5,
+          "note": "131小節目。G#mからGへの半音下降"
+        },
+        {
+          "symbol": "F#M",
+          "roman": "I",
+          "beats": 0.5,
+          "bar": 131,
+          "beatOffset": 3.5,
+          "note": "131小節目末の食い"
+        },
+        {
+          "symbol": "F#M7(9)",
+          "roman": "IM7(9)",
+          "beats": 4,
+          "bar": 132,
+          "beatOffset": 0,
+          "note": "ChordTube 132小節目"
+        },
+        {
+          "symbol": "BM7(9)",
+          "roman": "IVM7(9)",
+          "beats": 3.5,
+          "bar": 133,
+          "beatOffset": 0,
+          "note": "ChordTube 133小節目"
+        },
+        {
+          "symbol": "D#m7(9)",
+          "roman": "VIm7(9)",
+          "beats": 0.5,
+          "bar": 133,
+          "beatOffset": 3.5,
+          "note": "133小節目末の食い"
+        },
+        {
+          "symbol": "D#m7(9)",
+          "roman": "VIm7(9)",
+          "beats": 4,
+          "bar": 134,
+          "beatOffset": 0,
+          "note": "ChordTube 134小節目はコード表記なし。直前のD#m7(9)持続と解釈"
+        },
+        {
+          "symbol": "G#m7(9)",
+          "roman": "IIm7(9)",
+          "beats": 1.5,
+          "bar": 135,
+          "beatOffset": 0,
+          "note": "ChordTube 135小節目"
+        },
+        {
+          "symbol": "C#7(9,13)",
+          "roman": "V7(9,13)",
+          "beats": 1.5,
+          "bar": 135,
+          "beatOffset": 1.5,
+          "note": "135小節目の裏位置"
+        },
+        {
+          "symbol": "F#M7",
+          "roman": "IM7",
+          "beats": 1,
+          "bar": 135,
+          "beatOffset": 3,
+          "note": "135小節目終盤"
+        },
+        {
+          "symbol": "F#M7",
+          "roman": "IM7",
+          "beats": 4,
+          "bar": 136,
+          "beatOffset": 0,
+          "note": "ChordTube 136小節目はコード表記なし。直前のF#M7持続と解釈"
+        },
+        {
+          "symbol": "Fm7(9)",
+          "roman": "bIm7(9)",
+          "beats": 1.5,
+          "bar": 137,
+          "beatOffset": 0,
+          "note": "ChordTube 137小節目。F#からFへの半音下降"
+        },
+        {
+          "symbol": "A#7(b9,b13)",
+          "roman": "III7(b9,b13)",
+          "beats": 2,
+          "bar": 137,
+          "beatOffset": 1.5,
+          "note": "137小節目。16分音符表示あり、位置概算"
+        },
+        {
+          "symbol": "D#m7",
+          "roman": "VIm7",
+          "beats": 0.5,
+          "bar": 137,
+          "beatOffset": 3.5,
+          "note": "137小節目末の食い"
+        },
+        {
+          "symbol": "D#m7(9)",
+          "roman": "VIm7(9)",
+          "beats": 4,
+          "bar": 138,
+          "beatOffset": 0,
+          "note": "ChordTube 138小節目"
+        },
+        {
+          "symbol": "G#m7(9)",
+          "roman": "IIm7(9)",
+          "beats": 1.5,
+          "bar": 139,
+          "beatOffset": 0,
+          "note": "ChordTube 139小節目"
+        },
+        {
+          "symbol": "GM7(9)",
+          "roman": "bIIM7(9)",
+          "beats": 2,
+          "bar": 139,
+          "beatOffset": 1.5,
+          "note": "139小節目。G#mからGへの半音下降"
+        },
+        {
+          "symbol": "F#M7",
+          "roman": "IM7",
+          "beats": 0.5,
+          "bar": 139,
+          "beatOffset": 3.5,
+          "note": "139小節目末の食い"
+        },
+        {
+          "symbol": "F#M7(9)",
+          "roman": "IM7(9)",
+          "beats": 4,
+          "bar": 140,
+          "beatOffset": 0,
+          "note": "ChordTube 140小節目"
+        }
+      ]
+    }
+  ],
+  "createdAt": "2026-11-27T18:02:00+09:00",
+  "updatedAt": "2026-11-27T18:02:00+09:00"
+}
