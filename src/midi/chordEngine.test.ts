@@ -92,6 +92,17 @@ describe('chordEngine and Piano SMF export', () => {
     expect(tied!.durationBeats).toBeGreaterThan(0.5);
   });
 
+  it('accounts for a 2/4 bar when calculating later bar positions', () => {
+    const chords = [
+      { symbol: 'Cmaj7', beats: 4, bar: 1, beatOffset: 0 },
+      { symbol: 'Fmaj7', beats: 2, bar: 2, beatOffset: 0, barBeats: 2 },
+      { symbol: 'G7', beats: 4, bar: 3, beatOffset: 0 }
+    ];
+    const sequence = generatePianoSequence(chords);
+    expect(sequence.chordSpans.map((span) => span.startBeat)).toEqual([0, 4, 6]);
+    expect(sequence.totalBeats).toBe(10);
+  });
+
   it('parses Roman numeral quick lines when a key is provided', () => {
     const chords = parseQuickChordLine('IVM7(2) III7(2) VIm7(4)', 'C major');
     expect(chords.map((c) => c.symbol)).toEqual(['FM7', 'E7', 'Am7']);
