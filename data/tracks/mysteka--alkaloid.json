@@ -543,6 +543,28 @@
             }
           ],
           "sourceNote": "ChordTube印刷PDF（49〜64小節）"
+        },
+        {
+          "id": "extended-altered-tensions",
+          "technique": "拡張和音・オルタード・テンション",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "49〜64小節",
+          "note": "A7(#9)、Eb7(9)、Dm7(9)、Gm7(9)、Dbm7(9)、F7(9)など、9thや#9を使ったドミナントとマイナーセブンスの拡張が多い。これらは和音の機能を置き換えるというより、緊張の質感を変える色彩として働いている。",
+          "theoryRefs": [
+            "HARM-028"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-028",
+              "libraryFile": "harmony-techniques.json",
+              "title": "Open Music Theory — Altered and Extended Dominant Chords",
+              "author": "Bryn Hughes",
+              "url": "https://viva.pressbooks.pub/openmusictheory/chapter/altered-and-extended-dominant-chords/",
+              "evidenceType": "human-authored-open-textbook",
+              "sourceConfidence": "high"
+            }
+          ]
         }
       ]
     }
