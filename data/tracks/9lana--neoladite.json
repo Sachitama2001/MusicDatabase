@@ -713,6 +713,28 @@
           ],
           "sourceNote": "ChordTube印刷PDF pp.3–4",
           "caveat": "ルートポジション表記からベースもルートとみなした分析。実演ボイシングの最低音は別途確認が必要。"
+        },
+        {
+          "id": "harmonic-rhythm-chorus",
+          "technique": "ハーモニック・リズムの加速",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "25・33小節",
+          "note": "通常の2拍単位のコード進行に対して、C#m7→Cm7→Bm7→A#m7-5を各1拍で連続させる箇所がある。短いクロマチック下降とコード変化の加速が重なり、サビ内に一瞬の推進力を作る。",
+          "theoryRefs": [
+            "HARM-029"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-029",
+              "libraryFile": "harmony-techniques.json",
+              "title": "Music Theory for the 21st-Century Classroom — 9.2 Harmonic Rhythm",
+              "author": "Robert Hutchinson",
+              "url": "https://musictheory.pugetsound.edu/mt21c/HarmonicRhythm.html",
+              "evidenceType": "human-authored-open-textbook",
+              "sourceConfidence": "high"
+            }
+          ]
         }
       ]
     }
