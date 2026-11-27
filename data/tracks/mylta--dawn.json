@@ -301,9 +301,101 @@
           "beatOffset": 0,
           "note": "ChordTube 140小節目"
         }
+      ],
+      "theoryAnnotations": [
+        {
+          "id": "circle-ii-v-i",
+          "technique": "五度圏進行／ii–V–I",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "127・135小節",
+          "note": "G#m7(9)→C#7(9,13)→F#M7 は F# major の ii–V–I。ルートが G#→C#→F# と五度圏方向に進み、F#M7 に強く着地する。",
+          "theoryRefs": [
+            "HARM-025"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-025",
+              "libraryFile": "harmony-techniques.json",
+              "title": "Music Theory for the 21st-Century Classroom — 9.3.1 II–V–I",
+              "url": "https://musictheory.pugetsound.edu/mt21c/ShorterProgressionsFromTheCircleOfFifths.html",
+              "evidenceType": "human-authored-educational-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF p.7"
+        },
+        {
+          "id": "secondary-dominant-vi",
+          "technique": "セカンダリー・ドミナント V/vi",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "129・137小節",
+          "note": "A#7(b9,b13)→D#m7(9) は F# major における III7→vi、すなわち D#m7 を一時的な到達点として強調する V/vi。",
+          "theoryRefs": [
+            "HARM-018"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-018",
+              "libraryFile": "harmony-techniques.json",
+              "title": "二次ドミナント",
+              "author": "yuta",
+              "url": "https://soundquest.jp/quest/chord/chord-mv2/secondary-dominant/",
+              "evidenceType": "human-authored-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF p.7"
+        },
+        {
+          "id": "chromatic-gsharp-g-fsharp",
+          "technique": "下降クロマチック・ベースライン",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "131〜132・139〜140小節",
+          "note": "G#m7(9)→GM7(9)→F#M7 はルート／ベースが G#→G→F# と半音ずつ下降する。HARM-024 のクロマチック下降線の短い形として、F#M7 への着地を装飾する。",
+          "theoryRefs": [
+            "HARM-024"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-024",
+              "libraryFile": "harmony-techniques.json",
+              "title": "Music Theory for the 21st-Century Classroom — 21.7 Descending Chromatic Bass Lines",
+              "url": "https://musictheory.pugetsound.edu/mt21c/DescendingChromaticBassLines.html",
+              "evidenceType": "human-authored-educational-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF p.7"
+        },
+        {
+          "id": "hybrid-bm7-csharp",
+          "technique": "ハイブリッドコード／テンションベース",
+          "matchType": "direct",
+          "confidence": "high",
+          "location": "125小節",
+          "note": "BM7(9)/C# は B major の上部構造に C# ベースを組み合わせた形。C# は BM7 の基本三和音外なので、上部コードと異なるベース機能を重ねている。",
+          "theoryRefs": [
+            "HARM-013"
+          ],
+          "sources": [
+            {
+              "recordId": "HARM-013",
+              "libraryFile": "harmony-techniques.json",
+              "title": "おしゃれコード進行一覧 — ジャンル別の解説",
+              "author": "SRM.",
+              "url": "https://srm-music.com/stylish-chord/",
+              "evidenceType": "human-authored-source",
+              "sourceConfidence": "high"
+            }
+          ],
+          "sourceNote": "ChordTube印刷PDF p.7"
+        }
       ]
     }
   ],
   "createdAt": "2026-11-27T18:02:00+09:00",
-  "updatedAt": "2026-11-27T18:02:00+09:00"
+  "updatedAt": "2026-11-27T19:10:00+09:00"
 }
