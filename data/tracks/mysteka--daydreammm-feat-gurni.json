@@ -1,0 +1,228 @@
+{
+  "schemaVersion": "2.0",
+  "id": "mysteka--daydreammm-feat-gurni",
+  "title": "Daydreammm… (feat. Gurni.)",
+  "artist": "Mysteka",
+  "source": {
+    "platform": "chordtube",
+    "url": "https://chordtube.net/"
+  },
+  "bpm": 174,
+  "key": "Eb major",
+  "timeSignature": "4/4",
+  "overallFeelings": [
+    "未来的",
+    "不思議",
+    "少し不安",
+    "上昇感",
+    "気持ちのいい着地"
+  ],
+  "notes": "ユーザー提供ChordTube印刷PDF（12ページ）に基づく。対象は36〜51小節のBメロ。PDF 1ページにEb major、4/4、174 BPM、転調0回と記載。コードと小節番号はPDF 3〜4ページの譜面表示から転記。印刷PDFには楽曲個別のChordTube URLが含まれていないため、source.urlはChordTubeトップページを暫定登録し、youtubeIdは未設定。小節内のコード切替位置はカードのグリッドと「裏」「16分」表示から概算。空欄の小節は直前コードの持続と解釈。romanはEb majorを基準とした機能的な分析表記で、ChordTubeからの直接転記ではない。",
+  "sections": [
+    {
+      "id": "sec-01-b-melody",
+      "label": "pre_chorus",
+      "displayName": "Bメロ",
+      "order": 1,
+      "startBar": 36,
+      "endBar": 51,
+      "localKey": "Eb major",
+      "feelings": [
+        "未来的",
+        "不思議",
+        "少し不安",
+        "上昇感",
+        "着地への期待"
+      ],
+      "feelingSummary": "めちゃくちゃBメロとして優秀。tritoneをルートにして開始するから、メジャーな雰囲気をガラッと変えて、不思議な、未来的でちょっぴり不安な感じを導入する。その雰囲気を多彩に変形しながら、上昇感に繋げて、気持ちのいい着地を予感させる。",
+      "cadenceOrMotion": "Eb majorの中で、冒頭のBM7（#IVM7）がトライトーン・ルートとして景色を一変させる。Abm7、Db–Eb、AbM7–Fm7、Gm7–Cm7、E/Gb–B–Abm7、DbM7(9)–Ebを経てFm7–F7–Fm7/Bb–Bb7(9)へ進み、上昇感と次の着地への期待を作る。",
+      "tags": [
+        "bars-36-51",
+        "chordtube-pdf",
+        "tritone-root",
+        "futuristic",
+        "pre-chorus-build"
+      ],
+      "chords": [
+        {
+          "symbol": "BM7",
+          "roman": "#IVM7",
+          "beats": 3,
+          "bar": 36,
+          "beatOffset": 0,
+          "note": "ChordTube 36小節目"
+        },
+        {
+          "symbol": "Abm7",
+          "roman": "ivm7",
+          "beats": 1,
+          "bar": 36,
+          "beatOffset": 3,
+          "note": "36小節目後半に表示。正確な拍位置はグリッドから概算"
+        },
+        {
+          "symbol": "Abm7",
+          "roman": "ivm7",
+          "beats": 4,
+          "bar": 37,
+          "beatOffset": 0,
+          "note": "ChordTube 37小節目はコード表記なし。直前のAbm7持続と解釈"
+        },
+        {
+          "symbol": "Db",
+          "roman": "bVII",
+          "beats": 3,
+          "bar": 38,
+          "beatOffset": 0,
+          "note": "ChordTube 38小節目"
+        },
+        {
+          "symbol": "Eb",
+          "roman": "I",
+          "beats": 1,
+          "bar": 38,
+          "beatOffset": 3,
+          "note": "38小節目後半に表示。拍位置概算"
+        },
+        {
+          "symbol": "Eb",
+          "roman": "I",
+          "beats": 4,
+          "bar": 39,
+          "beatOffset": 0,
+          "note": "ChordTube 39小節目はコード表記なし。直前のEb持続と解釈"
+        },
+        {
+          "symbol": "AbM7",
+          "roman": "IVM7",
+          "beats": 3.75,
+          "bar": 40,
+          "beatOffset": 0,
+          "note": "ChordTube 40小節目。Fm7は16分音符の位置で入る表示"
+        },
+        {
+          "symbol": "Fm7",
+          "roman": "IIm7",
+          "beats": 0.25,
+          "bar": 40,
+          "beatOffset": 3.75,
+          "note": "40小節目末の16分音符位置。譜面表示からの概算"
+        },
+        {
+          "symbol": "Fm7",
+          "roman": "IIm7",
+          "beats": 4,
+          "bar": 41,
+          "beatOffset": 0,
+          "note": "ChordTube 41小節目"
+        },
+        {
+          "symbol": "Gm7",
+          "roman": "IIIm7",
+          "beats": 3,
+          "bar": 42,
+          "beatOffset": 0,
+          "note": "ChordTube 42小節目"
+        },
+        {
+          "symbol": "Cm7",
+          "roman": "VIm7",
+          "beats": 1,
+          "bar": 42,
+          "beatOffset": 3,
+          "note": "42小節目後半に表示。拍位置概算"
+        },
+        {
+          "symbol": "E/Gb",
+          "roman": "#IV/#II",
+          "beats": 2,
+          "bar": 43,
+          "beatOffset": 2,
+          "note": "ChordTube 43小節目。「裏」位置の表示。拍位置概算"
+        },
+        {
+          "symbol": "B",
+          "roman": "#IV",
+          "beats": 3,
+          "bar": 44,
+          "beatOffset": 0,
+          "note": "ChordTube 44小節目"
+        },
+        {
+          "symbol": "Abm7",
+          "roman": "ivm7",
+          "beats": 1,
+          "bar": 44,
+          "beatOffset": 3,
+          "note": "44小節目後半に表示。拍位置概算"
+        },
+        {
+          "symbol": "Abm7",
+          "roman": "ivm7",
+          "beats": 4,
+          "bar": 45,
+          "beatOffset": 0,
+          "note": "ChordTube 45小節目はコード表記なし。直前のAbm7持続と解釈"
+        },
+        {
+          "symbol": "DbM7(9)",
+          "roman": "bVIIM7(9)",
+          "beats": 3,
+          "bar": 46,
+          "beatOffset": 0,
+          "note": "ChordTube 46小節目"
+        },
+        {
+          "symbol": "Eb",
+          "roman": "I",
+          "beats": 1,
+          "bar": 46,
+          "beatOffset": 3,
+          "note": "46小節目後半に表示。拍位置概算"
+        },
+        {
+          "symbol": "Eb",
+          "roman": "I",
+          "beats": 4,
+          "bar": 47,
+          "beatOffset": 0,
+          "note": "ChordTube 47小節目はコード表記なし。直前のEb持続と解釈"
+        },
+        {
+          "symbol": "Fm7",
+          "roman": "IIm7",
+          "beats": 4,
+          "bar": 48,
+          "beatOffset": 0,
+          "note": "ChordTube 48小節目"
+        },
+        {
+          "symbol": "F7",
+          "roman": "II7",
+          "beats": 4,
+          "bar": 49,
+          "beatOffset": 0,
+          "note": "ChordTube 49小節目"
+        },
+        {
+          "symbol": "Fm7/Bb",
+          "roman": "IIm7/V",
+          "beats": 4,
+          "bar": 50,
+          "beatOffset": 0,
+          "note": "ChordTube 50小節目"
+        },
+        {
+          "symbol": "Bb7(9)",
+          "roman": "V7(9)",
+          "beats": 4,
+          "bar": 51,
+          "beatOffset": 0,
+          "note": "ChordTube 51小節目。次のサビへの接続"
+        }
+      ]
+    }
+  ],
+  "createdAt": "2026-11-27T16:54:00+09:00",
+  "updatedAt": "2026-11-27T16:54:00+09:00"
+}
