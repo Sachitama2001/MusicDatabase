@@ -6,6 +6,7 @@ export interface ChordInput {
   beats: number;
   bar?: number;
   beatOffset?: number;
+  barBeats?: number;
   note?: string;
 }
 
@@ -471,6 +472,19 @@ export function generatePianoSequence(
   const voicing = options.voicing ?? 'arpeggio';
   const beatsPerBar = options.beatsPerBar ?? 4;
   const firstBar = chords.find((chord) => chord.bar !== undefined)?.bar;
+  const barDurations = new Map<number, number>();
+  for (const chord of chords) {
+    if (chord.bar !== undefined && chord.barBeats !== undefined) {
+      barDurations.set(chord.bar, chord.barBeats);
+    }
+  }
+  const getBarStartBeat = (bar: number): number => {
+    let start = 0;
+    for (let current = firstBar!; current < bar; current++) {
+      start += barDurations.get(current) ?? beatsPerBar;
+    }
+    return start;
+  };
   const notes: PianoNote[] = [];
   const chordSpans: ChordSpan[] = [];
 
@@ -481,7 +495,7 @@ export function generatePianoSequence(
     const item = chords[i];
     const beats = Math.max(0.25, item.beats);
     const startBeat = item.bar !== undefined && firstBar !== undefined
-      ? (item.bar - firstBar) * beatsPerBar + (item.beatOffset ?? 0)
+      ? getBarStartBeat(item.bar) + (item.beatOffset ?? 0)
       : cursor;
     let symbolToParse = item.symbol.trim();
     if (!symbolToParse && item.roman && options.key) {
