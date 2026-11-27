@@ -1,0 +1,115 @@
+{
+  "schemaVersion": "2.0",
+  "id": "chon--no-signal",
+  "title": "No Signal",
+  "artist": "CHON",
+  "source": {
+    "platform": "chordtube",
+    "url": "https://chordtube.net/"
+  },
+  "bpm": 244,
+  "key": "F# major",
+  "timeSignature": "4/4",
+  "overallFeelings": [
+    "循環性",
+    "安定感",
+    "明快",
+    "展開の汎用性"
+  ],
+  "notes": "ユーザー提供ChordTube印刷PDF（10ページ）に基づく。対象は50〜57小節。PDF 1ページにF# major、4/4、244 BPM、転調1回と記載。個別ChordTube URL・YouTube IDはPDF内で確認できないためsource.urlはChordTubeトップページを暫定登録。コード配置はPDF 4ページの50〜57小節表示から読み取り。空欄の小節は直前コードの持続と解釈し、拍内の細かい位置は「16分」「裏」表示およびカードのグリッドから概算。ユーザーのIコード持続という所感をセクションのフィーリングとして保持。",
+  "sections": [
+    {
+      "id": "sec-01-versatile-loop",
+      "label": "other",
+      "displayName": "汎用ループ（Aメロ／Bメロ／サビ）",
+      "order": 1,
+      "startBar": 50,
+      "endBar": 57,
+      "localKey": "F# major",
+      "feelings": [
+        "循環性",
+        "起承転結の起",
+        "安定感",
+        "汎用性"
+      ],
+      "feelingSummary": "Aメロ、Bメロ、サビなど、使い方次第でどこでも使えると思う。Iを伸ばすので、起承転結の「起」が分かりやすい。循環できる。",
+      "cadenceOrMotion": "F#M7（I）を長く保つことで「起」を明確にし、その後A#7(b9)（III7）からBM7(9)（IV）へ移る。BM7(9)/A#やG#m7(9)、A#7/Dなどの変化を加えながら循環できる形。",
+      "tags": [
+        "bars-50-57",
+        "chordtube-pdf",
+        "versatile",
+        "loopable",
+        "tonic-pedal",
+        "song-section-flexible"
+      ],
+      "chords": [
+        {
+          "symbol": "F#M7",
+          "roman": "IM7",
+          "beats": 8,
+          "bar": 50,
+          "beatOffset": 0,
+          "note": "ChordTube 50小節目から長く保持。51小節目はコード表記なしのため持続と解釈"
+        },
+        {
+          "symbol": "A#7(b9)",
+          "roman": "III7(b9)",
+          "beats": 2,
+          "bar": 52,
+          "beatOffset": 0,
+          "note": "ChordTube 52小節目付近。正確な小節内位置は印刷譜から概算"
+        },
+        {
+          "symbol": "BM7(9)",
+          "roman": "IVM7(9)",
+          "beats": 4,
+          "bar": 53,
+          "beatOffset": 0,
+          "note": "ChordTube 53小節目"
+        },
+        {
+          "symbol": "BM7(9)/A#",
+          "roman": "IVM7(9)/III",
+          "beats": 0.25,
+          "bar": 53,
+          "beatOffset": 3.75,
+          "note": "53小節目末の16分音符位置として表示。拍位置概算"
+        },
+        {
+          "symbol": "G#m7(9)",
+          "roman": "IIm7(9)",
+          "beats": 4,
+          "bar": 54,
+          "beatOffset": 0,
+          "note": "ChordTube 54小節目"
+        },
+        {
+          "symbol": "A#7(b9)",
+          "roman": "III7(b9)",
+          "beats": 0.25,
+          "bar": 55,
+          "beatOffset": 3.75,
+          "note": "55小節目末の16分音符位置として表示。拍位置概算"
+        },
+        {
+          "symbol": "BM7(9)",
+          "roman": "IVM7(9)",
+          "beats": 4,
+          "bar": 56,
+          "beatOffset": 0,
+          "note": "ChordTube 56小節目"
+        },
+        {
+          "symbol": "A#7/D",
+          "roman": "III7/bVI",
+          "beats": 2,
+          "bar": 57,
+          "beatOffset": 2,
+          "note": "57小節目の裏拍位置として表示。拍位置概算"
+        }
+      ]
+    }
+  ],
+  "createdAt": "2026-11-27T18:02:00+09:00",
+  "updatedAt": "2026-11-27T18:02:00+09:00"
+}
