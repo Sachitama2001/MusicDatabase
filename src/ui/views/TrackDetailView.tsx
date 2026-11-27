@@ -175,6 +175,41 @@ export function TrackDetailView({
                       </p>
                     )}
 
+                    {section.theoryAnnotations && section.theoryAnnotations.length > 0 && (
+                      <div style={{ marginTop: 12, borderTop: '1px solid var(--border)', paddingTop: 10 }}>
+                        <h4 style={{ margin: '0 0 8px' }}>音楽理論の注釈・出典</h4>
+                        <div style={{ display: 'grid', gap: 10 }}>
+                          {section.theoryAnnotations.map((annotation) => (
+                            <article key={annotation.id} style={{ padding: 10, border: '1px solid var(--border)', borderRadius: 8 }}>
+                              <div className="card-header" style={{ alignItems: 'center' }}>
+                                <strong>{annotation.technique}</strong>
+                                <div className="chip-row">
+                                  <span className="chip">{annotation.matchType === 'direct' ? '直接一致' : annotation.matchType === 'partial' ? '部分一致' : '分析上の推論'}</span>
+                                  <span className="chip">確度: {annotation.confidence}</span>
+                                </div>
+                              </div>
+                              {annotation.location && <p className="muted" style={{ margin: '4px 0' }}>該当箇所: {annotation.location}</p>}
+                              <p style={{ margin: '6px 0' }}>{annotation.note}</p>
+                              {annotation.theoryRefs.length > 0 && (
+                                <div className="chip-row" style={{ marginBottom: 6 }}>
+                                  {annotation.theoryRefs.map((ref) => <span className="chip chip-roman" key={ref}>{ref}</span>)}
+                                </div>
+                              )}
+                              {annotation.sources.map((source) => (
+                                <p className="muted" key={source.recordId} style={{ margin: '4px 0', fontSize: '0.85rem' }}>
+                                  出典 [{source.recordId}]: {source.author ? `${source.author} — ` : ''}
+                                  {source.url ? <a href={source.url} target="_blank" rel="noreferrer" style={{ color: 'var(--accent)' }}>{source.title} ↗</a> : source.title}
+                                  {source.reviewStatus === 'pending' ? '（理論DB内で確認待ち）' : ''}
+                                </p>
+                              ))}
+                              {annotation.sourceNote && <p className="muted" style={{ margin: '4px 0', fontSize: '0.8rem' }}>コード譜根拠: {annotation.sourceNote}</p>}
+                              {annotation.caveat && <p className="muted" style={{ margin: '4px 0', fontSize: '0.8rem' }}>留意点: {annotation.caveat}</p>}
+                            </article>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
                     <ChordMidiPlayer
                       title={`${activeTrack.artist}-${activeTrack.title}-${section.displayName}`}
                       chords={section.chords}
