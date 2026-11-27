@@ -108,7 +108,7 @@ describe('v2 ChordTube TrackSchema and invariants', () => {
     );
 
     expect(progressions.length).toBeGreaterThanOrEqual(38);
-    expect(techniques.length).toBeGreaterThanOrEqual(26);
+    expect(techniques.length).toBeGreaterThanOrEqual(32);
     expect(styles.length).toBeGreaterThanOrEqual(12);
     expect(rules.length).toBeGreaterThanOrEqual(7);
 
