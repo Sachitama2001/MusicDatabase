@@ -1,0 +1,106 @@
+{
+  "schemaVersion": "2.0",
+  "id": "anomalie--velours",
+  "title": "Velours",
+  "artist": "Anomalie",
+  "source": {
+    "platform": "chordtube",
+    "url": "https://chordtube.net/"
+  },
+  "bpm": 89,
+  "key": "B major",
+  "timeSignature": "4/4",
+  "overallFeelings": [
+    "浮遊感",
+    "不安",
+    "多彩",
+    "曖昧な着地",
+    "雰囲気の混在"
+  ],
+  "notes": "ユーザーから直接提供されたコード進行メモ。ChordTubeの個別ページURLや小節番号は未提供。記載された改行を7つのまとまりとして保持し、各まとまりを4/4の1小節と仮定。まとまり内に2コードある箇所は各2拍ずつと仮置きしている。実際のコード持続時間・曲中のセクション位置は未確認。source.urlはChordTubeトップページを参照先として仮置きし、個別ページの出典を意味しない。",
+  "sections": [
+    {
+      "id": "sec-01-progression-note",
+      "label": "other",
+      "displayName": "コード進行メモ（位置未指定）",
+      "order": 1,
+      "localKey": "B major",
+      "localBpm": 89,
+      "localTimeSignature": "4/4",
+      "feelings": [
+        "浮遊感",
+        "不安",
+        "多彩",
+        "雰囲気の混在",
+        "着地感"
+      ],
+      "feelingSummary": "色んな雰囲気をごっちゃまぜにして浮遊しながら微量の不安と着地を見せる。",
+      "cadenceOrMotion": "D#7(#9,b13)とEM7(9)の往復で緊張と浮遊を作り、終盤のGM7(9)–CM7(9,13)で別の色彩へ移る。B majorを基準にするとD#7はIII7（G#mへのセカンダリー・ドミナント的な響き）、EはIV、GとCは借用的な♭VI・♭IIとして解釈でき、異なる和声色が混在する。",
+      "tags": [
+        "user-entered",
+        "progression-note",
+        "floating",
+        "subtle-anxiety",
+        "mixed-harmony"
+      ],
+      "chords": [
+        {
+          "symbol": "D#7(#9b13)",
+          "roman": "III7(#9,b13)",
+          "beats": 4,
+          "note": "ユーザー記載の1行目。原表記 D#7(#9♭13)"
+        },
+        {
+          "symbol": "EM7(9)",
+          "roman": "IVM7(9)",
+          "beats": 2,
+          "note": "ユーザー記載の2行目・前半。持続2拍は仮置き"
+        },
+        {
+          "symbol": "D#7(#9b13)",
+          "roman": "III7(#9,b13)",
+          "beats": 2,
+          "note": "ユーザー記載の2行目・後半。原表記 D#7(#9♭13)、持続2拍は仮置き"
+        },
+        {
+          "symbol": "D#7(#9b13)",
+          "roman": "III7(#9,b13)",
+          "beats": 4,
+          "note": "ユーザー記載の3行目。原表記 D#7(#9♭13)"
+        },
+        {
+          "symbol": "EM7(9)",
+          "roman": "IVM7(9)",
+          "beats": 4,
+          "note": "ユーザー記載の4行目"
+        },
+        {
+          "symbol": "D#7(#9b13)",
+          "roman": "III7(#9,b13)",
+          "beats": 4,
+          "note": "ユーザー記載の5行目。原表記 D#7(#9♭13)"
+        },
+        {
+          "symbol": "EM7",
+          "roman": "IVM7",
+          "beats": 4,
+          "note": "ユーザー記載の6行目"
+        },
+        {
+          "symbol": "GM7(9)",
+          "roman": "bVIM7(9)",
+          "beats": 2,
+          "note": "ユーザー記載の7行目・前半。持続2拍は仮置き"
+        },
+        {
+          "symbol": "CM7(9,13)",
+          "roman": "bIIM7(9,13)",
+          "beats": 2,
+          "note": "ユーザー記載の7行目・後半。持続2拍は仮置き"
+        }
+      ]
+    }
+  ],
+  "createdAt": "2026-11-27T18:02:00+09:00",
+  "updatedAt": "2026-11-27T18:02:00+09:00"
+}
