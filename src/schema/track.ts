@@ -26,6 +26,7 @@ export const ChordEventSchema = z.object({
   beats: z.number().gt(0).lte(32),
   bar: z.number().int().min(1).optional(),
   beatOffset: z.number().min(0).lt(4).optional(),
+  barBeats: z.number().gt(0).lte(32).optional(),
   note: z.string().max(200).optional()
 });
 export type ChordEvent = z.infer<typeof ChordEventSchema>;
