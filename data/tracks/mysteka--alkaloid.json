@@ -1,0 +1,245 @@
+{
+  "schemaVersion": "2.0",
+  "id": "mysteka--alkaloid",
+  "title": "Alkaloid (feat. ねんね)",
+  "artist": "Mysteka",
+  "source": {
+    "platform": "chordtube",
+    "url": "https://chordtube.net/videos/Z9Ryy7Tfty8",
+    "youtubeId": "Z9Ryy7Tfty8"
+  },
+  "bpm": 142,
+  "key": "D minor",
+  "timeSignature": "4/4",
+  "overallFeelings": [
+    "マイナー",
+    "不安",
+    "おしゃれ",
+    "緊張感",
+    "着地"
+  ],
+  "notes": "ユーザー提供ChordTube印刷PDF（10ページ）に基づく。対象は17〜32小節で、ユーザー指定により「イントロ兼Aメロ」として独立登録。曲全体のKey D minor、4/4、142 BPM、転調0回（PDF 1ページ）。ChordEvent.barは楽曲全体の小節番号。各小節末に表示される小さいコードは「食い」と判断し、直前小節の3.5拍目から0.5拍として記録。拍位置はPDFのカード内グリッドと「食い」表示からの概算。コード名はPDF 2〜3ページから転記。romanはD minorを基準にした機能的な分析値で、ChordTubeに表示された度数の直接転記ではない。",
+  "sections": [
+    {
+      "id": "sec-01-intro-verse",
+      "label": "other",
+      "displayName": "イントロ兼Aメロ",
+      "order": 1,
+      "startBar": 17,
+      "endBar": 32,
+      "localKey": "D minor",
+      "feelings": [
+        "マイナー",
+        "不安",
+        "おしゃれ",
+        "緊張感",
+        "着地"
+      ],
+      "feelingSummary": "マイナーで、不安だけど、おしゃれな感じ。最初のコードでちょっとした意外感があって、その緊張感を保ったまま、最後は着地してくれる。",
+      "cadenceOrMotion": "Em7-5（iiø7）から始まり、Eb7系の裏コード的な色彩を挟みつつ、Am7/D・Bm・Gm7・A7系を循環。終盤はAm7/DからD7(9)へ進み、次のGm7(9)へ向かうドミナント感を作る。",
+      "tags": [
+        "bars-17-32",
+        "chordtube-pdf",
+        "minor",
+        "suspense",
+        "stylish"
+      ],
+      "chords": [
+        {
+          "symbol": "Em7-5",
+          "roman": "iiø7",
+          "beats": 3.5,
+          "bar": 17,
+          "beatOffset": 0,
+          "note": "ChordTube 17小節目"
+        },
+        {
+          "symbol": "Eb7",
+          "roman": "bII7",
+          "beats": 0.5,
+          "bar": 17,
+          "beatOffset": 3.5,
+          "note": "17小節目末の食い。次小節のEb7(9,#11)へつながる"
+        },
+        {
+          "symbol": "Eb7(9,#11)",
+          "roman": "bII7(9,#11)",
+          "beats": 4,
+          "bar": 18,
+          "beatOffset": 0,
+          "note": "ChordTube 18小節目"
+        },
+        {
+          "symbol": "Am7/D",
+          "roman": "v7/i",
+          "beats": 3.5,
+          "bar": 19,
+          "beatOffset": 0,
+          "note": "ChordTube 19小節目"
+        },
+        {
+          "symbol": "Bm",
+          "roman": "#vim",
+          "beats": 0.5,
+          "bar": 19,
+          "beatOffset": 3.5,
+          "note": "19小節目末の食い"
+        },
+        {
+          "symbol": "Bm7(9)",
+          "roman": "#vim7(9)",
+          "beats": 4,
+          "bar": 20,
+          "beatOffset": 0,
+          "note": "ChordTube 20小節目"
+        },
+        {
+          "symbol": "Gm7(9)",
+          "roman": "ivm7(9)",
+          "beats": 3.5,
+          "bar": 21,
+          "beatOffset": 0,
+          "note": "ChordTube 21小節目"
+        },
+        {
+          "symbol": "A7",
+          "roman": "V7",
+          "beats": 0.5,
+          "bar": 21,
+          "beatOffset": 3.5,
+          "note": "21小節目末の食い"
+        },
+        {
+          "symbol": "A7",
+          "roman": "V7",
+          "beats": 4,
+          "bar": 22,
+          "beatOffset": 0,
+          "note": "ChordTube 22小節目"
+        },
+        {
+          "symbol": "Em7(11)",
+          "roman": "iim7(11)",
+          "beats": 3.5,
+          "bar": 23,
+          "beatOffset": 0,
+          "note": "ChordTube 23小節目"
+        },
+        {
+          "symbol": "A7",
+          "roman": "V7",
+          "beats": 0.5,
+          "bar": 23,
+          "beatOffset": 3.5,
+          "note": "23小節目末の食い"
+        },
+        {
+          "symbol": "A7(b9)",
+          "roman": "V7(b9)",
+          "beats": 4,
+          "bar": 24,
+          "beatOffset": 0,
+          "note": "ChordTube 24小節目"
+        },
+        {
+          "symbol": "Em7-5",
+          "roman": "iiø7",
+          "beats": 3.5,
+          "bar": 25,
+          "beatOffset": 0,
+          "note": "ChordTube 25小節目"
+        },
+        {
+          "symbol": "Eb7",
+          "roman": "bII7",
+          "beats": 0.5,
+          "bar": 25,
+          "beatOffset": 3.5,
+          "note": "25小節目末の食い"
+        },
+        {
+          "symbol": "Eb7(9,#11)",
+          "roman": "bII7(9,#11)",
+          "beats": 4,
+          "bar": 26,
+          "beatOffset": 0,
+          "note": "ChordTube 26小節目"
+        },
+        {
+          "symbol": "Am7/D",
+          "roman": "v7/i",
+          "beats": 3.5,
+          "bar": 27,
+          "beatOffset": 0,
+          "note": "ChordTube 27小節目"
+        },
+        {
+          "symbol": "Bm",
+          "roman": "#vim",
+          "beats": 0.5,
+          "bar": 27,
+          "beatOffset": 3.5,
+          "note": "27小節目末の食い"
+        },
+        {
+          "symbol": "Bm7(9)",
+          "roman": "#vim7(9)",
+          "beats": 4,
+          "bar": 28,
+          "beatOffset": 0,
+          "note": "ChordTube 28小節目"
+        },
+        {
+          "symbol": "Gm7(9)",
+          "roman": "ivm7(9)",
+          "beats": 3.5,
+          "bar": 29,
+          "beatOffset": 0,
+          "note": "ChordTube 29小節目"
+        },
+        {
+          "symbol": "A7",
+          "roman": "V7",
+          "beats": 0.5,
+          "bar": 29,
+          "beatOffset": 3.5,
+          "note": "29小節目末の食い"
+        },
+        {
+          "symbol": "A7",
+          "roman": "V7",
+          "beats": 4,
+          "bar": 30,
+          "beatOffset": 0,
+          "note": "ChordTube 30小節目"
+        },
+        {
+          "symbol": "Am7/D",
+          "roman": "v7/i",
+          "beats": 3.5,
+          "bar": 31,
+          "beatOffset": 0,
+          "note": "ChordTube 31小節目"
+        },
+        {
+          "symbol": "D7",
+          "roman": "I7",
+          "beats": 0.5,
+          "bar": 31,
+          "beatOffset": 3.5,
+          "note": "31小節目末の食い"
+        },
+        {
+          "symbol": "D7(9)",
+          "roman": "I7(9)",
+          "beats": 4,
+          "bar": 32,
+          "beatOffset": 0,
+          "note": "ChordTube 32小節目"
+        }
+      ]
+    }
+  ],
+  "createdAt": "2026-11-27T16:54:00+09:00",
+  "updatedAt": "2026-11-27T16:54:00+09:00"
+}
